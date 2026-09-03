@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MpAge Calculator - Precision Age & Life Analytics</title>
+    <title>MpAge Calculator - All-in-One Precision Calculators Hub</title>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- FontAwesome Icons for Logos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
@@ -17,7 +16,7 @@
             --text: #0F172A;
             --text-muted: #64748B;
             --border: #E2E8F0;
-            --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+            --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
             --gradient: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%);
         }
 
@@ -46,17 +45,20 @@
             min-height: 100vh;
         }
 
-        /* Header */
+        /* Top Navigation Header */
         header {
             background: var(--surface);
             border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-top {
             padding: 16px 8%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 100;
         }
 
         .logo {
@@ -112,85 +114,131 @@
             border-color: var(--primary);
         }
 
-        /* Main Container */
+        /* Navigation Menu Bar */
+        nav.menu-bar {
+            background: var(--surface);
+            border-top: 1px solid var(--border);
+            padding: 0 8%;
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+
+        nav.menu-bar ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav.menu-bar a {
+            display: block;
+            padding: 14px 0;
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            border-bottom: 2px solid transparent;
+        }
+
+        nav.menu-bar a:hover, nav.menu-bar a.active {
+            color: var(--primary);
+            border-bottom-color: var(--primary);
+        }
+
+        /* Main Area */
         main {
             flex: 1;
             max-width: 1100px;
             width: 92%;
-            margin: 40px auto;
+            margin: 30px auto;
             display: flex;
             flex-direction: column;
             gap: 30px;
         }
 
-        /* Hero / Main Card */
+        /* Calculator Card */
         .calculator-card {
             background: var(--surface);
-            padding: 40px;
+            padding: 35px;
             border-radius: 24px;
             box-shadow: var(--card-shadow);
             border: 1px solid var(--border);
-            text-align: center;
         }
 
         .calculator-card h1 {
-            font-size: 32px;
+            font-size: 28px;
             font-weight: 800;
-            margin-bottom: 10px;
-            letter-spacing: -0.5px;
+            margin-bottom: 8px;
+            text-align: center;
         }
 
-        .calculator-card p.subtitle {
+        .subtitle {
             color: var(--text-muted);
-            font-size: 15px;
-            margin-bottom: 30px;
+            font-size: 14px;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .inputs-wrapper {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            max-width: 600px;
+            margin: 0 auto 25px;
         }
 
         .input-box {
-            max-width: 450px;
-            margin: 0 auto 30px;
             text-align: left;
         }
 
         .input-box label {
             display: block;
-            font-size: 14px;
+            font-size: 13px;
             font-weight: 600;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
         }
 
         .input-box input {
             width: 100%;
-            padding: 14px 18px;
+            padding: 12px 14px;
             border: 2px solid var(--border);
-            border-radius: 12px;
-            font-size: 16px;
+            border-radius: 10px;
+            font-size: 15px;
             outline: none;
             background: var(--bg);
             color: var(--text);
         }
 
-        .input-box input:focus {
-            border-color: var(--primary);
+        .button-group {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            max-width: 600px;
+            margin: 0 auto;
         }
 
         .btn-calc {
-            width: 100%;
-            max-width: 450px;
+            flex: 2;
             background: var(--gradient);
             color: white;
-            padding: 16px;
+            padding: 14px;
             border: none;
-            border-radius: 12px;
-            font-size: 16px;
+            border-radius: 10px;
+            font-size: 15px;
             font-weight: 700;
             cursor: pointer;
-            box-shadow: 0 10px 20px -5px rgba(79, 70, 229, 0.4);
+            box-shadow: 0 8px 18px -4px rgba(79, 70, 229, 0.4);
         }
 
-        .btn-calc:hover {
-            opacity: 0.95;
-            transform: translateY(-1px);
+        .btn-reset {
+            flex: 1;
+            background: var(--bg);
+            border: 1px solid var(--border);
+            color: var(--text);
+            padding: 14px;
+            border-radius: 10px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
         }
 
         /* Results Display */
@@ -212,39 +260,39 @@
             padding: 20px;
             border-radius: 16px;
             border: 1px solid var(--border);
+            text-align: center;
         }
 
         .result-box .number {
-            font-size: 36px;
+            font-size: 32px;
             font-weight: 800;
             color: var(--primary);
             display: block;
         }
 
         .result-box .label {
-            font-size: 13px;
+            font-size: 12px;
             color: var(--text-muted);
             font-weight: 600;
             text-transform: uppercase;
         }
 
-        /* Extra Analytics Grid */
+        /* Analytics Grid */
         .analytics-title {
             font-size: 18px;
             font-weight: 700;
-            margin-top: 10px;
             text-align: left;
         }
 
         .analytics-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
             gap: 15px;
         }
 
         .stat-card {
             background: var(--bg);
-            padding: 18px;
+            padding: 16px;
             border-radius: 14px;
             border: 1px solid var(--border);
             text-align: left;
@@ -257,32 +305,91 @@
         }
 
         .stat-card h3 {
-            font-size: 20px;
+            font-size: 18px;
             font-weight: 700;
             margin-top: 4px;
             color: var(--text);
         }
 
-        /* Share Section */
         .share-btn-group {
             display: flex;
             justify-content: center;
-            gap: 10px;
-            margin-top: 15px;
+            gap: 12px;
+            margin-top: 10px;
+            flex-wrap: wrap;
         }
 
-        .share-btn {
+        .action-btn {
             background: var(--bg);
             border: 1px solid var(--border);
             color: var(--text);
-            padding: 10px 16px;
+            padding: 10px 18px;
             border-radius: 8px;
             cursor: pointer;
             font-size: 13px;
             font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 6px;
         }
 
-        /* Fake Image Ads Styling */
+        /* Calculators Directory Section */
+        .directory-section {
+            background: var(--surface);
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+        }
+
+        .directory-title {
+            font-size: 20px;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+        }
+
+        .category-card {
+            background: var(--bg);
+            padding: 20px;
+            border-radius: 14px;
+            border: 1px solid var(--border);
+        }
+
+        .category-card h3 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary);
+        }
+
+        .category-card ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .category-card a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .category-card a:hover {
+            color: var(--primary);
+        }
+
+        /* Ads Container */
         .ad-container {
             background: var(--surface);
             border: 1px dashed #CBD5E1;
@@ -290,9 +397,7 @@
             padding: 15px;
             text-align: center;
             position: relative;
-            margin: 10px 0;
             overflow: hidden;
-            box-shadow: var(--card-shadow);
         }
 
         .ad-label {
@@ -301,13 +406,10 @@
             right: 12px;
             font-size: 10px;
             color: #94A3B8;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
             font-weight: 700;
             background: rgba(255,255,255,0.8);
             padding: 2px 6px;
             border-radius: 4px;
-            z-index: 2;
         }
 
         .ad-banner-content {
@@ -322,8 +424,8 @@
         }
 
         .ad-image {
-            width: 110px;
-            height: 80px;
+            width: 100px;
+            height: 70px;
             border-radius: 8px;
             object-fit: cover;
             flex-shrink: 0;
@@ -334,68 +436,27 @@
         }
 
         .ad-banner-text h4 {
-            font-size: 16px;
+            font-size: 15px;
             color: #2563EB;
             margin-bottom: 4px;
-            font-weight: 700;
         }
 
         .ad-banner-text p {
-            font-size: 13px;
+            font-size: 12px;
             color: var(--text-muted);
-            line-height: 1.4;
         }
 
         .ad-btn {
             background: #2563EB;
             color: white;
-            padding: 10px 18px;
-            border-radius: 8px;
-            font-size: 13px;
+            padding: 8px 14px;
+            border-radius: 6px;
+            font-size: 12px;
             font-weight: 700;
             white-space: nowrap;
         }
 
-        /* Features Section */
-        .grid-3 {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-
-        .info-card {
-            background: var(--surface);
-            padding: 25px;
-            border-radius: 18px;
-            border: 1px solid var(--border);
-            box-shadow: var(--card-shadow);
-        }
-
-        .info-card h2 {
-            font-size: 18px;
-            font-weight: 700;
-            margin-bottom: 12px;
-        }
-
-        .info-card p, .faq-item p {
-            color: var(--text-muted);
-            font-size: 14px;
-            line-height: 1.6;
-        }
-
-        .faq-item {
-            margin-top: 15px;
-            padding-top: 15px;
-            border-top: 1px solid var(--border);
-        }
-
-        .faq-item h3 {
-            font-size: 15px;
-            font-weight: 600;
-            margin-bottom: 6px;
-        }
-
-        /* Floating WhatsApp Button */
+        /* WhatsApp Button */
         .whatsapp-float {
             position: fixed;
             bottom: 25px;
@@ -403,69 +464,64 @@
             background-color: #25D366;
             color: #FFF;
             border-radius: 50px;
-            text-align: center;
-            font-size: 24px;
-            box-shadow: 2px 5px 15px rgba(0,0,0,0.2);
+            padding: 12px 20px;
+            text-decoration: none;
+            font-weight: 600;
             z-index: 1000;
             display: flex;
             align-items: center;
             gap: 10px;
-            padding: 12px 20px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: transform 0.2s, background-color 0.2s;
+            box-shadow: 2px 5px 15px rgba(0,0,0,0.2);
         }
 
-        .whatsapp-float:hover {
-            background-color: #20BA5A;
-            transform: scale(1.05);
-        }
-
-        .whatsapp-float i {
-            font-size: 28px;
-        }
-
-        .whatsapp-text {
-            font-size: 14px;
-            color: white;
-        }
-
-        /* Footer */
+        /* Footer Layout */
         footer {
             background: var(--surface);
             border-top: 1px solid var(--border);
-            padding: 40px 8%;
+            padding: 40px 8% 20px;
             margin-top: auto;
         }
 
-        .footer-content {
-            max-width: 1100px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 20px;
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
         }
 
-        .footer-links {
-            display: flex;
-            gap: 20px;
+        .footer-col h4 {
+            font-size: 15px;
+            font-weight: 700;
+            margin-bottom: 12px;
         }
 
-        .footer-links a {
+        .footer-col ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .footer-col a {
             color: var(--text-muted);
             text-decoration: none;
-            font-size: 14px;
-            font-weight: 500;
+            font-size: 13px;
             cursor: pointer;
         }
 
-        .footer-links a:hover {
+        .footer-col a:hover {
             color: var(--primary);
         }
 
-        /* Modal Styles */
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
+            color: var(--text-muted);
+            font-size: 13px;
+        }
+
+        /* Modals */
         .modal {
             display: none;
             position: fixed;
@@ -498,49 +554,71 @@
             color: var(--text-muted);
         }
 
+        @media print {
+            header, nav, .directory-section, .ad-container, footer, .whatsapp-float, .button-group {
+                display: none !important;
+            }
+            .calculator-card { border: none; box-shadow: none; }
+        }
+
         @media (max-width: 768px) {
             .primary-results { grid-template-columns: 1fr; }
-            .calculator-card { padding: 25px 18px; }
-            header { padding: 15px 5%; }
-            .whatsapp-text { display: none; }
-            .whatsapp-float { padding: 14px; }
+            .inputs-wrapper { grid-template-columns: 1fr; }
             .ad-banner-content { flex-direction: column; text-align: center; }
-            .ad-image { width: 100%; height: 120px; }
-            .ad-btn { width: 100%; }
+            .ad-image { width: 100%; height: 100px; }
+            .whatsapp-text { display: none; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Header Navigation -->
     <header>
-        <a href="#" class="logo">
-            <div class="ai-logo-icon">
-                <i class="fa-solid fa-wand-magic-sparkles"></i>
+        <div class="header-top">
+            <a href="#" class="logo">
+                <div class="ai-logo-icon">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                </div>
+                <div class="logo-text"><span>MpAge</span> Calculator</div>
+            </a>
+            <div class="header-controls">
+                <button class="btn-toggle" onclick="toggleLanguage()" id="lang-btn">🌐 हिंदी में बदलें</button>
+                <button class="btn-toggle" onclick="toggleDarkMode()">🌙 Theme</button>
             </div>
-            <div class="logo-text"><span>MpAge</span> Calculator</div>
-        </a>
-        <div class="header-controls">
-            <button class="btn-toggle" onclick="toggleLanguage()" id="lang-btn">🌐 हिंदी में बदलें</button>
-            <button class="btn-toggle" onclick="toggleDarkMode()">🌙 Theme</button>
         </div>
+
+        <nav class="menu-bar">
+            <ul>
+                <li><a href="#" class="active" data-key="mHome">Home</a></li>
+                <li><a href="#age-calc" data-key="mAge">Age Calculator</a></li>
+                <li><a href="#date-calc" data-key="mDate">Date Calculator</a></li>
+                <li><a href="#all-calc" data-key="mAll">All Calculators</a></li>
+                <li><a onclick="openModal('about')" data-key="mAbout">About Us</a></li>
+                <li><a onclick="openModal('contact')" data-key="mContact">Contact Us</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <!-- Main Container -->
     <main>
-        <!-- Main Calculator Section -->
-        <div class="calculator-card">
+        <div class="calculator-card" id="age-calc">
             <h1 data-key="title">Precision Age Calculator</h1>
-            <p class="subtitle" data-key="subtitle">Calculate your exact age in years, months, days, and discover your life stats</p>
+            <p class="subtitle" data-key="subtitle">Calculate your exact age, birth day, total birthdays, zodiac sign & life statistics</p>
 
-            <div class="input-box">
-                <label for="dob" data-key="dobLabel">Select Date of Birth</label>
-                <input type="date" id="dob">
+            <div class="inputs-wrapper">
+                <div class="input-box">
+                    <label for="dob" data-key="dobLabel">Date of Birth (DOB)</label>
+                    <input type="date" id="dob">
+                </div>
+                <div class="input-box">
+                    <label for="targetDate" data-key="targetDateLabel">Age at Date (Optional)</label>
+                    <input type="date" id="targetDate">
+                </div>
             </div>
 
-            <button class="btn-calc" onclick="calculateAge()" data-key="calcBtn">Calculate Age</button>
+            <div class="button-group">
+                <button class="btn-calc" onclick="calculateAge()" data-key="calcBtn">Calculate Age</button>
+                <button class="btn-reset" onclick="resetCalculator()" data-key="resetBtn">Reset</button>
+            </div>
 
-            <!-- Results Section -->
             <div class="result-container" id="result">
                 <div class="primary-results">
                     <div class="result-box">
@@ -557,8 +635,24 @@
                     </div>
                 </div>
 
-                <h3 class="analytics-title" data-key="analyticsTitle">Your Life Analytics</h3>
+                <h3 class="analytics-title" data-key="analyticsTitle">Life & Zodiac Insights</h3>
                 <div class="analytics-grid">
+                    <div class="stat-card">
+                        <p data-key="birthDay">Day of Birth</p>
+                        <h3 id="stat-birthday-day">-</h3>
+                    </div>
+                    <div class="stat-card">
+                        <p data-key="zodiac">Zodiac Sign</p>
+                        <h3 id="stat-zodiac">-</h3>
+                    </div>
+                    <div class="stat-card">
+                        <p data-key="totalBirthdays">Total Birthdays Celebrated</p>
+                        <h3 id="stat-total-bday">0</h3>
+                    </div>
+                    <div class="stat-card">
+                        <p data-key="nextBday">Next Birthday In</p>
+                        <h3 id="stat-nextbday">0 Days</h3>
+                    </div>
                     <div class="stat-card">
                         <p data-key="totalDays">Total Days Lived</p>
                         <h3 id="stat-days">0</h3>
@@ -571,85 +665,134 @@
                         <p data-key="totalMinutes">Total Minutes Lived</p>
                         <h3 id="stat-minutes">0</h3>
                     </div>
-                    <div class="stat-card">
-                        <p data-key="nextBday">Next Birthday In</p>
-                        <h3 id="stat-nextbday">0 Days</h3>
-                    </div>
                 </div>
 
-                <!-- Share Results -->
                 <div class="share-btn-group">
-                    <button class="share-btn" onclick="shareResults()" data-key="shareBtn">📋 Copy Summary</button>
+                    <button class="action-btn" onclick="shareResults()"><i class="fa-solid fa-copy"></i> <span data-key="copyBtn">Copy Summary</span></button>
+                    <button class="action-btn" onclick="window.print()"><i class="fa-solid fa-print"></i> <span data-key="printBtn">Print / Download PDF</span></button>
                 </div>
             </div>
         </div>
 
-        <!-- Fake Ad Banner 1 (With Image) -->
         <div class="ad-container">
             <span class="ad-label">ADVERTISEMENT</span>
-            <div class="ad-banner-content" onclick="alert('This is a demo advertisement space.')">
-                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=300&q=80" alt="Ad Image" class="ad-image">
+            <div class="ad-banner-content" onclick="alert('Demo Advertisement Space')">
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=300&q=80" alt="Ad" class="ad-image">
                 <div class="ad-banner-text">
                     <h4>🚀 High-Speed Cloud Hosting - 70% Off!</h4>
-                    <p>Upgrade your website speed with ultra-fast NVMe servers, free SSL, and 24/7 expert support.</p>
+                    <p>Upgrade your site performance with ultra-fast NVMe servers & free SSL.</p>
                 </div>
                 <div class="ad-btn">Learn More</div>
             </div>
         </div>
 
-        <!-- Information & FAQ Section Grid -->
-        <div class="grid-3">
-            <div class="info-card">
-                <h2 data-key="aboutTitle">About MpAge Calculator</h2>
-                <p data-key="aboutDesc">MpAge Calculator (Mpage.online) is a high-precision online tool designed to calculate your exact age down to the day, hour, and minute. Ideal for official forms, eligibility verification, or personal curiosity.</p>
-            </div>
+        <div class="directory-section" id="all-calc">
+            <h2 class="directory-title" data-key="dirTitle">Explore All Calculators on Mpage.online</h2>
+            <div class="category-grid">
+                
+                <div class="category-card" id="date-calc">
+                    <h3><i class="fa-regular fa-calendar-days"></i> Date & Time</h3>
+                    <ul>
+                        <li><a href="#">Date Difference Calculator</a></li>
+                        <li><a href="#">Days Between Dates</a></li>
+                        <li><a href="#">Date Add/Subtract Calculator</a></li>
+                        <li><a href="#">Birthday Countdown</a></li>
+                        <li><a href="#">Time Duration Calculator</a></li>
+                    </ul>
+                </div>
 
-            <div class="info-card">
-                <h2 data-key="faqTitle">Frequently Asked Questions</h2>
-                <div class="faq-item">
-                    <h3 data-key="q1">Is Leap Year calculated correctly?</h3>
-                    <p data-key="a1">Yes, our algorithm automatically factors in leap years and varying month lengths for 100% accuracy.</p>
+                <div class="category-card">
+                    <h3><i class="fa-solid fa-calculator"></i> Math Calculators</h3>
+                    <ul>
+                        <li><a href="#">Percentage Calculator</a></li>
+                        <li><a href="#">Average Calculator</a></li>
+                        <li><a href="#">Ratio Calculator</a></li>
+                        <li><a href="#">Profit & Loss Calculator</a></li>
+                        <li><a href="#">Discount Calculator</a></li>
+                        <li><a href="#">GST Calculator</a></li>
+                    </ul>
                 </div>
-                <div class="faq-item">
-                    <h3 data-key="q2">Is my data secure?</h3>
-                    <p data-key="a2">Your birth date is processed entirely inside your browser. No data is stored on external servers.</p>
+
+                <div class="category-card">
+                    <h3><i class="fa-solid fa-sack-dollar"></i> Finance Calculators</h3>
+                    <ul>
+                        <li><a href="#">EMI Calculator</a></li>
+                        <li><a href="#">SIP Calculator</a></li>
+                        <li><a href="#">FD Calculator</a></li>
+                        <li><a href="#">Loan Calculator</a></li>
+                        <li><a href="#">Simple Interest Calculator</a></li>
+                        <li><a href="#">Compound Interest Calculator</a></li>
+                    </ul>
                 </div>
+
+                <div class="category-card">
+                    <h3><i class="fa-solid fa-heart-pulse"></i> Health Calculators</h3>
+                    <ul>
+                        <li><a href="#">BMI Calculator</a></li>
+                        <li><a href="#">BMR Calculator</a></li>
+                        <li><a href="#">Calorie Calculator</a></li>
+                        <li><a href="#">Ideal Weight Calculator</a></li>
+                    </ul>
+                </div>
+
             </div>
         </div>
 
-        <!-- Fake Ad Banner 2 (With Image) -->
         <div class="ad-container">
             <span class="ad-label">SPONSORED</span>
-            <div class="ad-banner-content" onclick="alert('This is a demo advertisement space.')">
-                <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=300&q=80" alt="Ad Image" class="ad-image">
+            <div class="ad-banner-content" onclick="alert('Demo Advertisement Space')">
+                <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=300&q=80" alt="Ad" class="ad-image">
                 <div class="ad-banner-text">
                     <h4>💼 Master Full-Stack AI Development</h4>
-                    <p>Learn coding with live interactive sessions, real-world projects & job assistance program.</p>
+                    <p>Live interactive classes, real-world projects & job assistance program.</p>
                 </div>
                 <div class="ad-btn">Apply Now</div>
             </div>
         </div>
     </main>
 
-    <!-- Floating Official WhatsApp Button -->
-    <a href="https://wa.me/919131053539?text=Hello!%20I%20have%20a%20query%20regarding%20Mpage.online." class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+    <a href="https://wa.me/919131053539?text=Hello!%20I%20have%20a%20query%20regarding%20Mpage.online." class="whatsapp-float" target="_blank">
         <i class="fa-brands fa-whatsapp"></i>
         <span class="whatsapp-text">WhatsApp Support</span>
     </a>
 
-    <!-- Footer -->
     <footer>
-        <div class="footer-content">
-            <p class="copyright">&copy; 2026 Mpage.online. All Rights Reserved.</p>
-            <div class="footer-links">
-                <a onclick="openModal('privacy')" data-key="privacy">Privacy Policy</a>
-                <a onclick="openModal('terms')" data-key="terms">Terms & Conditions</a>
-                <a onclick="openModal('contact')" data-key="contact">Contact Us</a>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>About</h4>
+                <ul>
+                    <li><a onclick="openModal('about')">About Us</a></li>
+                    <li><a href="#">Our Team</a></li>
+                    <li><a href="#">Careers</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact & Help</h4>
+                <ul>
+                    <li><a onclick="openModal('contact')">Contact Us</a></li>
+                    <li><a onclick="openModal('support')">Support</a></li>
+                    <li><a href="https://wa.me/919131053539">WhatsApp Support</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Legal Pages</h4>
+                <ul>
+                    <li><a onclick="openModal('privacy')">Privacy Policy</a></li>
+                    <li><a onclick="openModal('terms')">Terms & Conditions</a></li>
+                    <li><a onclick="openModal('disclaimer')">Disclaimer</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Site Map</h4>
+                <ul>
+                    <li><a onclick="openModal('sitemap')">Sitemap</a></li>
+                    <li><a href="#all-calc">All Calculators</a></li>
+                </ul>
             </div>
         </div>
+        <p class="copyright">&copy; 2026 Mpage.online. All Rights Reserved.</p>
     </footer>
 
-    <!-- Dynamic Modal Pages -->
     <div class="modal" id="modal">
         <div class="modal-content">
             <span class="close-btn" onclick="closeModal()">&times;</span>
@@ -657,78 +800,47 @@
         </div>
     </div>
 
-    <!-- Script Logic -->
     <script>
         const dobInput = document.getElementById('dob');
-        dobInput.max = new Date().toISOString().split('T')[0];
+        const targetInput = document.getElementById('targetDate');
+        
+        const todayStr = new Date().toISOString().split('T')[0];
+        dobInput.max = todayStr;
+        targetInput.value = todayStr;
 
         let currentLang = 'en';
 
         const translations = {
             en: {
-                title: "Precision Age Calculator",
-                subtitle: "Calculate your exact age in years, months, days, and discover your life stats",
-                dobLabel: "Select Date of Birth",
-                calcBtn: "Calculate Age",
-                years: "Years",
-                months: "Months",
-                days: "Days",
-                analyticsTitle: "Your Life Analytics",
-                totalDays: "Total Days Lived",
-                totalHours: "Total Hours Lived",
-                totalMinutes: "Total Minutes Lived",
-                nextBday: "Next Birthday In",
-                shareBtn: "📋 Copy Summary",
-                aboutTitle: "About MpAge Calculator",
-                aboutDesc: "MpAge Calculator (Mpage.online) is a high-precision online tool designed to calculate your exact age down to the day, hour, and minute. Ideal for official forms, eligibility verification, or personal curiosity.",
-                faqTitle: "Frequently Asked Questions",
-                q1: "Is Leap Year calculated correctly?",
-                a1: "Yes, our algorithm automatically factors in leap years and varying month lengths for 100% accuracy.",
-                q2: "Is my data secure?",
-                a2: "Your birth date is processed entirely inside your browser. No data is stored on external servers.",
-                privacy: "Privacy Policy",
-                terms: "Terms & Conditions",
-                contact: "Contact Us",
+                mHome: "Home", mAge: "Age Calculator", mDate: "Date Calculator", mAll: "All Calculators", mAbout: "About Us", mContact: "Contact Us",
+                title: "Precision Age Calculator", subtitle: "Calculate your exact age, birth day, total birthdays, zodiac sign & life statistics",
+                dobLabel: "Date of Birth (DOB)", targetDateLabel: "Age at Date (Optional)", calcBtn: "Calculate Age", resetBtn: "Reset",
+                years: "Years", months: "Months", days: "Days", analyticsTitle: "Life & Zodiac Insights",
+                birthDay: "Day of Birth", zodiac: "Zodiac Sign", totalBirthdays: "Total Birthdays Celebrated", nextBday: "Next Birthday In",
+                totalDays: "Total Days Lived", totalHours: "Total Hours Lived", totalMinutes: "Total Minutes Lived",
+                copyBtn: "Copy Summary", printBtn: "Print / Download PDF", dirTitle: "Explore All Calculators on Mpage.online",
                 langBtn: "🌐 हिंदी में बदलें"
             },
             hi: {
-                title: "सटीक आयु कैलकुलेटर (MpAge Calculator)",
-                subtitle: "अपनी सटीक उम्र, महीने, दिन और जीवन के महत्वपूर्ण आँकड़े जानें",
-                dobLabel: "अपनी जन्म तिथि चुनें",
-                calcBtn: "आयु की गणना करें",
-                years: "वर्ष",
-                months: "महीने",
-                days: "दिन",
-                analyticsTitle: "आपके जीवन के आंकड़े (Life Stats)",
-                totalDays: "कुल जिए गए दिन",
-                totalHours: "कुल जिए गए घंटे",
-                totalMinutes: "कुल जिए गए मिनट",
-                nextBday: "अगला जन्मदिन",
-                shareBtn: "📋 समरी कॉपी करें",
-                aboutTitle: "MpAge Calculator के बारे में",
-                aboutDesc: "MpAge Calculator (Mpage.online) एक सटीक ऑनलाइन टूल है जो आपकी उम्र को वर्ष, महीने, दिन और मिनटों तक सटीक रूप से कैलकुलेट करता है। यह सरकारी फॉर्म भरने या एलिजिबिलिटी चेक करने के लिए बेहद उपयोगी है।",
-                faqTitle: "अक्सर पूछे जाने वाले सवाल",
-                q1: "क्या यह लीप ईयर की सही गणना करता है?",
-                a1: "हाँ, हमारा एल्गोरिदम लीप वर्ष और महीनों के अलग-अलग दिनों को स्वचालित रूप से एडजस्ट करता है।",
-                q2: "क्या मेरा डेटा सुरक्षित है?",
-                a2: "आपकी जन्म तिथि केवल आपके ब्राउज़र में कैलकुलेट होती है, इसे किसी सर्वर पर स्टोर नहीं किया जाता।",
-                privacy: "प्राइवेसी पॉलिसी",
-                terms: "नियम और शर्तें",
-                contact: "संपर्क करें",
+                mHome: "होम", mAge: "एज कैलकुलेटर", mDate: "डेट कैलकुलेटर", mAll: "सभी कैलकुलेटर", mAbout: "हमारे बारे में", mContact: "संपर्क करें",
+                title: "सटीक आयु कैलकुलेटर (MpAge Calculator)", subtitle: "अपनी उम्र, जन्म का दिन, कुल जन्मदिन, राशि (Zodiac) और जीवन के आंकड़े जानें",
+                dobLabel: "जन्म तिथि (DOB)", targetDateLabel: "इस तिथि तक आयु (ऐच्छिक)", calcBtn: "आयु की गणना करें", resetBtn: "रीसेट",
+                years: "वर्ष", months: "महीने", days: "दिन", analyticsTitle: "जीवन और राशि संबंधी जानकारी",
+                birthDay: "जन्म का दिन", zodiac: "राशि (Zodiac Sign)", totalBirthdays: "कुल मनाए गए जन्मदिन", nextBday: "अगला जन्मदिन",
+                totalDays: "कुल जिए गए दिन", totalHours: "कुल जिए गए घंटे", totalMinutes: "कुल जिए गए मिनट",
+                copyBtn: "समरी कॉपी करें", printBtn: "प्रिंट / PDF डाउनलोड", dirTitle: "Mpage.online पर सभी कैलकुलेटर का उपयोग करें",
                 langBtn: "🌐 Switch to English"
             }
         };
 
         function toggleLanguage() {
             currentLang = currentLang === 'en' ? 'hi' : 'en';
-            
             document.querySelectorAll('[data-key]').forEach(elem => {
                 const key = elem.getAttribute('data-key');
                 if (translations[currentLang][key]) {
                     elem.innerText = translations[currentLang][key];
                 }
             });
-
             document.getElementById('lang-btn').innerText = translations[currentLang].langBtn;
         }
 
@@ -736,23 +848,44 @@
             document.body.classList.toggle('dark-mode');
         }
 
+        function getZodiac(day, month) {
+            const zodiacs = [
+                { name: 'Capricorn ♑', month: 1, day: 19 },
+                { name: 'Aquarius ♒', month: 2, day: 18 },
+                { name: 'Pisces ♓', month: 3, day: 20 },
+                { name: 'Aries ♈', month: 4, day: 19 },
+                { name: 'Taurus ♉', month: 5, day: 20 },
+                { name: 'Gemini ♊', month: 6, day: 20 },
+                { name: 'Cancer ♋', month: 7, day: 22 },
+                { name: 'Leo ♌', month: 8, day: 22 },
+                { name: 'Virgo ♍', month: 9, day: 22 },
+                { name: 'Libra ♎', month: 10, day: 22 },
+                { name: 'Scorpio ♏', month: 11, day: 21 },
+                { name: 'Sagittarius ♐', month: 12, day: 21 }
+            ];
+            
+            if (month === 1 && day <= 19) return 'Capricorn ♑';
+            const found = zodiacs.find(z => z.month === month && day <= z.day);
+            return found ? found.name : 'Capricorn ♑';
+        }
+
         function calculateAge() {
             const dob = dobInput.value;
             if (!dob) {
-                alert(currentLang === 'en' ? "Please select your date of birth first!" : "कृपया पहले अपनी जन्म तिथि चुनें!");
+                alert(currentLang === 'en' ? "Please select your Date of Birth!" : "कृपया अपनी जन्म तिथि चुनें!");
                 return;
             }
 
             const birthDate = new Date(dob);
-            const today = new Date();
+            const targetDate = targetInput.value ? new Date(targetInput.value) : new Date();
 
-            let years = today.getFullYear() - birthDate.getFullYear();
-            let months = today.getMonth() - birthDate.getMonth();
-            let days = today.getDate() - birthDate.getDate();
+            let years = targetDate.getFullYear() - birthDate.getFullYear();
+            let months = targetDate.getMonth() - birthDate.getMonth();
+            let days = targetDate.getDate() - birthDate.getDate();
 
             if (days < 0) {
                 months--;
-                const lastMonth = new Date(today.getFullYear(), today.getMonth(), 0);
+                const lastMonth = new Date(targetDate.getFullYear(), targetDate.getMonth(), 0);
                 days += lastMonth.getDate();
             }
 
@@ -761,49 +894,66 @@
                 months += 12;
             }
 
-            // Life Analytics
-            const diffTime = Math.abs(today - birthDate);
+            // Calculations
+            const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+            const birthDayName = daysOfWeek[birthDate.getDay()];
+            const zodiacSign = getZodiac(birthDate.getDate(), birthDate.getMonth() + 1);
+
+            const diffTime = Math.abs(targetDate - birthDate);
             const totalDaysVal = Math.floor(diffTime / (1000 * 60 * 60 * 24));
             const totalHoursVal = totalDaysVal * 24;
             const totalMinutesVal = totalHoursVal * 60;
 
-            // Next Birthday Calculation
-            let nextBdayYear = today.getFullYear();
-            if (today.getMonth() > birthDate.getMonth() || (today.getMonth() === birthDate.getMonth() && today.getDate() > birthDate.getDate())) {
+            let nextBdayYear = targetDate.getFullYear();
+            if (targetDate.getMonth() > birthDate.getMonth() || (targetDate.getMonth() === birthDate.getMonth() && targetDate.getDate() > birthDate.getDate())) {
                 nextBdayYear++;
             }
             const nextBdayDate = new Date(nextBdayYear, birthDate.getMonth(), birthDate.getDate());
-            const daysToNextBday = Math.ceil((nextBdayDate - today) / (1000 * 60 * 60 * 24));
+            const daysToNextBday = Math.ceil((nextBdayDate - targetDate) / (1000 * 60 * 60 * 24));
 
+            // Set Values
             document.getElementById('years').innerText = years;
             document.getElementById('months').innerText = months;
             document.getElementById('days').innerText = days;
 
+            document.getElementById('stat-birthday-day').innerText = birthDayName;
+            document.getElementById('stat-zodiac').innerText = zodiacSign;
+            document.getElementById('stat-total-bday').innerText = years;
+            document.getElementById('stat-nextbday').innerText = `${daysToNextBday} ${currentLang === 'en' ? 'Days' : 'दिन'}`;
             document.getElementById('stat-days').innerText = totalDaysVal.toLocaleString();
             document.getElementById('stat-hours').innerText = totalHoursVal.toLocaleString();
             document.getElementById('stat-minutes').innerText = totalMinutesVal.toLocaleString();
-            document.getElementById('stat-nextbday').innerText = `${daysToNextBday} ${currentLang === 'en' ? 'Days' : 'दिन'}`;
 
             document.getElementById('result').style.display = 'flex';
+        }
+
+        function resetCalculator() {
+            dobInput.value = '';
+            targetInput.value = todayStr;
+            document.getElementById('result').style.display = 'none';
         }
 
         function shareResults() {
             const y = document.getElementById('years').innerText;
             const m = document.getElementById('months').innerText;
             const d = document.getElementById('days').innerText;
-            const text = `I am ${y} years, ${m} months, and ${d} days old! Calculated via Mpage.online.`;
+            const text = `I am ${y} years, ${m} months, and ${d} days old! Calculated on Mpage.online`;
             navigator.clipboard.writeText(text);
-            alert(currentLang === 'en' ? "Copied summary to clipboard!" : "समरी क्लिपबोर्ड में कॉपी हो गई!");
+            alert(currentLang === 'en' ? "Summary copied to clipboard!" : "समरी कॉपी हो गई!");
         }
 
-        // Dynamic Pages Modals
+        // Modal Logic
         const modal = document.getElementById('modal');
         const modalBody = document.getElementById('modal-body');
 
         const pagesContent = {
-            privacy: `<h2>Privacy Policy</h2><br><p>MpAge Calculator (Mpage.online) operates 100% on client-side JavaScript. We do not track, collect, or store your Personal Identifiable Information (PII) or Date of Birth on any remote servers.</p>`,
-            terms: `<h2>Terms and Conditions</h2><br><p>This age calculator is provided as a free tool for informational and personal calculation purposes only. We make no guarantees about absolute fidelity for legal requirements.</p>`,
-            contact: `<h2>Contact Us</h2><br><p>Have questions or suggestions to improve Mpage.online? Reach out to us at:</p><br><p><strong>WhatsApp:</strong> +91 9131053539</p><p><strong>Email:</strong> contact@mpage.online</p>`
+            about: `<h2>About Us</h2><br><p>MpAge Calculator (Mpage.online) is a premier platform offering high-precision tools for age, finance, math, and health calculations free of charge.</p>`,
+            contact: `<h2>Contact Us</h2><br><p><strong>WhatsApp Support:</strong> +91 9131053539</p><p><strong>Email:</strong> contact@mpage.online</p>`,
+            support: `<h2>Help & Support</h2><br><p>If you face any issues while using our calculators, feel free to contact us via WhatsApp or Email.</p>`,
+            privacy: `<h2>Privacy Policy</h2><br><p>Mpage.online operates 100% locally on your browser. We never collect or store your date of birth or any personal data.</p>`,
+            terms: `<h2>Terms & Conditions</h2><br><p>Our tools are intended for informational purposes. While we ensure max precision, verify critical calculations independently.</p>`,
+            disclaimer: `<h2>Disclaimer</h2><br><p>Mpage.online is not liable for administrative decisions made based purely on calculator results.</p>`,
+            sitemap: `<h2>Sitemap</h2><br><p>- Home<br>- Age Calculator<br>- Date Calculators<br>- Math Calculators<br>- Finance Calculators<br>- Health Calculators</p>`
         };
 
         function openModal(page) {
