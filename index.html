@@ -1,31 +1,43 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AgeCalc - सटीक और आसान Age Calculator</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>AgeCalc Pro - Precision Age Calculator & Life Analytics</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #4F46E5;
+            --primary: #4F46E5;
             --primary-hover: #4338CA;
-            --bg-color: #F9FAFB;
-            --card-bg: #FFFFFF;
-            --text-main: #1F2937;
-            --text-muted: #6B7280;
-            --border-color: #E5E7EB;
+            --bg: #F8FAFC;
+            --surface: #FFFFFF;
+            --text: #0F172A;
+            --text-muted: #64748B;
+            --border: #E2E8F0;
+            --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+            --gradient: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%);
+        }
+
+        body.dark-mode {
+            --bg: #0F172A;
+            --surface: #1E293B;
+            --text: #F8FAFC;
+            --text-muted: #94A3B8;
+            --border: #334155;
+            --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            transition: background-color 0.3s, color 0.3s, border-color 0.3s;
         }
 
         body {
-            background-color: var(--bg-color);
-            color: var(--text-main);
+            background-color: var(--bg);
+            color: var(--text);
             display: flex;
             flex-direction: column;
             min-height: 100vh;
@@ -33,9 +45,9 @@
 
         /* Header */
         header {
-            background: var(--card-bg);
-            border-bottom: 1px solid var(--border-color);
-            padding: 15px 5%;
+            background: var(--surface);
+            border-bottom: 1px solid var(--border);
+            padding: 16px 8%;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -45,171 +57,255 @@
         }
 
         .logo {
-            font-size: 22px;
-            font-weight: 700;
-            color: var(--primary-color);
+            font-size: 24px;
+            font-weight: 800;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             text-decoration: none;
             display: flex;
             align-items: center;
             gap: 8px;
         }
 
-        nav a {
-            color: var(--text-muted);
-            text-decoration: none;
-            margin-left: 20px;
-            font-size: 14px;
-            font-weight: 500;
-            transition: color 0.2s;
+        .header-controls {
+            display: flex;
+            align-items: center;
+            gap: 12px;
         }
 
-        nav a:hover {
-            color: var(--primary-color);
+        .btn-toggle {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            color: var(--text);
+            padding: 8px 14px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 13px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .btn-toggle:hover {
+            border-color: var(--primary);
         }
 
         /* Main Container */
         main {
             flex: 1;
-            max-width: 800px;
-            width: 90%;
+            max-width: 1100px;
+            width: 92%;
             margin: 40px auto;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
         }
 
+        /* Hero / Main Card */
         .calculator-card {
-            background: var(--card-bg);
-            padding: 35px;
-            border-radius: 16px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-            border: 1px solid var(--border-color);
+            background: var(--surface);
+            padding: 40px;
+            border-radius: 24px;
+            box-shadow: var(--card-shadow);
+            border: 1px solid var(--border);
             text-align: center;
         }
 
         .calculator-card h1 {
-            font-size: 26px;
-            margin-bottom: 8px;
-            color: var(--text-main);
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 10px;
+            letter-spacing: -0.5px;
         }
 
         .calculator-card p.subtitle {
             color: var(--text-muted);
-            font-size: 14px;
-            margin-bottom: 25px;
+            font-size: 15px;
+            margin-bottom: 30px;
         }
 
-        .input-group {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
+        .input-box {
+            max-width: 450px;
+            margin: 0 auto 30px;
             text-align: left;
-            margin-bottom: 20px;
         }
 
-        .input-group label {
+        .input-box label {
+            display: block;
             font-size: 14px;
             font-weight: 600;
-            color: var(--text-main);
+            margin-bottom: 8px;
         }
 
-        .input-group input {
-            padding: 12px 15px;
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            font-size: 15px;
+        .input-box input {
+            width: 100%;
+            padding: 14px 18px;
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            font-size: 16px;
             outline: none;
-            transition: border-color 0.2s;
+            background: var(--bg);
+            color: var(--text);
         }
 
-        .input-group input:focus {
-            border-color: var(--primary-color);
+        .input-box input:focus {
+            border-color: var(--primary);
         }
 
         .btn-calc {
             width: 100%;
-            background: var(--primary-color);
+            max-width: 450px;
+            background: var(--gradient);
             color: white;
-            padding: 12px;
+            padding: 16px;
             border: none;
-            border-radius: 8px;
+            border-radius: 12px;
             font-size: 16px;
-            font-weight: 600;
+            font-weight: 700;
             cursor: pointer;
-            transition: background 0.2s;
+            box-shadow: 0 10px 20px -5px rgba(79, 70, 229, 0.4);
         }
 
         .btn-calc:hover {
-            background: var(--primary-hover);
+            opacity: 0.95;
+            transform: translateY(-1px);
         }
 
-        /* Results Display */
+        /* Main Result Display */
         .result-container {
-            margin-top: 30px;
+            margin-top: 35px;
             display: none;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .primary-results {
+            display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 15px;
         }
 
         .result-box {
-            background: #F3F4F6;
-            padding: 15px;
-            border-radius: 12px;
-            border: 1px solid var(--border-color);
+            background: var(--bg);
+            padding: 20px;
+            border-radius: 16px;
+            border: 1px solid var(--border);
         }
 
         .result-box .number {
-            font-size: 28px;
-            font-weight: 700;
-            color: var(--primary-color);
+            font-size: 36px;
+            font-weight: 800;
+            color: var(--primary);
             display: block;
         }
 
         .result-box .label {
+            font-size: 13px;
+            color: var(--text-muted);
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        /* Extra Analytics Grid */
+        .analytics-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-top: 10px;
+            text-align: left;
+        }
+
+        .analytics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .stat-card {
+            background: var(--bg);
+            padding: 18px;
+            border-radius: 14px;
+            border: 1px solid var(--border);
+            text-align: left;
+        }
+
+        .stat-card p {
             font-size: 12px;
             color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+            font-weight: 500;
         }
 
-        /* Content & FAQ Section */
-        .info-section {
-            margin-top: 40px;
-            background: var(--card-bg);
-            padding: 30px;
-            border-radius: 16px;
-            border: 1px solid var(--border-color);
+        .stat-card h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-top: 4px;
+            color: var(--text);
         }
 
-        .info-section h2 {
+        /* Share Section */
+        .share-btn-group {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .share-btn {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            color: var(--text);
+            padding: 10px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        /* Features Section */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .info-card {
+            background: var(--surface);
+            padding: 25px;
+            border-radius: 18px;
+            border: 1px solid var(--border);
+            box-shadow: var(--card-shadow);
+        }
+
+        .info-card h2 {
             font-size: 18px;
-            margin-bottom: 15px;
+            font-weight: 700;
+            margin-bottom: 12px;
         }
 
-        .info-section p {
+        .info-card p, .faq-item p {
             color: var(--text-muted);
             font-size: 14px;
             line-height: 1.6;
-            margin-bottom: 20px;
         }
 
         .faq-item {
-            border-top: 1px solid var(--border-color);
-            padding: 12px 0;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid var(--border);
         }
 
         .faq-item h3 {
             font-size: 15px;
-            color: var(--text-main);
-            margin-bottom: 5px;
-        }
-
-        .faq-item p {
-            margin-bottom: 0;
+            font-weight: 600;
+            margin-bottom: 6px;
         }
 
         /* Footer */
         footer {
-            background: var(--card-bg);
-            border-top: 1px solid var(--border-color);
-            padding: 30px 5%;
+            background: var(--surface);
+            border-top: 1px solid var(--border);
+            padding: 40px 8%;
             margin-top: auto;
         }
 
@@ -231,132 +327,158 @@
         .footer-links a {
             color: var(--text-muted);
             text-decoration: none;
-            font-size: 13px;
+            font-size: 14px;
+            font-weight: 500;
             cursor: pointer;
         }
 
         .footer-links a:hover {
-            color: var(--primary-color);
+            color: var(--primary);
         }
 
-        .copyright {
-            color: var(--text-muted);
-            font-size: 13px;
-        }
-
-        /* Modal / Popup Page Styles */
+        /* Modal Styles */
         .modal {
             display: none;
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.5);
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.6);
+            backdrop-filter: blur(4px);
             z-index: 1000;
             justify-content: center;
             align-items: center;
         }
 
         .modal-content {
-            background: white;
+            background: var(--surface);
             padding: 30px;
-            border-radius: 12px;
+            border-radius: 16px;
             max-width: 600px;
             width: 90%;
             max-height: 80vh;
             overflow-y: auto;
             position: relative;
+            border: 1px solid var(--border);
         }
 
         .close-btn {
             position: absolute;
-            top: 15px;
-            right: 20px;
-            font-size: 22px;
+            top: 15px; right: 20px;
+            font-size: 24px;
             cursor: pointer;
             color: var(--text-muted);
         }
 
-        @media (max-width: 600px) {
-            .result-container {
-                grid-template-columns: 1fr;
-            }
-            .footer-content {
-                flex-direction: column;
-                text-align: center;
-            }
+        @media (max-width: 768px) {
+            .primary-results { grid-template-columns: 1fr; }
+            .calculator-card { padding: 25px 18px; }
+            header { padding: 15px 5%; }
         }
     </style>
 </head>
 <body>
 
+    <!-- Header Navigation -->
     <header>
-        <a href="#" class="logo">⏳ AgeCalc</a>
-        <nav>
-            <a href="#calculator">होम</a>
-            <a href="#about">हमारे बारे में</a>
-            <a href="#faq">FAQ</a>
-        </nav>
+        <a href="#" class="logo">⚡ AgeCalc Pro</a>
+        <div class="header-controls">
+            <button class="btn-toggle" onclick="toggleLanguage()" id="lang-btn">🌐 हिंदी में बदलें</button>
+            <button class="btn-toggle" onclick="toggleDarkMode()">🌙 Theme</button>
+        </div>
     </header>
 
+    <!-- Main Container -->
     <main>
-        <div class="calculator-card" id="calculator">
-            <h1>Age Calculator</h1>
-            <p class="subtitle">अपनी जन्म तिथि दर्ज करें और अपनी सटीक आयु जानें</p>
+        <!-- Main Calculator Section -->
+        <div class="calculator-card">
+            <h1 data-key="title">Precision Age Calculator</h1>
+            <p class="subtitle" data-key="subtitle">Calculate your exact age in years, months, days, and discover your life stats</p>
 
-            <div class="input-group">
-                <label for="dob">जन्म तिथि (Date of Birth)</label>
+            <div class="input-box">
+                <label for="dob" data-key="dobLabel">Select Date of Birth</label>
                 <input type="date" id="dob">
             </div>
 
-            <button class="btn-calc" onclick="calculateAge()">आयु की गणना करें</button>
+            <button class="btn-calc" onclick="calculateAge()" data-key="calcBtn">Calculate Age</button>
 
+            <!-- Results Section -->
             <div class="result-container" id="result">
-                <div class="result-box">
-                    <span class="number" id="years">0</span>
-                    <span class="label">वर्ष</span>
+                <div class="primary-results">
+                    <div class="result-box">
+                        <span class="number" id="years">0</span>
+                        <span class="label" data-key="years">Years</span>
+                    </div>
+                    <div class="result-box">
+                        <span class="number" id="months">0</span>
+                        <span class="label" data-key="months">Months</span>
+                    </div>
+                    <div class="result-box">
+                        <span class="number" id="days">0</span>
+                        <span class="label" data-key="days">Days</span>
+                    </div>
                 </div>
-                <div class="result-box">
-                    <span class="number" id="months">0</span>
-                    <span class="label">महीने</span>
+
+                <h3 class="analytics-title" data-key="analyticsTitle">Your Life Analytics</h3>
+                <div class="analytics-grid">
+                    <div class="stat-card">
+                        <p data-key="totalDays">Total Days Lived</p>
+                        <h3 id="stat-days">0</h3>
+                    </div>
+                    <div class="stat-card">
+                        <p data-key="totalHours">Total Hours Lived</p>
+                        <h3 id="stat-hours">0</h3>
+                    </div>
+                    <div class="stat-card">
+                        <p data-key="totalMinutes">Total Minutes Lived</p>
+                        <h3 id="stat-minutes">0</h3>
+                    </div>
+                    <div class="stat-card">
+                        <p data-key="nextBday">Next Birthday In</p>
+                        <h3 id="stat-nextbday">0 Days</h3>
+                    </div>
                 </div>
-                <div class="result-box">
-                    <span class="number" id="days">0</span>
-                    <span class="label">दिन</span>
+
+                <!-- Share Results -->
+                <div class="share-btn-group">
+                    <button class="share-btn" onclick="shareResults()" data-key="shareBtn">📋 Copy Summary</button>
                 </div>
             </div>
         </div>
 
-        <div class="info-section" id="about">
-            <h2>ऑनलाइन एज कैलकुलेटर के बारे में</h2>
-            <p>यह ऑनलाइन कैलकुलेटर आपको आपकी सटीक आयु वर्षों, महीनों और दिनों में बताने के लिए डिज़ाइन किया गया है। यह टूल सरकारी फॉर्म भरने, परीक्षा के लिए एलिजिबिलिटी चेक करने या सिर्फ अपनी उम्र जानने के लिए बेहद उपयोगी है।</p>
-        </div>
-
-        <div class="info-section" id="faq">
-            <h2>अक्सर पूछे जाने वाले सवाल (FAQs)</h2>
-            <div class="faq-item">
-                <h3>क्या यह कैलकुलेटर लीप ईयर की गणना सही करता है?</h3>
-                <p>हाँ, यह सिस्टम स्वचालित रूप से लीप वर्ष और महीनों के कुल दिनों का ध्यान रखता है।</p>
+        <!-- Information & FAQ Section Grid -->
+        <div class="grid-3">
+            <div class="info-card">
+                <h2 data-key="aboutTitle">About AgeCalc Pro</h2>
+                <p data-key="aboutDesc">AgeCalc Pro is a high-precision online tool designed to calculate your exact age down to the day, hour, and minute. Ideal for official forms, eligibility verification, or personal curiosity.</p>
             </div>
-            <div class="faq-item">
-                <h3>क्या मेरा डेटा सुरक्षित है?</h3>
-                <p>जी हाँ, आपकी जन्म तिथि आपके ब्राउज़र में ही कैलकुलेट होती है। हम कोई भी डेटा सेव नहीं करते।</p>
+
+            <div class="info-card">
+                <h2 data-key="faqTitle">Frequently Asked Questions</h2>
+                <div class="faq-item">
+                    <h3 data-key="q1">Is Leap Year calculated correctly?</h3>
+                    <p data-key="a1">Yes, our algorithm automatically factors in leap years and varying month lengths for 100% accuracy.</p>
+                </div>
+                <div class="faq-item">
+                    <h3 data-key="q2">Is my data secure?</h3>
+                    <p data-key="a2">Your birth date is processed entirely inside your browser. No data is stored on external servers.</p>
+                </div>
             </div>
         </div>
     </main>
 
+    <!-- Footer -->
     <footer>
         <div class="footer-content">
-            <p class="copyright">&copy; 2026 AgeCalc. सर्वाधिकार सुरक्षित।</p>
+            <p class="copyright">&copy; 2026 AgeCalc Pro. All Rights Reserved.</p>
             <div class="footer-links">
-                <a onclick="openModal('privacy')">Privacy Policy</a>
-                <a onclick="openModal('terms')">Terms & Conditions</a>
-                <a onclick="openModal('contact')">Contact Us</a>
+                <a onclick="openModal('privacy')" data-key="privacy">Privacy Policy</a>
+                <a onclick="openModal('terms')" data-key="terms">Terms & Conditions</a>
+                <a onclick="openModal('contact')" data-key="contact">Contact Us</a>
             </div>
         </div>
     </footer>
 
+    <!-- Dynamic Modal Pages -->
     <div class="modal" id="modal">
         <div class="modal-content">
             <span class="close-btn" onclick="closeModal()">&times;</span>
@@ -364,15 +486,89 @@
         </div>
     </div>
 
+    <!-- Script Logic -->
     <script>
-        // Set maximum date as today
         const dobInput = document.getElementById('dob');
         dobInput.max = new Date().toISOString().split('T')[0];
+
+        let currentLang = 'en';
+
+        const translations = {
+            en: {
+                title: "Precision Age Calculator",
+                subtitle: "Calculate your exact age in years, months, days, and discover your life stats",
+                dobLabel: "Select Date of Birth",
+                calcBtn: "Calculate Age",
+                years: "Years",
+                months: "Months",
+                days: "Days",
+                analyticsTitle: "Your Life Analytics",
+                totalDays: "Total Days Lived",
+                totalHours: "Total Hours Lived",
+                totalMinutes: "Total Minutes Lived",
+                nextBday: "Next Birthday In",
+                shareBtn: "📋 Copy Summary",
+                aboutTitle: "About AgeCalc Pro",
+                aboutDesc: "AgeCalc Pro is a high-precision online tool designed to calculate your exact age down to the day, hour, and minute. Ideal for official forms, eligibility verification, or personal curiosity.",
+                faqTitle: "Frequently Asked Questions",
+                q1: "Is Leap Year calculated correctly?",
+                a1: "Yes, our algorithm automatically factors in leap years and varying month lengths for 100% accuracy.",
+                q2: "Is my data secure?",
+                a2: "Your birth date is processed entirely inside your browser. No data is stored on external servers.",
+                privacy: "Privacy Policy",
+                terms: "Terms & Conditions",
+                contact: "Contact Us",
+                langBtn: "🌐 हिंदी में बदलें"
+            },
+            hi: {
+                title: "सटीक आयु कैलकुलेटर (Age Calculator)",
+                subtitle: "अपनी सटीक उम्र, महीने, दिन और जीवन के महत्वपूर्ण आँकड़े जानें",
+                dobLabel: "अपनी जन्म तिथि चुनें",
+                calcBtn: "आयु की गणना करें",
+                years: "वर्ष",
+                months: "महीने",
+                days: "दिन",
+                analyticsTitle: "आपके जीवन के आंकड़े (Life Stats)",
+                totalDays: "कुल जिए गए दिन",
+                totalHours: "कुल जिए गए घंटे",
+                totalMinutes: "कुल जिए गए मिनट",
+                nextBday: "अगला जन्मदिन",
+                shareBtn: "📋 समरी कॉपी करें",
+                aboutTitle: "AgeCalc Pro के बारे में",
+                aboutDesc: "AgeCalc Pro एक सटीक ऑनलाइन टूल है जो आपकी उम्र को वर्ष, महीने, दिन और मिनटों तक सटीक रूप से कैलकुलेट करता है। यह सरकारी फॉर्म भरने या एलिजिबिलिटी चेक करने के लिए बेहद उपयोगी है।",
+                faqTitle: "अक्सर पूछे जाने वाले सवाल",
+                q1: "क्या यह लीप ईयर की सही गणना करता है?",
+                a1: "हाँ, हमारा एल्गोरिदम लीप वर्ष और महीनों के अलग-अलग दिनों को स्वचालित रूप से एडजस्ट करता है।",
+                q2: "क्या मेरा डेटा सुरक्षित है?",
+                a2: "आपकी जन्म तिथि केवल आपके ब्राउज़र में कैलकुलेट होती है, इसे किसी सर्वर पर स्टोर नहीं किया जाता।",
+                privacy: "प्राइवेसी पॉलिसी",
+                terms: "नियम और शर्तें",
+                contact: "संपर्क करें",
+                langBtn: "🌐 Switch to English"
+            }
+        };
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'en' ? 'hi' : 'en';
+            
+            document.querySelectorAll('[data-key]').forEach(elem => {
+                const key = elem.getAttribute('data-key');
+                if (translations[currentLang][key]) {
+                    elem.innerText = translations[currentLang][key];
+                }
+            });
+
+            document.getElementById('lang-btn').innerText = translations[currentLang].langBtn;
+        }
+
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+        }
 
         function calculateAge() {
             const dob = dobInput.value;
             if (!dob) {
-                alert("कृपया पहले अपनी जन्म तिथि चुनें!");
+                alert(currentLang === 'en' ? "Please select your date of birth first!" : "कृपया पहले अपनी जन्म तिथि चुनें!");
                 return;
             }
 
@@ -394,40 +590,49 @@
                 months += 12;
             }
 
+            // Life Analytics
+            const diffTime = Math.abs(today - birthDate);
+            const totalDaysVal = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+            const totalHoursVal = totalDaysVal * 24;
+            const totalMinutesVal = totalHoursVal * 60;
+
+            // Next Birthday Calculation
+            let nextBdayYear = today.getFullYear();
+            if (today.getMonth() > birthDate.getMonth() || (today.getMonth() === birthDate.getMonth() && today.getDate() > birthDate.getDate())) {
+                nextBdayYear++;
+            }
+            const nextBdayDate = new Date(nextBdayYear, birthDate.getMonth(), birthDate.getDate());
+            const daysToNextBday = Math.ceil((nextBdayDate - today) / (1000 * 60 * 60 * 24));
+
             document.getElementById('years').innerText = years;
             document.getElementById('months').innerText = months;
             document.getElementById('days').innerText = days;
 
-            document.getElementById('result').style.display = 'grid';
+            document.getElementById('stat-days').innerText = totalDaysVal.toLocaleString();
+            document.getElementById('stat-hours').innerText = totalHoursVal.toLocaleString();
+            document.getElementById('stat-minutes').innerText = totalMinutesVal.toLocaleString();
+            document.getElementById('stat-nextbday').innerText = `${daysToNextBday} ${currentLang === 'en' ? 'Days' : 'दिन'}`;
+
+            document.getElementById('result').style.display = 'flex';
         }
 
-        // Modal Logic for Dynamic Pages
+        function shareResults() {
+            const y = document.getElementById('years').innerText;
+            const m = document.getElementById('months').innerText;
+            const d = document.getElementById('days').innerText;
+            const text = `I am ${y} years, ${m} months, and ${d} days old! Calculated via AgeCalc Pro.`;
+            navigator.clipboard.writeText(text);
+            alert(currentLang === 'en' ? "Copied summary to clipboard!" : "समरी क्लिपबोर्ड में कॉपी हो गई!");
+        }
+
+        // Dynamic Pages Modals
         const modal = document.getElementById('modal');
         const modalBody = document.getElementById('modal-body');
 
         const pagesContent = {
-            privacy: `
-                <h2>Privacy Policy</h2>
-                <br>
-                <p>आपकी गोपनीयता हमारे लिए अत्यंत महत्वपूर्ण है। यह एज कैलकुलेटर पूरी तरह से क्लाइंट-साइड (Browser-based) पर काम करता है। हम आपकी कोई भी व्यक्तिगत जानकारी या जन्म तिथि अपने सर्वर पर स्टोर या शेयर नहीं करते हैं।</p>
-            `,
-            terms: `
-                <h2>Terms and Conditions</h2>
-                <br>
-                <p>हमारी वेबसाइट का उपयोग करने के नियम:</p>
-                <br>
-                <ul>
-                    <li>यह टूल केवल सामान्य जानकारी और गणना उद्देश्यों के लिए प्रदान किया गया है।</li>
-                    <li>उपयोगकर्ता बिना किसी शुल्क के इस टूल का असीमित उपयोग कर सकते हैं।</li>
-                </ul>
-            `,
-            contact: `
-                <h2>Contact Us</h2>
-                <br>
-                <p>यदि आपके पास कोई सुझाव या प्रतिक्रिया है, तो आप हमें संपर्क कर सकते हैं:</p>
-                <br>
-                <p><strong>Email:</strong> support@agecalc.com</p>
-            `
+            privacy: `<h2>Privacy Policy</h2><br><p>AgeCalc Pro operates 100% on client-side JavaScript. We do not track, collect, or store your Personal Identifiable Information (PII) or Date of Birth on any remote servers.</p>`,
+            terms: `<h2>Terms and Conditions</h2><br><p>This age calculator is provided as a free tool for informational and personal calculation purposes only. We make no guarantees about absolute fidelity for legal requirements.</p>`,
+            contact: `<h2>Contact Us</h2><br><p>Have questions or suggestions to improve our site? Reach out to us at:</p><br><p><strong>Email:</strong> contact@agecalcpro.com</p>`
         };
 
         function openModal(page) {
@@ -439,10 +644,8 @@
             modal.style.display = 'none';
         }
 
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                closeModal();
-            }
+        window.onclick = function(e) {
+            if (e.target == modal) closeModal();
         }
     </script>
 </body>
