@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AgeCalc Pro - Precision Age Calculator & Life Analytics</title>
+    <title>MpAge Calculator - Precision Age & Life Analytics</title>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- FontAwesome Icons for Official WhatsApp Logo -->
+    <!-- FontAwesome Icons for Logos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
@@ -60,15 +60,32 @@
         }
 
         .logo {
-            font-size: 24px;
+            font-size: 22px;
             font-weight: 800;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
             text-decoration: none;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
+            color: var(--text);
+        }
+
+        .ai-logo-icon {
+            width: 38px;
+            height: 38px;
+            background: var(--gradient);
+            color: white;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+        }
+
+        .logo-text span {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .header-controls {
@@ -265,61 +282,76 @@
             font-weight: 600;
         }
 
-        /* Mock / Fake Ads Styling */
+        /* Fake Image Ads Styling */
         .ad-container {
             background: var(--surface);
             border: 1px dashed #CBD5E1;
-            border-radius: 12px;
+            border-radius: 16px;
             padding: 15px;
             text-align: center;
             position: relative;
             margin: 10px 0;
             overflow: hidden;
+            box-shadow: var(--card-shadow);
         }
 
         .ad-label {
             position: absolute;
-            top: 4px;
-            right: 8px;
+            top: 6px;
+            right: 12px;
             font-size: 10px;
             color: #94A3B8;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            font-weight: 600;
+            font-weight: 700;
+            background: rgba(255,255,255,0.8);
+            padding: 2px 6px;
+            border-radius: 4px;
+            z-index: 2;
         }
 
         .ad-banner-content {
             display: flex;
             align-items: center;
-            justify-content: space-between;
-            gap: 15px;
-            padding: 10px;
+            gap: 20px;
             background: var(--bg);
-            border-radius: 8px;
+            padding: 12px;
+            border-radius: 12px;
             cursor: pointer;
-        }
-
-        .ad-banner-text {
             text-align: left;
         }
 
+        .ad-image {
+            width: 110px;
+            height: 80px;
+            border-radius: 8px;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .ad-banner-text {
+            flex: 1;
+        }
+
         .ad-banner-text h4 {
-            font-size: 15px;
+            font-size: 16px;
             color: #2563EB;
-            margin-bottom: 2px;
+            margin-bottom: 4px;
+            font-weight: 700;
         }
 
         .ad-banner-text p {
-            font-size: 12px;
+            font-size: 13px;
             color: var(--text-muted);
+            line-height: 1.4;
         }
 
         .ad-btn {
             background: #2563EB;
             color: white;
-            padding: 8px 16px;
-            border-radius: 6px;
-            font-size: 12px;
+            padding: 10px 18px;
+            border-radius: 8px;
+            font-size: 13px;
             font-weight: 700;
             white-space: nowrap;
         }
@@ -472,6 +504,9 @@
             header { padding: 15px 5%; }
             .whatsapp-text { display: none; }
             .whatsapp-float { padding: 14px; }
+            .ad-banner-content { flex-direction: column; text-align: center; }
+            .ad-image { width: 100%; height: 120px; }
+            .ad-btn { width: 100%; }
         }
     </style>
 </head>
@@ -479,7 +514,12 @@
 
     <!-- Header Navigation -->
     <header>
-        <a href="#" class="logo">⚡ AgeCalc Pro</a>
+        <a href="#" class="logo">
+            <div class="ai-logo-icon">
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+            </div>
+            <div class="logo-text"><span>MpAge</span> Calculator</div>
+        </a>
         <div class="header-controls">
             <button class="btn-toggle" onclick="toggleLanguage()" id="lang-btn">🌐 हिंदी में बदलें</button>
             <button class="btn-toggle" onclick="toggleDarkMode()">🌙 Theme</button>
@@ -544,13 +584,14 @@
             </div>
         </div>
 
-        <!-- Fake Ad Banner 1 (Mid-page) -->
+        <!-- Fake Ad Banner 1 (With Image) -->
         <div class="ad-container">
             <span class="ad-label">ADVERTISEMENT</span>
             <div class="ad-banner-content" onclick="alert('This is a demo advertisement space.')">
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=300&q=80" alt="Ad Image" class="ad-image">
                 <div class="ad-banner-text">
-                    <h4>🚀 Upgrade Your Web Hosting - 70% Off Today!</h4>
-                    <p>Get high-speed cloud hosting with free SSL & 24/7 support. Fast setup in 1 click.</p>
+                    <h4>🚀 High-Speed Cloud Hosting - 70% Off!</h4>
+                    <p>Upgrade your website speed with ultra-fast NVMe servers, free SSL, and 24/7 expert support.</p>
                 </div>
                 <div class="ad-btn">Learn More</div>
             </div>
@@ -559,8 +600,8 @@
         <!-- Information & FAQ Section Grid -->
         <div class="grid-3">
             <div class="info-card">
-                <h2 data-key="aboutTitle">About AgeCalc Pro</h2>
-                <p data-key="aboutDesc">AgeCalc Pro is a high-precision online tool designed to calculate your exact age down to the day, hour, and minute. Ideal for official forms, eligibility verification, or personal curiosity.</p>
+                <h2 data-key="aboutTitle">About MpAge Calculator</h2>
+                <p data-key="aboutDesc">MpAge Calculator (Mpage.online) is a high-precision online tool designed to calculate your exact age down to the day, hour, and minute. Ideal for official forms, eligibility verification, or personal curiosity.</p>
             </div>
 
             <div class="info-card">
@@ -576,13 +617,14 @@
             </div>
         </div>
 
-        <!-- Fake Ad Banner 2 (Bottom Page) -->
+        <!-- Fake Ad Banner 2 (With Image) -->
         <div class="ad-container">
             <span class="ad-label">SPONSORED</span>
             <div class="ad-banner-content" onclick="alert('This is a demo advertisement space.')">
+                <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=300&q=80" alt="Ad Image" class="ad-image">
                 <div class="ad-banner-text">
-                    <h4>💼 Master Full-Stack Web Development in 12 Weeks</h4>
-                    <p>Live interactive classes, real-world projects & job assistance. Register for free demo.</p>
+                    <h4>💼 Master Full-Stack AI Development</h4>
+                    <p>Learn coding with live interactive sessions, real-world projects & job assistance program.</p>
                 </div>
                 <div class="ad-btn">Apply Now</div>
             </div>
@@ -590,7 +632,7 @@
     </main>
 
     <!-- Floating Official WhatsApp Button -->
-    <a href="https://wa.me/919131053539?text=Hello!%20I%20have%20a%20query%20regarding%20AgeCalc%20Pro." class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+    <a href="https://wa.me/919131053539?text=Hello!%20I%20have%20a%20query%20regarding%20Mpage.online." class="whatsapp-float" target="_blank" rel="noopener noreferrer">
         <i class="fa-brands fa-whatsapp"></i>
         <span class="whatsapp-text">WhatsApp Support</span>
     </a>
@@ -598,7 +640,7 @@
     <!-- Footer -->
     <footer>
         <div class="footer-content">
-            <p class="copyright">&copy; 2026 AgeCalc Pro. All Rights Reserved.</p>
+            <p class="copyright">&copy; 2026 Mpage.online. All Rights Reserved.</p>
             <div class="footer-links">
                 <a onclick="openModal('privacy')" data-key="privacy">Privacy Policy</a>
                 <a onclick="openModal('terms')" data-key="terms">Terms & Conditions</a>
@@ -637,8 +679,8 @@
                 totalMinutes: "Total Minutes Lived",
                 nextBday: "Next Birthday In",
                 shareBtn: "📋 Copy Summary",
-                aboutTitle: "About AgeCalc Pro",
-                aboutDesc: "AgeCalc Pro is a high-precision online tool designed to calculate your exact age down to the day, hour, and minute. Ideal for official forms, eligibility verification, or personal curiosity.",
+                aboutTitle: "About MpAge Calculator",
+                aboutDesc: "MpAge Calculator (Mpage.online) is a high-precision online tool designed to calculate your exact age down to the day, hour, and minute. Ideal for official forms, eligibility verification, or personal curiosity.",
                 faqTitle: "Frequently Asked Questions",
                 q1: "Is Leap Year calculated correctly?",
                 a1: "Yes, our algorithm automatically factors in leap years and varying month lengths for 100% accuracy.",
@@ -650,7 +692,7 @@
                 langBtn: "🌐 हिंदी में बदलें"
             },
             hi: {
-                title: "सटीक आयु कैलकुलेटर (Age Calculator)",
+                title: "सटीक आयु कैलकुलेटर (MpAge Calculator)",
                 subtitle: "अपनी सटीक उम्र, महीने, दिन और जीवन के महत्वपूर्ण आँकड़े जानें",
                 dobLabel: "अपनी जन्म तिथि चुनें",
                 calcBtn: "आयु की गणना करें",
@@ -663,8 +705,8 @@
                 totalMinutes: "कुल जिए गए मिनट",
                 nextBday: "अगला जन्मदिन",
                 shareBtn: "📋 समरी कॉपी करें",
-                aboutTitle: "AgeCalc Pro के बारे में",
-                aboutDesc: "AgeCalc Pro एक सटीक ऑनलाइन टूल है जो आपकी उम्र को वर्ष, महीने, दिन और मिनटों तक सटीक रूप से कैलकुलेट करता है। यह सरकारी फॉर्म भरने या एलिजिबिलिटी चेक करने के लिए बेहद उपयोगी है।",
+                aboutTitle: "MpAge Calculator के बारे में",
+                aboutDesc: "MpAge Calculator (Mpage.online) एक सटीक ऑनलाइन टूल है जो आपकी उम्र को वर्ष, महीने, दिन और मिनटों तक सटीक रूप से कैलकुलेट करता है। यह सरकारी फॉर्म भरने या एलिजिबिलिटी चेक करने के लिए बेहद उपयोगी है।",
                 faqTitle: "अक्सर पूछे जाने वाले सवाल",
                 q1: "क्या यह लीप ईयर की सही गणना करता है?",
                 a1: "हाँ, हमारा एल्गोरिदम लीप वर्ष और महीनों के अलग-अलग दिनों को स्वचालित रूप से एडजस्ट करता है।",
@@ -749,7 +791,7 @@
             const y = document.getElementById('years').innerText;
             const m = document.getElementById('months').innerText;
             const d = document.getElementById('days').innerText;
-            const text = `I am ${y} years, ${m} months, and ${d} days old! Calculated via AgeCalc Pro.`;
+            const text = `I am ${y} years, ${m} months, and ${d} days old! Calculated via Mpage.online.`;
             navigator.clipboard.writeText(text);
             alert(currentLang === 'en' ? "Copied summary to clipboard!" : "समरी क्लिपबोर्ड में कॉपी हो गई!");
         }
@@ -759,9 +801,9 @@
         const modalBody = document.getElementById('modal-body');
 
         const pagesContent = {
-            privacy: `<h2>Privacy Policy</h2><br><p>AgeCalc Pro operates 100% on client-side JavaScript. We do not track, collect, or store your Personal Identifiable Information (PII) or Date of Birth on any remote servers.</p>`,
+            privacy: `<h2>Privacy Policy</h2><br><p>MpAge Calculator (Mpage.online) operates 100% on client-side JavaScript. We do not track, collect, or store your Personal Identifiable Information (PII) or Date of Birth on any remote servers.</p>`,
             terms: `<h2>Terms and Conditions</h2><br><p>This age calculator is provided as a free tool for informational and personal calculation purposes only. We make no guarantees about absolute fidelity for legal requirements.</p>`,
-            contact: `<h2>Contact Us</h2><br><p>Have questions or suggestions to improve our site? Reach out to us at:</p><br><p><strong>WhatsApp:</strong> +91 9131053539</p><p><strong>Email:</strong> contact@agecalcpro.com</p>`
+            contact: `<h2>Contact Us</h2><br><p>Have questions or suggestions to improve Mpage.online? Reach out to us at:</p><br><p><strong>WhatsApp:</strong> +91 9131053539</p><p><strong>Email:</strong> contact@mpage.online</p>`
         };
 
         function openModal(page) {
