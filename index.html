@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AgeCalc Pro - Precision Age Calculator & Life Analytics</title>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons for Official WhatsApp Logo -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
         :root {
             --primary: #4F46E5;
@@ -173,7 +176,7 @@
             transform: translateY(-1px);
         }
 
-        /* Main Result Display */
+        /* Results Display */
         .result-container {
             margin-top: 35px;
             display: none;
@@ -262,6 +265,65 @@
             font-weight: 600;
         }
 
+        /* Mock / Fake Ads Styling */
+        .ad-container {
+            background: var(--surface);
+            border: 1px dashed #CBD5E1;
+            border-radius: 12px;
+            padding: 15px;
+            text-align: center;
+            position: relative;
+            margin: 10px 0;
+            overflow: hidden;
+        }
+
+        .ad-label {
+            position: absolute;
+            top: 4px;
+            right: 8px;
+            font-size: 10px;
+            color: #94A3B8;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+        }
+
+        .ad-banner-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+            padding: 10px;
+            background: var(--bg);
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .ad-banner-text {
+            text-align: left;
+        }
+
+        .ad-banner-text h4 {
+            font-size: 15px;
+            color: #2563EB;
+            margin-bottom: 2px;
+        }
+
+        .ad-banner-text p {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        .ad-btn {
+            background: #2563EB;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+
         /* Features Section */
         .grid-3 {
             display: grid;
@@ -299,6 +361,41 @@
             font-size: 15px;
             font-weight: 600;
             margin-bottom: 6px;
+        }
+
+        /* Floating WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background-color: #25D366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 24px;
+            box-shadow: 2px 5px 15px rgba(0,0,0,0.2);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 20px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .whatsapp-float:hover {
+            background-color: #20BA5A;
+            transform: scale(1.05);
+        }
+
+        .whatsapp-float i {
+            font-size: 28px;
+        }
+
+        .whatsapp-text {
+            font-size: 14px;
+            color: white;
         }
 
         /* Footer */
@@ -373,6 +470,8 @@
             .primary-results { grid-template-columns: 1fr; }
             .calculator-card { padding: 25px 18px; }
             header { padding: 15px 5%; }
+            .whatsapp-text { display: none; }
+            .whatsapp-float { padding: 14px; }
         }
     </style>
 </head>
@@ -445,6 +544,18 @@
             </div>
         </div>
 
+        <!-- Fake Ad Banner 1 (Mid-page) -->
+        <div class="ad-container">
+            <span class="ad-label">ADVERTISEMENT</span>
+            <div class="ad-banner-content" onclick="alert('This is a demo advertisement space.')">
+                <div class="ad-banner-text">
+                    <h4>🚀 Upgrade Your Web Hosting - 70% Off Today!</h4>
+                    <p>Get high-speed cloud hosting with free SSL & 24/7 support. Fast setup in 1 click.</p>
+                </div>
+                <div class="ad-btn">Learn More</div>
+            </div>
+        </div>
+
         <!-- Information & FAQ Section Grid -->
         <div class="grid-3">
             <div class="info-card">
@@ -464,7 +575,25 @@
                 </div>
             </div>
         </div>
+
+        <!-- Fake Ad Banner 2 (Bottom Page) -->
+        <div class="ad-container">
+            <span class="ad-label">SPONSORED</span>
+            <div class="ad-banner-content" onclick="alert('This is a demo advertisement space.')">
+                <div class="ad-banner-text">
+                    <h4>💼 Master Full-Stack Web Development in 12 Weeks</h4>
+                    <p>Live interactive classes, real-world projects & job assistance. Register for free demo.</p>
+                </div>
+                <div class="ad-btn">Apply Now</div>
+            </div>
+        </div>
     </main>
+
+    <!-- Floating Official WhatsApp Button -->
+    <a href="https://wa.me/919131053539?text=Hello!%20I%20have%20a%20query%20regarding%20AgeCalc%20Pro." class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+        <i class="fa-brands fa-whatsapp"></i>
+        <span class="whatsapp-text">WhatsApp Support</span>
+    </a>
 
     <!-- Footer -->
     <footer>
@@ -632,7 +761,7 @@
         const pagesContent = {
             privacy: `<h2>Privacy Policy</h2><br><p>AgeCalc Pro operates 100% on client-side JavaScript. We do not track, collect, or store your Personal Identifiable Information (PII) or Date of Birth on any remote servers.</p>`,
             terms: `<h2>Terms and Conditions</h2><br><p>This age calculator is provided as a free tool for informational and personal calculation purposes only. We make no guarantees about absolute fidelity for legal requirements.</p>`,
-            contact: `<h2>Contact Us</h2><br><p>Have questions or suggestions to improve our site? Reach out to us at:</p><br><p><strong>Email:</strong> contact@agecalcpro.com</p>`
+            contact: `<h2>Contact Us</h2><br><p>Have questions or suggestions to improve our site? Reach out to us at:</p><br><p><strong>WhatsApp:</strong> +91 9131053539</p><p><strong>Email:</strong> contact@agecalcpro.com</p>`
         };
 
         function openModal(page) {
