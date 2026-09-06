@@ -1,1834 +1,1909 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
-<title>MP QR Tool – Free Online QR Code Generator</title>
-<meta name="description" content="Create free QR codes for websites, WhatsApp, Wi-Fi, UPI, contacts, email, phone, social media and more. Customize, download, print and share QR codes instantly.">
-<meta name="keywords" content="QR code generator, QR maker, free QR code, WhatsApp QR, UPI QR, WiFi QR, vCard QR, online QR generator">
-<meta name="robots" content="index,follow">
-<link rel="canonical" href="https://mpage.online/">
-<meta name="theme-color" content="#4f46e5">
-<meta property="og:type" content="website">
-<meta property="og:title" content="MP QR Tool – Free Online QR Code Generator">
-<meta property="og:description" content="Create beautiful QR codes for websites, WhatsApp, Wi-Fi, UPI, contacts, email and more.">
-<meta property="og:url" content="https://mpage.online/">
-<meta property="og:site_name" content="MP QR Tool">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MP QR Tool – Free Online QR Code Generator">
-<meta name="twitter:description" content="Create customizable QR codes instantly in your browser.">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#5b5cf0">
+  <meta name="description" content="Calculate your exact age in years, months, weeks, days, hours, minutes and seconds. Find your next birthday, birthday countdown, age on any date and date differences.">
+  <meta name="keywords" content="age calculator, exact age calculator, birthday calculator, age counter, date difference calculator, age in days, age in months, age in weeks, age in hours, age in minutes, age in seconds">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://mpage.online/">
+  <meta property="og:title" content="MP Age Calculator – Calculate Your Exact Age Online">
+  <meta property="og:description" content="Calculate your exact age in years, months, weeks, days, hours, minutes and seconds.">
+  <meta property="og:url" content="https://mpage.online/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="MP Age Calculator">
+  <meta name="twitter:description" content="Calculate your exact age and explore birthday and date statistics.">
 
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='15' fill='%234f46e5'/%3E%3Cpath fill='white' d='M9 9h18v18H9zm5 5v8h8v-8zm23-5h18v18H37zm5 5v8h8v-8zM9 37h18v18H9zm5 5v8h8v-8zm23-5h6v6h-6zm12 0h6v12h-6zm-12 12h6v6h-6zm12 0h6v6h-6zM30 30h7v7h-7zm10 10h7v7h-7z'/%3E%3C/svg%3E">
+  <title>MP Age Calculator – Calculate Your Exact Age Online</title>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' x2='1'%3E%3Cstop stop-color='%235b5cf0'/%3E%3Cstop offset='1' stop-color='%23b044ff'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='16' fill='url(%23g)'/%3E%3Cpath d='M18 27h28M22 14v9M42 14v9M20 20h24a5 5 0 0 1 5 5v21a5 5 0 0 1-5 5H20a5 5 0 0 1-5-5V25a5 5 0 0 1 5-5Z' fill='none' stroke='white' stroke-width='4' stroke-linecap='round'/%3E%3Ctext x='32' y='43' text-anchor='middle' font-family='Arial' font-size='13' font-weight='700' fill='white'%3EMP%3C/text%3E%3C/svg%3E">
 
-<style>
-:root{
-  --bg:#f7f8ff;
-  --surface:#ffffff;
-  --surface2:#f1f4ff;
-  --text:#172033;
-  --muted:#65708a;
-  --border:#e3e7f2;
-  --primary:#4f46e5;
-  --primary2:#7c3aed;
-  --cyan:#06b6d4;
-  --green:#10b981;
-  --pink:#ec4899;
-  --orange:#f59e0b;
-  --danger:#ef4444;
-  --shadow:0 16px 45px rgba(35,43,80,.10);
-  --radius:22px;
-  --radius-sm:14px;
-  --header:76px;
-}
-html.dark{
-  --bg:#0c1020;
-  --surface:#151b2f;
-  --surface2:#1c243b;
-  --text:#f4f7ff;
-  --muted:#a8b1c7;
-  --border:#29334e;
-  --shadow:0 18px 50px rgba(0,0,0,.28);
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:90px}
-body{
-  margin:0;
-  background:
-    radial-gradient(circle at 10% 5%,rgba(99,102,241,.10),transparent 27rem),
-    radial-gradient(circle at 90% 20%,rgba(6,182,212,.08),transparent 24rem),
-    var(--bg);
-  color:var(--text);
-  font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-  line-height:1.55;
-}
-button,input,textarea,select{font:inherit}
-button{cursor:pointer}
-a{color:inherit;text-decoration:none}
-img{max-width:100%}
-.container{width:min(1180px,calc(100% - 32px));margin:auto}
-.section{padding:88px 0}
-.section-head{max-width:760px;margin:0 auto 42px;text-align:center}
-.section-head h2{font-size:clamp(2rem,4vw,3rem);margin:0 0 12px;letter-spacing:-.04em}
-.section-head p{color:var(--muted);font-size:1.05rem;margin:0}
-.gradient-text{
-  background:linear-gradient(90deg,var(--primary),var(--primary2),var(--pink));
-  -webkit-background-clip:text;background-clip:text;color:transparent
-}
-.btn{
-  border:0;border-radius:13px;padding:12px 18px;font-weight:800;
-  display:inline-flex;align-items:center;justify-content:center;gap:9px;
-  transition:.2s ease;min-height:46px
-}
-.btn:hover{transform:translateY(-2px)}
-.btn-primary{color:white;background:linear-gradient(135deg,var(--primary),var(--primary2));box-shadow:0 10px 25px rgba(79,70,229,.25)}
-.btn-secondary{background:var(--surface);border:1px solid var(--border);color:var(--text)}
-.btn-danger{background:#fee2e2;color:#b91c1c}
-.btn-success{background:#dcfce7;color:#047857}
-.icon{width:19px;height:19px;display:inline-block;flex:none}
-.muted{color:var(--muted)}
-.small{font-size:.84rem}
-.hidden{display:none!important}
-
-header{
-  height:var(--header);position:sticky;top:0;z-index:1000;
-  background:color-mix(in srgb,var(--surface) 90%,transparent);
-  backdrop-filter:blur(18px);border-bottom:1px solid var(--border)
-}
-.nav{height:100%;display:flex;align-items:center;justify-content:space-between;gap:20px}
-.brand{display:flex;align-items:center;gap:11px;font-weight:900;white-space:nowrap}
-.brand svg{width:43px;height:43px}
-.brand-name{font-size:1.08rem}
-.nav-links{display:flex;align-items:center;gap:21px;font-size:.91rem;font-weight:700;color:var(--muted)}
-.nav-links a{transition:.2s}
-.nav-links a:hover{color:var(--primary)}
-.nav-actions{display:flex;align-items:center;gap:9px}
-.theme-btn,.menu-btn{
-  width:43px;height:43px;border:1px solid var(--border);border-radius:12px;
-  background:var(--surface);color:var(--text);display:grid;place-items:center
-}
-.menu-btn{display:none}
-
-.hero{padding:85px 0 55px;overflow:hidden}
-.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:55px;align-items:center}
-.badges{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
-.badge{
-  padding:7px 11px;border-radius:999px;background:var(--surface);
-  border:1px solid var(--border);font-size:.78rem;font-weight:800;color:var(--muted)
-}
-.hero h1{font-size:clamp(2.65rem,6vw,5rem);line-height:1.02;letter-spacing:-.065em;margin:0 0 20px}
-.hero p{font-size:1.12rem;color:var(--muted);max-width:680px}
-.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
-.hero-visual{
-  min-height:440px;display:grid;place-items:center;position:relative
-}
-.orb{position:absolute;border-radius:50%;filter:blur(2px);opacity:.7}
-.orb.one{width:260px;height:260px;background:#6366f1;top:20px;right:10px;opacity:.12}
-.orb.two{width:180px;height:180px;background:#06b6d4;bottom:20px;left:20px;opacity:.12}
-.qr-demo-card{
-  width:min(390px,100%);padding:26px;background:var(--surface);border:1px solid var(--border);
-  border-radius:30px;box-shadow:var(--shadow);position:relative;z-index:2
-}
-.qr-demo-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
-.qr-demo-head strong{font-size:1.1rem}
-.demo-dot{width:11px;height:11px;border-radius:50%;background:var(--green);box-shadow:0 0 0 5px rgba(16,185,129,.12)}
-.demo-qr{background:#fff;border-radius:20px;padding:18px;display:grid;place-items:center}
-.demo-qr svg{width:100%;max-width:280px;height:auto}
-.demo-caption{text-align:center;margin-top:16px;font-weight:800}
-.demo-sub{text-align:center;color:var(--muted);font-size:.85rem}
-
-.ad{
-  min-height:76px;border:1px dashed var(--border);border-radius:16px;
-  display:flex;align-items:center;justify-content:center;color:var(--muted);
-  background:color-mix(in srgb,var(--surface) 70%,transparent);font-size:.8rem;font-weight:700
-}
-.ad-wide{margin:15px 0 35px}
-
-.generator-wrap{
-  background:var(--surface);border:1px solid var(--border);border-radius:28px;
-  box-shadow:var(--shadow);overflow:hidden
-}
-.generator-top{
-  padding:20px 22px;border-bottom:1px solid var(--border);
-  display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap
-}
-.generator-top h2{margin:0;font-size:1.25rem}
-.generator-top p{margin:3px 0 0;color:var(--muted);font-size:.84rem}
-.generator-body{display:grid;grid-template-columns:285px 1fr 350px;min-height:680px}
-.type-panel{border-right:1px solid var(--border);padding:18px;background:var(--surface2)}
-.search-box{position:relative;margin-bottom:15px}
-.search-box svg{position:absolute;left:13px;top:50%;transform:translateY(-50%);color:var(--muted)}
-.search-box input{padding-left:42px}
-.type-list{display:grid;gap:7px;max-height:600px;overflow:auto;padding-right:3px}
-.type-btn{
-  display:flex;align-items:center;gap:11px;text-align:left;width:100%;border:1px solid transparent;
-  border-radius:12px;padding:10px 11px;background:transparent;color:var(--text);font-weight:750
-}
-.type-btn:hover{background:var(--surface);border-color:var(--border)}
-.type-btn.active{background:linear-gradient(135deg,rgba(79,70,229,.12),rgba(124,58,237,.09));border-color:rgba(79,70,229,.25);color:var(--primary)}
-.type-icon{
-  width:34px;height:34px;border-radius:10px;display:grid;place-items:center;
-  background:var(--surface);border:1px solid var(--border);flex:none
-}
-.form-panel{padding:26px;min-width:0}
-.form-title{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;margin-bottom:20px}
-.form-title h3{margin:0;font-size:1.4rem}
-.form-title p{margin:3px 0;color:var(--muted);font-size:.86rem}
-.field{margin-bottom:16px}
-.field label{display:block;font-size:.84rem;font-weight:800;margin-bottom:7px}
-input,textarea,select{
-  width:100%;border:1px solid var(--border);background:var(--surface);
-  color:var(--text);border-radius:12px;padding:12px 13px;outline:none;
-  transition:.18s
-}
-textarea{resize:vertical;min-height:100px}
-input:focus,textarea:focus,select:focus{border-color:var(--primary);box-shadow:0 0 0 4px rgba(79,70,229,.10)}
-input.invalid,textarea.invalid,select.invalid{border-color:var(--danger);box-shadow:0 0 0 3px rgba(239,68,68,.08)}
-.error{font-size:.78rem;color:var(--danger);margin-top:5px;min-height:0}
-.grid2{display:grid;grid-template-columns:1fr 1fr;gap:13px}
-.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}
-.check{display:flex;align-items:center;gap:9px;font-size:.86rem;font-weight:700}
-.check input{width:auto}
-.notice{padding:11px 13px;border-radius:12px;background:rgba(245,158,11,.10);border:1px solid rgba(245,158,11,.25);font-size:.78rem;color:var(--text);margin-top:8px}
-.form-actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:22px}
-.preview-panel{
-  border-left:1px solid var(--border);background:linear-gradient(180deg,var(--surface2),var(--surface));
-  padding:22px;display:flex;flex-direction:column
-}
-.preview-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
-.preview-head strong{font-size:.95rem}
-.preview-size{font-size:.74rem;color:var(--muted)}
-.preview-box{
-  flex:1;min-height:350px;background:var(--surface);border:1px solid var(--border);
-  border-radius:20px;display:flex;align-items:center;justify-content:center;padding:20px;overflow:hidden
-}
-#qrCanvas{display:block;background:#fff;max-width:100%;height:auto;border-radius:2px}
-.empty-preview{text-align:center;color:var(--muted);max-width:230px}
-.empty-preview svg{width:75px;height:75px;margin-bottom:15px;opacity:.65}
-.empty-preview strong{display:block;color:var(--text);font-size:1rem;margin-bottom:5px}
-.preview-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:13px}
-.preview-actions .btn{font-size:.8rem;padding:9px 10px;min-height:42px}
-.preview-tip{font-size:.72rem;color:var(--muted);text-align:center;margin:12px 0 0}
-
-.customize{
-  margin-top:18px;border-top:1px solid var(--border);padding-top:18px
-}
-.customize h4{margin:0 0 14px}
-.color-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.color-control{
-  border:1px solid var(--border);border-radius:12px;padding:9px;display:flex;align-items:center;gap:9px
-}
-.color-control input{width:40px;height:35px;padding:2px;border:0;border-radius:8px}
-.range-row{display:flex;align-items:center;gap:12px}
-.range-row input{padding:0;border:0;box-shadow:none}
-.range-val{min-width:44px;text-align:right;font-size:.8rem;font-weight:800}
-.logo-preview{display:flex;align-items:center;gap:10px;margin-top:8px}
-.logo-thumb{width:42px;height:42px;border-radius:9px;object-fit:contain;background:#fff;border:1px solid var(--border)}
-.style-options{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}
-.style-option input{display:none}
-.style-option span{
-  display:block;text-align:center;border:1px solid var(--border);padding:8px;border-radius:10px;
-  font-size:.75rem;font-weight:800
-}
-.style-option input:checked+span{border-color:var(--primary);background:rgba(79,70,229,.09);color:var(--primary)}
-
-.history-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
-.history-card{
-  padding:17px;background:var(--surface);border:1px solid var(--border);border-radius:16px
-}
-.history-card-top{display:flex;justify-content:space-between;gap:10px}
-.history-card strong{font-size:.88rem}
-.history-card p{font-size:.76rem;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.card-actions{display:flex;gap:7px;margin-top:12px}
-.card-actions button{flex:1;padding:8px;border-radius:9px;border:1px solid var(--border);background:var(--surface);color:var(--text);font-size:.73rem;font-weight:800}
-
-.feature-grid,.use-grid,.type-info-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
-.feature-card,.use-card,.type-info-card{
-  background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:20px;
-  transition:.2s
-}
-.feature-card:hover,.use-card:hover,.type-info-card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
-.feature-icon{
-  width:44px;height:44px;border-radius:13px;display:grid;place-items:center;
-  color:white;background:linear-gradient(135deg,var(--primary),var(--cyan));margin-bottom:13px
-}
-.feature-card h3,.use-card h3,.type-info-card h3{margin:0 0 6px;font-size:1rem}
-.feature-card p,.use-card p,.type-info-card p{margin:0;color:var(--muted);font-size:.84rem}
-.feature-card:nth-child(2) .feature-icon{background:linear-gradient(135deg,var(--primary2),var(--pink))}
-.feature-card:nth-child(3) .feature-icon{background:linear-gradient(135deg,var(--cyan),var(--primary))}
-.feature-card:nth-child(4) .feature-icon{background:linear-gradient(135deg,var(--orange),var(--pink))}
-
-.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;position:relative}
-.step{position:relative;text-align:center;padding:20px}
-.step-num{
-  width:56px;height:56px;border-radius:18px;margin:0 auto 15px;display:grid;place-items:center;
-  background:linear-gradient(135deg,var(--primary),var(--primary2));color:#fff;font-size:1.2rem;font-weight:900;
-  box-shadow:0 10px 24px rgba(79,70,229,.22)
-}
-.step h3{margin:0 0 6px}.step p{margin:0;color:var(--muted);font-size:.85rem}
-
-.type-info-card .type-mini-icon{
-  width:42px;height:42px;border-radius:12px;background:rgba(79,70,229,.1);color:var(--primary);
-  display:grid;place-items:center;margin-bottom:12px
-}
-
-.faq{max-width:820px;margin:auto;display:grid;gap:10px}
-.faq-item{background:var(--surface);border:1px solid var(--border);border-radius:15px;overflow:hidden}
-.faq-q{
-  width:100%;padding:17px 19px;background:none;border:0;color:var(--text);
-  display:flex;justify-content:space-between;align-items:center;text-align:left;font-weight:800
-}
-.faq-q span:last-child{transition:.2s;font-size:1.2rem}
-.faq-item.open .faq-q span:last-child{transform:rotate(45deg)}
-.faq-a{display:grid;grid-template-rows:0fr;transition:.25s}
-.faq-a>div{overflow:hidden}
-.faq-a p{padding:0 19px 17px;margin:0;color:var(--muted);font-size:.88rem}
-.faq-item.open .faq-a{grid-template-rows:1fr}
-
-.info-panel{
-  background:linear-gradient(135deg,rgba(79,70,229,.10),rgba(6,182,212,.08));
-  border:1px solid rgba(79,70,229,.15);border-radius:25px;padding:35px
-}
-.info-panel h2{margin-top:0}
-.info-panel p{color:var(--muted)}
-
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-.contact-card{padding:25px;background:var(--surface);border:1px solid var(--border);border-radius:20px}
-.contact-link{display:flex;align-items:center;gap:12px;padding:13px 0;border-bottom:1px solid var(--border)}
-.contact-link:last-child{border-bottom:0}
-.contact-icon{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;background:var(--surface2);color:var(--primary)}
-
-.legal-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-.legal-card{background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:24px}
-.legal-card h3{margin-top:0}.legal-card p,.legal-card li{color:var(--muted);font-size:.87rem}
-
-footer{margin-top:30px;padding:55px 0 25px;background:#0b1020;color:#dce2f0}
-.footer-grid{display:grid;grid-template-columns:1.4fr repeat(3,1fr);gap:30px}
-footer .brand-name{color:#fff}
-.footer-brand p{color:#929bb3;max-width:320px;font-size:.86rem}
-footer h4{margin:0 0 13px;color:#fff}
-footer a{display:block;color:#929bb3;font-size:.82rem;margin:8px 0}
-footer a:hover{color:#fff}
-.footer-bottom{border-top:1px solid #232b40;margin-top:35px;padding-top:20px;display:flex;justify-content:space-between;gap:15px;color:#7e889f;font-size:.78rem}
-
-.floating{
-  position:fixed;right:18px;bottom:18px;z-index:900;display:flex;flex-direction:column;gap:10px
-}
-.float-btn{
-  width:52px;height:52px;border-radius:50%;display:grid;place-items:center;color:#fff;
-  box-shadow:0 12px 28px rgba(0,0,0,.22);transition:.2s;position:relative
-}
-.float-btn:hover{transform:scale(1.08)}
-.float-btn.whatsapp{background:#25d366}
-.float-btn.instagram{background:linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045)}
-.tooltip{
-  position:absolute;right:62px;background:#101827;color:#fff;padding:6px 9px;border-radius:7px;
-  font-size:.7rem;white-space:nowrap;opacity:0;pointer-events:none;transition:.2s
-}
-.float-btn:hover .tooltip{opacity:1}
-
-.toast-wrap{position:fixed;right:18px;top:88px;z-index:2000;display:grid;gap:9px}
-.toast{
-  min-width:250px;max-width:360px;background:#12192b;color:#fff;border-radius:12px;padding:12px 14px;
-  box-shadow:0 15px 40px rgba(0,0,0,.22);display:flex;align-items:flex-start;gap:10px;
-  animation:toastIn .25s ease
-}
-.toast.success{border-left:4px solid #10b981}.toast.error{border-left:4px solid #ef4444}.toast.info{border-left:4px solid #60a5fa}
-@keyframes toastIn{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
-
-.modal{
-  position:fixed;inset:0;background:rgba(4,8,20,.68);backdrop-filter:blur(6px);
-  z-index:1500;display:none;align-items:center;justify-content:center;padding:18px
-}
-.modal.open{display:flex}
-.modal-box{
-  width:min(650px,100%);max-height:90vh;overflow:auto;background:var(--surface);
-  border:1px solid var(--border);border-radius:22px;box-shadow:var(--shadow);padding:25px
-}
-.modal-head{display:flex;align-items:center;justify-content:space-between;gap:15px;margin-bottom:18px}
-.modal-head h3{margin:0}.modal-close{border:0;background:var(--surface2);color:var(--text);width:38px;height:38px;border-radius:10px}
-.print-area{background:#fff;color:#111;padding:25px;border-radius:12px;text-align:center}
-.print-area img{max-width:100%;width:320px}
-
-@media(max-width:1050px){
-  .nav-links{display:none}.menu-btn{display:grid}
-  .nav.mobile-open .nav-links{
-    display:flex;position:absolute;top:var(--header);left:0;right:0;padding:16px;
-    background:var(--surface);border-bottom:1px solid var(--border);flex-direction:column;align-items:stretch
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebApplication",
+    "name":"MP Age Calculator",
+    "url":"https://mpage.online/",
+    "applicationCategory":"UtilitiesApplication",
+    "operatingSystem":"Any",
+    "description":"Online age calculator for exact age, birthdays, date differences and time statistics."
   }
-  .nav.mobile-open .nav-links a{padding:11px 13px}
-  .generator-body{grid-template-columns:235px 1fr}
-  .preview-panel{grid-column:1/-1;border-left:0;border-top:1px solid var(--border)}
-  .preview-box{min-height:330px}
-  .feature-grid,.use-grid,.type-info-grid{grid-template-columns:repeat(2,1fr)}
-  .footer-grid{grid-template-columns:2fr 1fr 1fr}
-}
-@media(max-width:760px){
-  .container{width:min(100% - 22px,1180px)}
-  .section{padding:65px 0}.hero{padding:55px 0 35px}
-  .hero-grid{grid-template-columns:1fr;gap:30px}
-  .hero-visual{min-height:340px}
-  .generator-body{grid-template-columns:1fr}
-  .type-panel{border-right:0;border-bottom:1px solid var(--border)}
-  .type-list{display:flex;overflow:auto;max-height:none;padding-bottom:3px}
-  .type-btn{min-width:150px}
-  .form-panel{padding:20px 16px}
-  .preview-panel{padding:17px}
-  .history-grid,.contact-grid,.legal-grid{grid-template-columns:1fr}
-  .steps{grid-template-columns:1fr 1fr}
-  .footer-grid{grid-template-columns:1fr 1fr}
-  .footer-brand{grid-column:1/-1}
-}
-@media(max-width:480px){
-  .brand-name{display:none}.nav-actions .btn{display:none}
-  .hero h1{font-size:2.55rem}.hero p{font-size:1rem}
-  .grid2,.grid3,.color-row{grid-template-columns:1fr}
-  .feature-grid,.use-grid,.type-info-grid,.steps{grid-template-columns:1fr}
-  .preview-actions{grid-template-columns:1fr 1fr}
-  .footer-grid{grid-template-columns:1fr}
-  .footer-brand{grid-column:auto}
-  .footer-bottom{flex-direction:column}
-  .floating{right:12px;bottom:12px}
-  .float-btn{width:48px;height:48px}
-}
-@media(prefers-reduced-motion:reduce){
-  *,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}
-}
-</style>
+  </script>
+
+  <style>
+    :root{
+      --primary:#5b5cf0;
+      --primary2:#7c3aed;
+      --cyan:#06b6d4;
+      --pink:#ec4899;
+      --orange:#f97316;
+      --green:#10b981;
+      --red:#ef4444;
+      --yellow:#f59e0b;
+      --bg:#f7f8ff;
+      --surface:#ffffff;
+      --surface2:#f1f3ff;
+      --text:#17172b;
+      --muted:#667085;
+      --border:#e6e8f2;
+      --shadow:0 20px 60px rgba(45,45,100,.10);
+      --shadow-sm:0 8px 25px rgba(45,45,100,.08);
+      --radius:24px;
+      --radius-sm:14px;
+      --max:1180px;
+    }
+
+    [data-theme="dark"]{
+      --bg:#0b0d18;
+      --surface:#121525;
+      --surface2:#191d30;
+      --text:#f5f7ff;
+      --muted:#a7aec5;
+      --border:#292e45;
+      --shadow:0 20px 60px rgba(0,0,0,.30);
+      --shadow-sm:0 8px 25px rgba(0,0,0,.22);
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.6;
+      overflow-x:hidden;
+      transition:background .25s,color .25s;
+    }
+
+    button,input,select{font:inherit}
+    button{cursor:pointer}
+    a{color:inherit;text-decoration:none}
+    img,svg{max-width:100%}
+
+    .container{width:min(var(--max),calc(100% - 32px));margin:auto}
+    .section{padding:92px 0;position:relative}
+    .section-head{text-align:center;max-width:760px;margin:0 auto 48px}
+    .eyebrow{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:7px 13px;border-radius:999px;
+      background:rgba(91,92,240,.10);color:var(--primary);
+      font-size:13px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;
+      margin-bottom:15px;
+    }
+    .section-head h2{font-size:clamp(30px,5vw,46px);line-height:1.12;letter-spacing:-.04em;margin-bottom:15px}
+    .section-head p{color:var(--muted);font-size:17px}
+
+    .gradient-text{
+      background:linear-gradient(90deg,var(--primary),var(--pink),var(--orange));
+      -webkit-background-clip:text;background-clip:text;color:transparent;
+    }
+
+    /* Header */
+    header{
+      position:sticky;top:0;z-index:1000;
+      background:color-mix(in srgb,var(--surface) 90%,transparent);
+      backdrop-filter:blur(18px);
+      border-bottom:1px solid var(--border);
+    }
+    .nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{display:flex;align-items:center;gap:11px;font-weight:900;white-space:nowrap}
+    .logo{width:46px;height:46px;flex:none}
+    .brand-text{font-size:18px;letter-spacing:-.03em}
+    .brand-text small{display:block;color:var(--muted);font-size:10px;letter-spacing:.13em;text-transform:uppercase}
+    .nav-links{display:flex;align-items:center;gap:22px}
+    .nav-links a{font-size:14px;font-weight:700;color:var(--muted);transition:.2s}
+    .nav-links a:hover{color:var(--primary)}
+    .nav-actions{display:flex;align-items:center;gap:9px}
+    .icon-btn,.menu-btn{
+      width:42px;height:42px;border:1px solid var(--border);background:var(--surface);
+      border-radius:13px;display:grid;place-items:center;color:var(--text);transition:.2s
+    }
+    .icon-btn:hover,.menu-btn:hover{border-color:var(--primary);transform:translateY(-1px)}
+    .menu-btn{display:none}
+    .btn{
+      border:0;border-radius:13px;padding:12px 18px;font-weight:800;
+      display:inline-flex;align-items:center;justify-content:center;gap:8px;transition:.2s;
+    }
+    .btn-primary{
+      color:#fff;background:linear-gradient(135deg,var(--primary),var(--primary2));
+      box-shadow:0 9px 22px rgba(91,92,240,.25)
+    }
+    .btn-primary:hover{transform:translateY(-2px);box-shadow:0 13px 28px rgba(91,92,240,.32)}
+    .btn-soft{background:var(--surface2);color:var(--text);border:1px solid var(--border)}
+    .btn-soft:hover{border-color:var(--primary);color:var(--primary)}
+    .btn-danger{background:#fee2e2;color:#b91c1c}
+    [data-theme="dark"] .btn-danger{background:#35191d;color:#ff9aa2}
+
+    /* Hero */
+    .hero{padding:86px 0 65px;overflow:hidden}
+    .hero:before,.hero:after{
+      content:"";position:absolute;border-radius:50%;filter:blur(3px);pointer-events:none
+    }
+    .hero:before{width:420px;height:420px;background:rgba(91,92,240,.12);top:-180px;left:-160px}
+    .hero:after{width:420px;height:420px;background:rgba(236,72,153,.10);right:-170px;top:50px}
+    .hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:65px;align-items:center}
+    .hero h1{font-size:clamp(42px,6vw,74px);line-height:.98;letter-spacing:-.065em;margin-bottom:22px}
+    .hero p{font-size:18px;color:var(--muted);max-width:650px;margin-bottom:30px}
+    .hero-buttons{display:flex;gap:12px;flex-wrap:wrap}
+    .badges{display:flex;gap:9px;flex-wrap:wrap;margin-top:24px}
+    .badge{
+      display:inline-flex;align-items:center;gap:7px;padding:8px 11px;
+      border:1px solid var(--border);background:var(--surface);border-radius:999px;
+      font-size:12px;font-weight:800;box-shadow:var(--shadow-sm)
+    }
+    .badge i{width:7px;height:7px;border-radius:50%;background:var(--green)}
+    .hero-art{
+      min-height:410px;border-radius:38px;
+      background:linear-gradient(145deg,#eef0ff,#fdf4ff);
+      border:1px solid rgba(91,92,240,.13);
+      position:relative;display:grid;place-items:center;box-shadow:var(--shadow);overflow:hidden
+    }
+    [data-theme="dark"] .hero-art{background:linear-gradient(145deg,#15192d,#24182d)}
+    .calendar{
+      width:245px;background:var(--surface);border:1px solid var(--border);
+      border-radius:27px;box-shadow:0 30px 65px rgba(39,39,100,.22);overflow:hidden;
+      transform:rotate(-4deg);position:relative;z-index:2
+    }
+    .calendar-top{height:72px;background:linear-gradient(135deg,var(--primary),var(--primary2));color:white;padding:16px 20px}
+    .calendar-top strong{font-size:24px;display:block}
+    .calendar-top span{font-size:11px;opacity:.8}
+    .calendar-body{padding:19px}
+    .cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;text-align:center;font-size:12px}
+    .cal-grid b{color:var(--muted)}
+    .cal-grid span{height:25px;display:grid;place-items:center;border-radius:8px}
+    .cal-grid .today{background:linear-gradient(135deg,var(--pink),var(--orange));color:white;font-weight:900}
+    .floating-stat{
+      position:absolute;background:var(--surface);border:1px solid var(--border);
+      border-radius:16px;padding:12px 15px;box-shadow:var(--shadow-sm);z-index:3;
+      font-size:12px;font-weight:800
+    }
+    .floating-stat strong{display:block;font-size:20px;color:var(--primary)}
+    .fs1{left:7%;top:22%}.fs2{right:6%;bottom:21%}.fs3{left:12%;bottom:12%}
+
+    /* Ads */
+    .ad{
+      min-height:82px;border:1px dashed #c9cce0;border-radius:18px;
+      display:flex;align-items:center;justify-content:center;text-align:center;
+      color:var(--muted);font-size:12px;background:var(--surface);
+      margin:25px 0
+    }
+
+    /* Calculator */
+    .calculator-shell{display:grid;grid-template-columns:390px 1fr;gap:22px;align-items:start}
+    .card{
+      background:var(--surface);border:1px solid var(--border);
+      border-radius:var(--radius);box-shadow:var(--shadow-sm)
+    }
+    .input-card{padding:26px;position:sticky;top:98px}
+    .card-title{font-size:22px;font-weight:900;letter-spacing:-.03em}
+    .card-subtitle{font-size:13px;color:var(--muted);margin:5px 0 22px}
+    .field{margin-bottom:16px}
+    label{display:block;font-size:13px;font-weight:800;margin-bottom:7px}
+    input,select{
+      width:100%;height:48px;border:1px solid var(--border);border-radius:12px;
+      padding:0 13px;background:var(--surface);color:var(--text);outline:none;
+      transition:.2s
+    }
+    input:focus,select:focus{border-color:var(--primary);box-shadow:0 0 0 4px rgba(91,92,240,.10)}
+    .date-row{display:grid;grid-template-columns:1fr 1.4fr 1.25fr;gap:8px}
+    .time-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+    .input-hint{font-size:11px;color:var(--muted);margin-top:5px}
+    .checkbox{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--muted);cursor:pointer}
+    .checkbox input{width:17px;height:17px}
+    .actions{display:flex;gap:9px;flex-wrap:wrap}
+    .actions .btn{flex:1}
+    .error{display:none;margin:10px 0;padding:10px 12px;border-radius:11px;background:#fff0f0;color:#c62828;font-size:12px;font-weight:700}
+    [data-theme="dark"] .error{background:#34191d;color:#ff9aa2}
+    .error.show{display:block}
+
+    .results{padding:22px}
+    .result-main{
+      border-radius:21px;padding:26px;text-align:center;color:white;
+      background:linear-gradient(135deg,var(--primary),var(--primary2),var(--pink));
+      position:relative;overflow:hidden
+    }
+    .result-main:after{content:"";position:absolute;width:190px;height:190px;border-radius:50%;right:-80px;top:-80px;background:rgba(255,255,255,.12)}
+    .result-label{text-transform:uppercase;letter-spacing:.12em;font-size:11px;font-weight:800;opacity:.82}
+    .exact-age{font-size:clamp(30px,4vw,46px);font-weight:950;line-height:1.15;margin:8px 0}
+    .result-date{font-size:13px;opacity:.82}
+    .stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:11px;margin-top:12px}
+    .stat{
+      padding:17px;background:var(--surface2);border:1px solid var(--border);
+      border-radius:17px;min-width:0
+    }
+    .stat-icon{font-size:20px;margin-bottom:5px}
+    .stat-value{font-size:22px;font-weight:900;letter-spacing:-.04em;overflow-wrap:anywhere}
+    .stat-name{font-size:11px;color:var(--muted);font-weight:700}
+    .live-card{
+      margin-top:12px;padding:20px;border-radius:19px;
+      background:linear-gradient(135deg,rgba(6,182,212,.11),rgba(16,185,129,.10));
+      border:1px solid rgba(6,182,212,.17)
+    }
+    .live-head{display:flex;justify-content:space-between;gap:10px;align-items:center}
+    .live-title{font-weight:900}
+    .live-dot{font-size:11px;color:var(--green);font-weight:800}
+    .live-age{font-size:18px;font-weight:900;margin-top:8px}
+    .result-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:13px}
+    .result-actions .btn{font-size:12px;padding:10px 13px}
+
+    .empty{
+      min-height:300px;display:grid;place-items:center;text-align:center;
+      padding:30px;color:var(--muted)
+    }
+    .empty-icon{
+      width:72px;height:72px;border-radius:22px;display:grid;place-items:center;
+      background:linear-gradient(135deg,rgba(91,92,240,.13),rgba(236,72,153,.13));
+      color:var(--primary);margin:0 auto 14px
+    }
+    .empty strong{display:block;color:var(--text);font-size:18px;margin-bottom:5px}
+
+    /* Tool grids */
+    .tool-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+    .tool-card{padding:25px}
+    .tool-icon{
+      width:48px;height:48px;border-radius:15px;display:grid;place-items:center;
+      background:linear-gradient(135deg,rgba(91,92,240,.14),rgba(236,72,153,.14));
+      color:var(--primary);margin-bottom:14px
+    }
+    .tool-card h3{font-size:20px;margin-bottom:5px}
+    .tool-card>p{color:var(--muted);font-size:13px;margin-bottom:19px}
+    .tool-result{
+      margin-top:14px;padding:15px;border-radius:14px;background:var(--surface2);
+      border:1px solid var(--border);display:none
+    }
+    .tool-result.show{display:block}
+    .result-highlight{font-weight:900;color:var(--primary);font-size:18px}
+    .mini-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .milestones{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+    .milestone{padding:17px;border-radius:17px;background:var(--surface);border:1px solid var(--border);box-shadow:var(--shadow-sm)}
+    .milestone-age{font-size:23px;font-weight:950;color:var(--primary)}
+    .milestone small{display:block;color:var(--muted);font-size:11px}
+    .timeline{position:relative;padding-left:25px}
+    .timeline:before{content:"";position:absolute;left:7px;top:4px;bottom:4px;width:2px;background:linear-gradient(var(--primary),var(--pink))}
+    .timeline-item{position:relative;padding:0 0 18px}
+    .timeline-item:before{content:"";position:absolute;left:-22px;top:5px;width:10px;height:10px;border-radius:50%;background:var(--primary);box-shadow:0 0 0 4px rgba(91,92,240,.12)}
+    .timeline-item strong{font-size:14px}
+    .timeline-item p{font-size:12px;color:var(--muted)}
+
+    /* Features */
+    .feature-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+    .feature{
+      padding:20px;background:var(--surface);border:1px solid var(--border);border-radius:18px;
+      transition:.2s
+    }
+    .feature:hover{transform:translateY(-3px);box-shadow:var(--shadow-sm);border-color:rgba(91,92,240,.35)}
+    .feature svg{color:var(--primary);margin-bottom:11px}
+    .feature h3{font-size:15px;margin-bottom:4px}
+    .feature p{font-size:12px;color:var(--muted)}
+
+    /* Steps */
+    .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:17px}
+    .step{padding:25px;border-radius:22px;background:var(--surface);border:1px solid var(--border);position:relative}
+    .step-number{font-size:12px;font-weight:900;color:var(--primary);letter-spacing:.1em}
+    .step-icon{font-size:30px;margin:18px 0 12px}
+    .step h3{margin-bottom:6px}.step p{font-size:13px;color:var(--muted)}
+
+    /* Use cases */
+    .use-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .use-card{padding:24px;border-radius:20px;background:var(--surface);border:1px solid var(--border)}
+    .use-card h3{margin:10px 0 5px}.use-card p{color:var(--muted);font-size:13px}
+
+    /* FAQ */
+    .faq{max-width:850px;margin:auto}
+    .faq-item{border:1px solid var(--border);border-radius:15px;background:var(--surface);margin-bottom:10px;overflow:hidden}
+    .faq-question{
+      width:100%;background:none;border:0;color:var(--text);padding:18px;
+      display:flex;justify-content:space-between;align-items:center;text-align:left;font-weight:800
+    }
+    .faq-question span:last-child{font-size:20px;color:var(--primary);transition:.2s}
+    .faq-answer{max-height:0;overflow:hidden;transition:max-height .3s ease}
+    .faq-answer p{padding:0 18px 18px;color:var(--muted);font-size:13px}
+    .faq-item.open .faq-answer{max-height:300px}
+    .faq-item.open .faq-question span:last-child{transform:rotate(45deg)}
+
+    /* Content cards */
+    .content-card{padding:30px;max-width:900px;margin:auto}
+    .content-card h3{font-size:20px;margin:24px 0 7px}
+    .content-card p,.content-card li{color:var(--muted);font-size:14px}
+    .content-card ul{padding-left:20px}
+
+    /* Footer */
+    footer{background:#0c0e1a;color:#fff;padding:65px 0 25px;margin-top:40px}
+    .footer-grid{display:grid;grid-template-columns:1.5fr repeat(3,1fr);gap:40px}
+    .footer-brand p{color:#9da4bb;font-size:13px;max-width:310px;margin-top:14px}
+    footer h4{font-size:13px;margin-bottom:14px}
+    footer a{display:block;color:#9da4bb;font-size:13px;margin:8px 0;transition:.2s}
+    footer a:hover{color:#fff}
+    .footer-bottom{border-top:1px solid #25293a;margin-top:40px;padding-top:20px;color:#7f879e;font-size:12px;display:flex;justify-content:space-between;gap:15px}
+    .social-links{display:flex;gap:8px;margin-top:17px}
+    .social-link{width:38px;height:38px;border:1px solid #2a2f43;border-radius:11px;display:grid;place-items:center}
+
+    /* Floating */
+    .floating-social{position:fixed;right:18px;bottom:20px;z-index:900;display:flex;flex-direction:column;gap:10px}
+    .float-btn{
+      width:52px;height:52px;border-radius:50%;display:grid;place-items:center;color:white;
+      box-shadow:0 10px 28px rgba(0,0,0,.22);transition:.2s;position:relative
+    }
+    .float-btn:hover{transform:translateY(-3px) scale(1.04)}
+    .float-btn:after{
+      content:attr(data-tooltip);position:absolute;right:63px;white-space:nowrap;
+      background:#111;color:#fff;padding:6px 9px;border-radius:7px;font-size:11px;
+      opacity:0;pointer-events:none;transition:.2s
+    }
+    .float-btn:hover:after{opacity:1}
+    .wa{background:#25d366}.ig{background:linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045)}
+
+    /* Toast */
+    #toast{
+      position:fixed;left:50%;bottom:25px;transform:translate(-50%,30px);
+      background:#171927;color:#fff;padding:12px 17px;border-radius:12px;
+      font-size:13px;font-weight:800;box-shadow:0 12px 35px rgba(0,0,0,.25);
+      opacity:0;pointer-events:none;transition:.25s;z-index:2000;max-width:calc(100% - 30px);text-align:center
+    }
+    #toast.show{opacity:1;transform:translate(-50%,0)}
+
+    /* Modal */
+    .modal{
+      display:none;position:fixed;inset:0;background:rgba(8,10,20,.65);
+      backdrop-filter:blur(6px);z-index:1500;padding:20px;overflow:auto
+    }
+    .modal.show{display:grid;place-items:center}
+    .modal-box{background:var(--surface);border:1px solid var(--border);border-radius:25px;max-width:760px;width:100%;max-height:90vh;overflow:auto;box-shadow:var(--shadow)}
+    .modal-head{padding:20px 24px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center}
+    .modal-body{padding:24px}
+    .modal-close{width:38px;height:38px;border:0;border-radius:10px;background:var(--surface2);color:var(--text)}
+
+    /* Print */
+    .print-only{display:none}
+    @media print{
+      body{background:#fff!important;color:#000!important}
+      body>*:not(#printArea){display:none!important}
+      #printArea{display:block!important;padding:30px;font-family:Arial,sans-serif}
+      #printArea h1{font-size:28px}
+      #printArea p{margin:8px 0}
+    }
+
+    /* Responsive */
+    @media(max-width:1050px){
+      .nav-links{gap:13px}
+      .feature-grid{grid-template-columns:repeat(3,1fr)}
+      .milestones{grid-template-columns:repeat(3,1fr)}
+    }
+    @media(max-width:900px){
+      .nav-links,.nav-actions .btn{display:none}
+      .menu-btn{display:grid}
+      .nav-links.mobile-open{
+        display:flex;position:absolute;left:16px;right:16px;top:68px;
+        flex-direction:column;align-items:stretch;padding:15px;background:var(--surface);
+        border:1px solid var(--border);border-radius:17px;box-shadow:var(--shadow)
+      }
+      .nav-links.mobile-open a{padding:10px}
+      .hero-grid{grid-template-columns:1fr;gap:35px}
+      .hero-art{min-height:340px}
+      .calculator-shell{grid-template-columns:1fr}
+      .input-card{position:static}
+      .tool-grid{grid-template-columns:1fr}
+      .feature-grid{grid-template-columns:repeat(2,1fr)}
+      .steps{grid-template-columns:repeat(2,1fr)}
+      .use-grid{grid-template-columns:repeat(2,1fr)}
+      .footer-grid{grid-template-columns:repeat(2,1fr)}
+    }
+    @media(max-width:600px){
+      .container{width:min(var(--max),calc(100% - 22px))}
+      .section{padding:65px 0}
+      .hero{padding:58px 0 40px}
+      .hero h1{font-size:43px}
+      .hero p{font-size:16px}
+      .hero-art{min-height:300px}
+      .calendar{width:205px}
+      .floating-stat{transform:scale(.82)}
+      .fs1{left:0}.fs2{right:0}.fs3{left:0}
+      .stats-grid{grid-template-columns:repeat(2,1fr)}
+      .mini-grid,.date-row,.time-row{grid-template-columns:1fr}
+      .feature-grid,.steps,.use-grid{grid-template-columns:1fr}
+      .milestones{grid-template-columns:repeat(2,1fr)}
+      .footer-grid{grid-template-columns:1fr 1fr;gap:25px}
+      .footer-brand{grid-column:1/-1}
+      .footer-bottom{flex-direction:column}
+      .floating-social{right:12px;bottom:12px}
+      .float-btn{width:48px;height:48px}
+      .float-btn:after{display:none}
+    }
+    @media(max-width:380px){
+      .stats-grid{grid-template-columns:1fr}
+      .milestones{grid-template-columns:1fr}
+      .footer-grid{grid-template-columns:1fr}
+    }
+    @media(prefers-reduced-motion:reduce){
+      *,*:before,*:after{scroll-behavior:auto!important;transition:none!important;animation:none!important}
+    }
+  </style>
 </head>
 
 <body>
+  <!-- SVG ICON DEFINITIONS -->
+  <svg width="0" height="0" style="position:absolute">
+    <defs>
+      <linearGradient id="brandGradient" x1="0" x2="1">
+        <stop offset="0%" stop-color="#5b5cf0"/>
+        <stop offset="100%" stop-color="#b044ff"/>
+      </linearGradient>
+    </defs>
+  </svg>
 
-<header>
-  <div class="container nav" id="mainNav">
-    <a class="brand" href="#home" aria-label="MP QR Tool Home">
-      <svg viewBox="0 0 64 64" aria-hidden="true">
-        <defs>
-          <linearGradient id="lg" x1="0" x2="1" y1="0" y2="1">
-            <stop stop-color="#4f46e5"/><stop offset="1" stop-color="#7c3aed"/>
-          </linearGradient>
-        </defs>
-        <rect width="64" height="64" rx="16" fill="url(#lg)"/>
-        <path fill="#fff" d="M9 9h18v18H9zm5 5v8h8v-8zm23-5h18v18H37zm5 5v8h8v-8zM9 37h18v18H9zm5 5v8h8v-8zm23-5h6v6h-6zm12 0h6v12h-6zm-12 12h6v6h-6zm12 0h6v6h-6zM30 30h7v7h-7zm10 10h7v7h-7z"/>
-      </svg>
-      <span class="brand-name">MP QR Tool</span>
-    </a>
-
-    <nav class="nav-links" aria-label="Main navigation">
-      <a href="#home">Home</a>
-      <a href="#generator">QR Generator</a>
-      <a href="#features">Features</a>
-      <a href="#how">How It Works</a>
-      <a href="#types">QR Types</a>
-      <a href="#faq">FAQ</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-    </nav>
-
-    <div class="nav-actions">
-      <button class="theme-btn" id="themeBtn" aria-label="Toggle dark mode" title="Toggle dark mode">
-        <svg class="icon" id="themeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M21 12.8A8.5 8.5 0 1 1 11.2 3 6.7 6.7 0 0 0 21 12.8Z"/>
+  <header>
+    <div class="container nav">
+      <a href="#home" class="brand" aria-label="MP Age Calculator Home">
+        <svg class="logo" viewBox="0 0 64 64" aria-hidden="true">
+          <rect width="64" height="64" rx="17" fill="url(#brandGradient)"/>
+          <path d="M17 27h30M22 14v10M42 14v10M20 20h24a5 5 0 0 1 5 5v21a5 5 0 0 1-5 5H20a5 5 0 0 1-5-5V25a5 5 0 0 1 5-5Z" fill="none" stroke="#fff" stroke-width="3.6" stroke-linecap="round"/>
+          <path d="M22 33h6v6h-6zM36 33h6v6h-6zM22 43h6v4h-6z" fill="#fff"/>
+          <text x="39" y="48" text-anchor="middle" font-size="11" font-weight="900" fill="#fff" font-family="Arial">MP</text>
         </svg>
-      </button>
-      <a href="#generator" class="btn btn-primary">Create QR Code</a>
-      <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">
-        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M4 6h16M4 12h16M4 18h16"/>
-        </svg>
-      </button>
-    </div>
-  </div>
-</header>
+        <span class="brand-text">MP Age Calculator<small>mpage.online</small></span>
+      </a>
 
-<main id="home">
+      <nav class="nav-links" id="navLinks">
+        <a href="#home">Home</a>
+        <a href="#calculator">Age Calculator</a>
+        <a href="#features">Features</a>
+        <a href="#tools">Calculators</a>
+        <a href="#how">How It Works</a>
+        <a href="#faq">FAQ</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
 
-<section class="hero">
-  <div class="container hero-grid">
-    <div>
-      <div class="badges">
-        <span class="badge">Free to Use</span>
-        <span class="badge">No Registration</span>
-        <span class="badge">Browser-Based</span>
-        <span class="badge">Instant Generation</span>
-      </div>
-      <h1>Create QR Codes <span class="gradient-text">for Anything</span></h1>
-      <p>Generate free, customizable QR codes for websites, WhatsApp, Wi-Fi, UPI, contacts, email, phone numbers, social media and more.</p>
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="#generator">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v18M3 12h18"/></svg>
-          Create QR Code
-        </a>
-        <a class="btn btn-secondary" href="#types">Explore QR Types</a>
+      <div class="nav-actions">
+        <button class="icon-btn" id="themeBtn" aria-label="Toggle dark mode" title="Toggle dark mode">☾</button>
+        <a class="btn btn-primary" href="#calculator">Calculate Age</a>
+        <button class="menu-btn" id="menuBtn" aria-label="Open navigation menu" aria-expanded="false">☰</button>
       </div>
     </div>
+  </header>
 
-    <div class="hero-visual">
-      <div class="orb one"></div><div class="orb two"></div>
-      <div class="qr-demo-card">
-        <div class="qr-demo-head"><strong>Beautiful QR. Instant.</strong><span class="demo-dot"></span></div>
-        <div class="demo-qr">
-          <svg viewBox="0 0 210 210" role="img" aria-label="Decorative QR code illustration">
-            <rect width="210" height="210" fill="#fff"/>
-            <g fill="#172033">
-              <path d="M8 8h58v58H8zM17 17h40v40H17zM27 27h20v20H27z"/>
-              <path d="M144 8h58v58h-58zM153 17h40v40h-40zM163 27h20v20h-20z"/>
-              <path d="M8 144h58v58H8zM17 153h40v40H17zM27 163h20v20H27z"/>
-              <path d="M80 8h12v12H80zM104 8h12v25h-12zM80 32h25v12H80zM116 44h12v20h-12z"/>
-              <path d="M78 76h14v14H78zM100 76h14v14h-14zM122 76h12v12h-12zM144 78h20v12h-20zM176 76h20v14h-20z"/>
-              <path d="M76 100h12v25H76zM94 98h20v12H94zM118 98h14v28h-14zM142 98h12v12h-12zM166 98h28v12h-28z"/>
-              <path d="M82 130h20v12H82zM108 132h12v20h-12zM128 130h25v12h-25zM160 128h14v26h-14zM184 130h12v12h-12z"/>
-              <path d="M78 156h14v14H78zM100 158h30v12h-30zM138 154h12v20h-12zM180 154h16v12h-16z"/>
-              <path d="M80 182h25v12H80zM116 178h12v18h-12zM136 182h25v12h-25zM172 176h24v20h-24z"/>
-            </g>
-          </svg>
-        </div>
-        <div class="demo-caption">Scan • Share • Print</div>
-        <div class="demo-sub">Create your own QR code in seconds</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="container"><div class="ad ad-wide">Advertisement – Demo</div></div>
-
-<section class="section" id="generator">
-<div class="container">
-  <div class="section-head">
-    <h2>Your <span class="gradient-text">QR Generator</span></h2>
-    <p>Choose a QR type, enter your information and customize the result. Everything essential happens directly in your browser.</p>
-  </div>
-
-  <div class="generator-wrap">
-    <div class="generator-top">
-      <div>
-        <h2>MP QR Code Maker</h2>
-        <p>Create, customize, download, share and print your QR code.</p>
-      </div>
-      <button class="btn btn-secondary" id="resetTopBtn">Reset</button>
-    </div>
-
-    <div class="generator-body">
-      <aside class="type-panel">
-        <div class="search-box">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
-          <input id="typeSearch" type="search" placeholder="Search QR Types" aria-label="Search QR types">
-        </div>
-        <div class="type-list" id="typeList"></div>
-      </aside>
-
-      <section class="form-panel">
-        <div class="form-title">
-          <div>
-            <h3 id="formTitle">Website QR</h3>
-            <p id="formDescription">Turn a website link into a scannable QR code.</p>
+  <main>
+    <!-- HERO -->
+    <section class="hero section" id="home">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">✦ Free Date Utility</span>
+          <h1>Calculate Your <span class="gradient-text">Exact Age</span> in Seconds</h1>
+          <p>Enter your date of birth and discover your age in years, months, weeks, days, hours, minutes and seconds — plus birthdays, countdowns and useful date statistics.</p>
+          <div class="hero-buttons">
+            <a class="btn btn-primary" href="#calculator">Calculate My Age →</a>
+            <a class="btn btn-soft" href="#features">Explore Features</a>
+          </div>
+          <div class="badges">
+            <span class="badge"><i></i> Free Online Tool</span>
+            <span class="badge"><i></i> Instant Results</span>
+            <span class="badge"><i></i> No Registration</span>
+            <span class="badge"><i></i> Browser Based</span>
+            <span class="badge"><i></i> Mobile Friendly</span>
           </div>
         </div>
-        <form id="qrForm" novalidate></form>
 
-        <div class="customize">
-          <h4>Customize QR Code</h4>
-
-          <div class="field">
-            <label for="qrSize">QR Size</label>
-            <select id="qrSize">
-              <option value="220">Small – 220 px</option>
-              <option value="320" selected>Medium – 320 px</option>
-              <option value="450">Large – 450 px</option>
-              <option value="600">Extra Large – 600 px</option>
-            </select>
-          </div>
-
-          <div class="color-row">
-            <div class="field">
-              <label>Foreground</label>
-              <div class="color-control">
-                <input type="color" id="fgColor" value="#172033" aria-label="QR foreground color">
-                <span id="fgHex">#172033</span>
-              </div>
+        <div class="hero-art" aria-label="Calendar illustration">
+          <div class="floating-stat fs1"><strong>26+</strong> Years</div>
+          <div class="floating-stat fs2"><strong>365</strong> Days/Year</div>
+          <div class="floating-stat fs3"><strong>24/7</strong> Available</div>
+          <div class="calendar">
+            <div class="calendar-top">
+              <strong id="heroMonth">September</strong>
+              <span id="heroYear">2026</span>
             </div>
-            <div class="field">
-              <label>Background</label>
-              <div class="color-control">
-                <input type="color" id="bgColor" value="#ffffff" aria-label="QR background color">
-                <span id="bgHex">#FFFFFF</span>
+            <div class="calendar-body">
+              <div class="cal-grid">
+                <b>M</b><b>T</b><b>W</b><b>T</b><b>F</b><b>S</b><b>S</b>
+                <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span class="today">6</span><span>7</span>
+                <span>8</span><span>9</span><span>10</span><span>11</span><span>12</span><span>13</span><span>14</span>
+                <span>15</span><span>16</span><span>17</span><span>18</span><span>19</span><span>20</span><span>21</span>
+                <span>22</span><span>23</span><span>24</span><span>25</span><span>26</span><span>27</span><span>28</span>
               </div>
             </div>
           </div>
-
-          <div class="field">
-            <label for="errorCorrection">Error Correction</label>
-            <select id="errorCorrection">
-              <option value="L">Low – smaller data overhead</option>
-              <option value="M" selected>Medium – balanced</option>
-              <option value="Q">Quartile – stronger recovery</option>
-              <option value="H">High – strongest recovery</option>
-            </select>
-            <div class="small muted">Higher correction can improve resilience but may reduce available data capacity.</div>
-          </div>
-
-          <div class="field">
-            <label for="marginRange">Quiet Zone / Margin</label>
-            <div class="range-row">
-              <input type="range" id="marginRange" min="2" max="12" value="4">
-              <span class="range-val" id="marginVal">4</span>
-            </div>
-          </div>
-
-          <div class="field">
-            <label for="qrStyle">QR Style</label>
-            <div class="style-options">
-              <label class="style-option"><input type="radio" name="qrStyle" value="square" checked><span>Square</span></label>
-              <label class="style-option"><input type="radio" name="qrStyle" value="rounded"><span>Rounded</span></label>
-              <label class="style-option"><input type="radio" name="qrStyle" value="dots"><span>Dots</span></label>
-            </div>
-            <div class="small muted" style="margin-top:6px">Decorative styles are kept conservative for scan reliability.</div>
-          </div>
-
-          <div class="field">
-            <label for="logoUpload">Center Logo</label>
-            <input id="logoUpload" type="file" accept="image/png,image/jpeg,image/webp,image/svg+xml">
-            <div class="small muted">Processed locally in your browser. A small logo is recommended for readability.</div>
-            <div id="logoPreview" class="logo-preview hidden">
-              <img id="logoThumb" class="logo-thumb" alt="Uploaded logo preview">
-              <button type="button" class="btn btn-secondary" id="removeLogo">Remove Logo</button>
-            </div>
-          </div>
-
-          <div class="notice">Always scan-test your QR code before publishing or printing it.</div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <aside class="preview-panel">
-        <div class="preview-head">
-          <strong>Live Preview</strong>
-          <span class="preview-size" id="previewSize">320 × 320 px</span>
+    <div class="container"><div class="ad">Advertisement – Demo</div></div>
+
+    <!-- CALCULATOR -->
+    <section class="section" id="calculator">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Age Calculator</span>
+          <h2>Your age, <span class="gradient-text">properly calculated</span></h2>
+          <p>Use calendar-aware calculations for your exact age, then explore your birthday and lifetime statistics.</p>
         </div>
 
-        <div class="preview-box" id="previewBox">
-          <div class="empty-preview" id="emptyPreview">
-            <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="4">
-              <rect x="9" y="9" width="30" height="30" rx="2"/><rect x="61" y="9" width="30" height="30" rx="2"/>
-              <rect x="9" y="61" width="30" height="30" rx="2"/>
-              <path d="M58 58h12v12H58zm20 0h12v12H78zm-20 20h12v12H58zm20 0h12v12H78z"/>
+        <div class="calculator-shell">
+          <div class="card input-card">
+            <div class="card-title">Enter Your Details</div>
+            <div class="card-subtitle">Your information is calculated locally in your browser.</div>
+
+            <div class="field">
+              <label for="dob">Date of Birth</label>
+              <input type="date" id="dob" aria-describedby="dobHint">
+              <div class="input-hint" id="dobHint">Choose your birth date.</div>
+            </div>
+
+            <label class="checkbox">
+              <input type="checkbox" id="useBirthTime">
+              Include time of birth for a more precise live counter
+            </label>
+
+            <div id="birthTimeWrap" style="display:none;margin-top:14px">
+              <div class="field">
+                <label>Time of Birth</label>
+                <div class="time-row">
+                  <input type="number" id="birthHour" min="0" max="23" placeholder="Hour" aria-label="Birth hour">
+                  <input type="number" id="birthMinute" min="0" max="59" placeholder="Minute" aria-label="Birth minute">
+                  <select id="birthPeriod" aria-label="Time format">
+                    <option value="24">24-hour</option>
+                    <option value="12">12-hour</option>
+                  </select>
+                </div>
+                <div class="input-hint">For 12-hour input, enter 1–12 for the hour.</div>
+              </div>
+            </div>
+
+            <div id="dobError" class="error" role="alert"></div>
+
+            <div class="actions">
+              <button class="btn btn-primary" id="calculateBtn">Calculate Age</button>
+              <button class="btn btn-soft" id="resetBtn">Reset</button>
+            </div>
+          </div>
+
+          <div class="card results">
+            <div id="emptyResult" class="empty">
+              <div>
+                <div class="empty-icon">
+                  <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+                    <rect x="3" y="4" width="18" height="17" rx="3"/>
+                    <path d="M8 2v4M16 2v4M3 9h18M8 13h3M8 17h5"/>
+                  </svg>
+                </div>
+                <strong>Your Age Will Appear Here</strong>
+                <span>Choose your date of birth and click Calculate Age to get started.</span>
+              </div>
+            </div>
+
+            <div id="resultContent" style="display:none">
+              <div class="result-main">
+                <div class="result-label">Your Exact Age</div>
+                <div class="exact-age" id="exactAge">—</div>
+                <div class="result-date" id="resultBirthDate">—</div>
+              </div>
+
+              <div class="stats-grid">
+                <div class="stat"><div class="stat-icon">🎂</div><div class="stat-value" id="yearsStat">—</div><div class="stat-name">Completed Years</div></div>
+                <div class="stat"><div class="stat-icon">🗓️</div><div class="stat-value" id="monthsStat">—</div><div class="stat-name">Completed Months</div></div>
+                <div class="stat"><div class="stat-icon">📅</div><div class="stat-value" id="weeksStat">—</div><div class="stat-name">Approx. Weeks</div></div>
+                <div class="stat"><div class="stat-icon">☀️</div><div class="stat-value" id="daysStat">—</div><div class="stat-name">Total Days</div></div>
+                <div class="stat"><div class="stat-icon">⏱️</div><div class="stat-value" id="hoursStat">—</div><div class="stat-name">Total Hours</div></div>
+                <div class="stat"><div class="stat-icon">⌛</div><div class="stat-value" id="minutesStat">—</div><div class="stat-name">Total Minutes</div></div>
+              </div>
+
+              <div class="live-card">
+                <div class="live-head">
+                  <div class="live-title">Your Age Right Now</div>
+                  <div class="live-dot">● LIVE</div>
+                </div>
+                <div class="live-age" id="liveAge">—</div>
+                <div class="input-hint" id="liveHint">Based on your local browser time.</div>
+              </div>
+
+              <div class="result-actions">
+                <button class="btn btn-soft" id="copyBtn">⧉ Copy Results</button>
+                <button class="btn btn-soft" id="shareBtn">↗ Share</button>
+                <button class="btn btn-soft" id="printBtn">🖨 Print</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BIRTHDAY -->
+    <section class="section" id="birthday" style="background:var(--surface2)">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Birthday Calculator</span>
+          <h2>Never miss your <span class="gradient-text">next birthday</span></h2>
+          <p>Find your next birthday, age you'll turn and a live countdown.</p>
+        </div>
+
+        <div class="tool-grid">
+          <div class="card tool-card">
+            <div class="tool-icon">🎂</div>
+            <h3>Birthday Details</h3>
+            <p>Calculate your upcoming birthday information.</p>
+            <div class="mini-grid">
+              <div class="field"><label for="birthdayDob">Date of Birth</label><input type="date" id="birthdayDob"></div>
+              <div class="field"><label for="febRule">Feb 29 Rule</label><select id="febRule"><option value="feb28">Use February 28</option><option value="mar1">Use March 1</option></select></div>
+            </div>
+            <button class="btn btn-primary" id="birthdayBtn">Calculate Birthday</button>
+            <div class="tool-result" id="birthdayResult"></div>
+          </div>
+
+          <div class="card tool-card">
+            <div class="tool-icon">⏳</div>
+            <h3>Next Birthday Countdown</h3>
+            <p>The countdown updates automatically once your birthday is calculated.</p>
+            <div id="countdownEmpty" class="empty" style="min-height:130px;padding:15px">
+              <div>Enter your birthday to start the countdown.</div>
+            </div>
+            <div id="countdownResult" style="display:none">
+              <div class="stats-grid" style="grid-template-columns:repeat(4,1fr)">
+                <div class="stat"><div class="stat-value" id="cdDays">0</div><div class="stat-name">Days</div></div>
+                <div class="stat"><div class="stat-value" id="cdHours">0</div><div class="stat-name">Hours</div></div>
+                <div class="stat"><div class="stat-value" id="cdMinutes">0</div><div class="stat-name">Minutes</div></div>
+                <div class="stat"><div class="stat-value" id="cdSeconds">0</div><div class="stat-name">Seconds</div></div>
+              </div>
+              <p id="birthdayMessage" style="margin-top:14px;font-weight:800;color:var(--primary)"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DATE TOOLS -->
+    <section class="section" id="tools">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">More Calculators</span>
+          <h2>More useful <span class="gradient-text">date tools</span></h2>
+          <p>Use MP Age Calculator for birthdays, date differences, comparisons and everyday date calculations.</p>
+        </div>
+
+        <div class="tool-grid">
+          <!-- Age on Date -->
+          <div class="card tool-card">
+            <div class="tool-icon">📍</div>
+            <h3>Age on Any Date</h3>
+            <p>Find out exactly how old someone was or will be on a specific date.</p>
+            <div class="mini-grid">
+              <div class="field"><label for="specificDob">Date of Birth</label><input type="date" id="specificDob"></div>
+              <div class="field"><label for="targetDate">Target Date</label><input type="date" id="targetDate"></div>
+            </div>
+            <div id="specificError" class="error"></div>
+            <button class="btn btn-primary" id="specificBtn">Calculate Age</button>
+            <div class="tool-result" id="specificResult"></div>
+          </div>
+
+          <!-- Date Difference -->
+          <div class="card tool-card">
+            <div class="tool-icon">↔️</div>
+            <h3>Date Difference</h3>
+            <p>Calculate calendar difference and duration between two dates.</p>
+            <div class="mini-grid">
+              <div class="field"><label for="startDate">Start Date</label><input type="date" id="startDate"></div>
+              <div class="field"><label for="endDate">End Date</label><input type="date" id="endDate"></div>
+            </div>
+            <div class="actions">
+              <button class="btn btn-primary" id="differenceBtn">Calculate Difference</button>
+              <button class="btn btn-soft" id="swapDatesBtn">⇄ Swap</button>
+            </div>
+            <div class="tool-result" id="differenceResult"></div>
+          </div>
+
+          <!-- Age Comparison -->
+          <div class="card tool-card">
+            <div class="tool-icon">👥</div>
+            <h3>Age Comparison</h3>
+            <p>Compare two birth dates and find the exact difference.</p>
+            <div class="mini-grid">
+              <div class="field"><label for="personA">Person A DOB</label><input type="date" id="personA"></div>
+              <div class="field"><label for="personB">Person B DOB</label><input type="date" id="personB"></div>
+            </div>
+            <button class="btn btn-primary" id="compareBtn">Compare Ages</button>
+            <div class="tool-result" id="compareResult"></div>
+          </div>
+
+          <!-- Add/Subtract -->
+          <div class="card tool-card">
+            <div class="tool-icon">➕</div>
+            <h3>Add or Subtract Time</h3>
+            <p>Move a date forward or backward by years, months and days.</p>
+            <div class="field"><label for="baseDate">Starting Date</label><input type="date" id="baseDate"></div>
+            <div class="mini-grid">
+              <input type="number" id="addYears" placeholder="Years" aria-label="Years to add">
+              <input type="number" id="addMonths" placeholder="Months" aria-label="Months to add">
+              <input type="number" id="addDays" placeholder="Days" aria-label="Days to add">
+              <select id="addDirection" aria-label="Add or subtract"><option value="add">Add</option><option value="subtract">Subtract</option></select>
+            </div>
+            <button class="btn btn-primary" id="addTimeBtn" style="margin-top:12px">Calculate Date</button>
+            <div class="tool-result" id="addTimeResult"></div>
+          </div>
+
+          <!-- Dog -->
+          <div class="card tool-card">
+            <div class="tool-icon">🐕</div>
+            <h3>Dog Age Calculator</h3>
+            <p>An approximate human-equivalent age. Aging varies by breed and size.</p>
+            <div class="mini-grid">
+              <input type="number" id="dogAge" min="0" max="50" placeholder="Dog age" aria-label="Dog age">
+              <select id="dogSize" aria-label="Dog size">
+                <option value="small">Small</option>
+                <option value="medium" selected>Medium</option>
+                <option value="large">Large</option>
+              </select>
+            </div>
+            <button class="btn btn-primary" id="dogBtn" style="margin-top:12px">Estimate Human Age</button>
+            <div class="tool-result" id="dogResult"></div>
+          </div>
+
+          <!-- Cat -->
+          <div class="card tool-card">
+            <div class="tool-icon">🐈</div>
+            <h3>Cat Age Calculator</h3>
+            <p>An approximate human-equivalent age for general reference.</p>
+            <input type="number" id="catAge" min="0" max="40" placeholder="Cat age in years" aria-label="Cat age">
+            <button class="btn btn-primary" id="catBtn" style="margin-top:12px">Estimate Human Age</button>
+            <div class="tool-result" id="catResult"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="container"><div class="ad">Advertisement – Demo</div></div>
+
+    <!-- STATISTICS / MILESTONES -->
+    <section class="section" id="statistics" style="background:var(--surface2)">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Your Timeline</span>
+          <h2>Explore your <span class="gradient-text">life statistics</span></h2>
+          <p>Calculate additional information from the date of birth entered above.</p>
+        </div>
+
+        <div class="card tool-card" style="margin-bottom:20px">
+          <h3>Lifetime Statistics</h3>
+          <p>These duration-based values are derived from elapsed days and are marked approximate where appropriate.</p>
+          <div class="stats-grid" id="lifeStats">
+            <div class="stat"><div class="stat-icon">🎂</div><div class="stat-value" id="lifeYears">—</div><div class="stat-name">Years</div></div>
+            <div class="stat"><div class="stat-icon">🗓</div><div class="stat-value" id="lifeMonths">—</div><div class="stat-name">Approx. Months</div></div>
+            <div class="stat"><div class="stat-icon">📅</div><div class="stat-value" id="lifeWeeks">—</div><div class="stat-name">Weeks</div></div>
+            <div class="stat"><div class="stat-icon">☀</div><div class="stat-value" id="lifeDays">—</div><div class="stat-name">Days</div></div>
+            <div class="stat"><div class="stat-icon">⏰</div><div class="stat-value" id="lifeHours">—</div><div class="stat-name">Approx. Hours</div></div>
+            <div class="stat"><div class="stat-icon">⌚</div><div class="stat-value" id="lifeMinutes">—</div><div class="stat-name">Approx. Minutes</div></div>
+          </div>
+        </div>
+
+        <div class="card tool-card">
+          <h3>Age Milestones</h3>
+          <p>Important birthdays calculated from your birth date.</p>
+          <div class="milestones" id="milestones">
+            <div class="empty" style="grid-column:1/-1;min-height:120px">Calculate your age first to see your milestones.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BIRTH INFORMATION -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Birth Information</span>
+          <h2>More about your <span class="gradient-text">birth date</span></h2>
+          <p>Simple calendar and zodiac information based on your selected date.</p>
+        </div>
+
+        <div class="tool-grid">
+          <div class="card tool-card">
+            <div class="tool-icon">✨</div>
+            <h3>Birth Date Information</h3>
+            <p>General calendar information from your date of birth.</p>
+            <div id="birthInfo" class="tool-result show">
+              Enter your date of birth in the main calculator to see this information.
+            </div>
+          </div>
+
+          <div class="card tool-card">
+            <div class="tool-icon">♈</div>
+            <h3>Western Zodiac Sign</h3>
+            <p>For entertainment/general information only. Zodiac signs are not scientific predictions.</p>
+            <div id="zodiacInfo" class="tool-result show">
+              Your zodiac sign will appear after calculation.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="section" id="features" style="background:var(--surface2)">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Why Use MP Age Calculator</span>
+          <h2>A complete <span class="gradient-text">age toolkit</span></h2>
+          <p>More than a simple year counter — built for everyday date and birthday calculations.</p>
+        </div>
+
+        <div class="feature-grid">
+          <div class="feature"><svg width="25" height="25" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12.5" cy="12.5" r="9"/><path d="M12.5 7v6l4 2"/></svg><h3>Exact Age</h3><p>Calendar-aware years, months and days.</p></div>
+          <div class="feature"><svg width="25" height="25" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21a9 9 0 1 0-9-9"/><path d="M3 12h5V7"/></svg><h3>Live Age Counter</h3><p>Updates your age every second.</p></div>
+          <div class="feature"><svg width="25" height="25" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2v4M18 2v4M3 9h18"/><rect x="3" y="4" width="18" height="18" rx="3"/></svg><h3>Birthday Countdown</h3><p>See exactly how long until your birthday.</p></div>
+          <div class="feature"><svg width="25" height="25" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 4h14v16H5z"/><path d="M8 8h8M8 12h8M8 16h5"/></svg><h3>Age on Any Date</h3><p>Check age for past or future dates.</p></div>
+          <div class="feature"><svg width="25" height="25" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg><h3>Date Difference</h3><p>Compare two dates in multiple units.</p></div>
+          <div class="feature"><svg width="25" height="25" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="9" r="3"/><circle cx="17" cy="15" r="3"/><path d="M11.5 11l3 2"/></svg><h3>Age Comparison</h3><p>Find the difference between two ages.</p></div>
+          <div class="feature"><svg width="25" height="25" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v18M3 12h18"/></svg><h3>Milestones</h3><p>Explore upcoming milestone birthdays.</p></div>
+          <div class="feature"><svg width="25" height="25" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12a8 8 0 0 1 14-5l2 2"/><path d="M20 12a8 8 0 0 1-14 5l-2-2"/></svg><h3>Browser Based</h3><p>Calculations happen locally.</p></div>
+          <div class="feature"><svg width="25" height="25" fill="none" stroke="currentColor" stroke-width="2"><rect x="6" y="3" width="12" height="18" rx="2"/><path d="M9 6h6"/></svg><h3>Mobile Friendly</h3><p>Designed for phones and tablets.</p></div>
+          <div class="feature"><svg width="25" height="25" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7l8-4Z"/><path d="m9 12 2 2 4-5"/></svg><h3>Privacy Friendly</h3><p>No account required for calculations.</p></div>
+          <div class="feature"><svg width="25" height="25" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12a8 8 0 1 0 16 0"/><path d="M12 4v8l5 3"/></svg><h3>Time Statistics</h3><p>Days, weeks, hours and minutes.</p></div>
+          <div class="feature"><svg width="25" height="25" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 12l3 3 7-7"/><circle cx="12" cy="12" r="9"/></svg><h3>Free to Use</h3><p>Simple tools without registration.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW -->
+    <section class="section" id="how">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Simple Process</span>
+          <h2>How it <span class="gradient-text">works</span></h2>
+          <p>Four simple steps to discover your complete age information.</p>
+        </div>
+        <div class="steps">
+          <div class="step"><div class="step-number">STEP 01</div><div class="step-icon">📅</div><h3>Enter your DOB</h3><p>Select your date of birth using the date picker.</p></div>
+          <div class="step"><div class="step-number">STEP 02</div><div class="step-icon">⏰</div><h3>Add birth time</h3><p>Optional — add your birth time for a more precise live counter.</p></div>
+          <div class="step"><div class="step-number">STEP 03</div><div class="step-icon">⚡</div><h3>Calculate</h3><p>Click Calculate Age and let your browser perform the calculation.</p></div>
+          <div class="step"><div class="step-number">STEP 04</div><div class="step-icon">🎉</div><h3>Explore</h3><p>See your age, birthday countdown, milestones and date statistics.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- USE CASES -->
+    <section class="section" style="background:var(--surface2)">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Built For Everyday Use</span>
+          <h2>Useful for <span class="gradient-text">everyone</span></h2>
+        </div>
+        <div class="use-grid">
+          <div class="use-card"><div class="tool-icon">🎓</div><h3>Students</h3><p>Quickly check age for forms, applications and personal records.</p></div>
+          <div class="use-card"><div class="tool-icon">👨‍👩‍👧</div><h3>Parents</h3><p>Calculate children's exact ages and upcoming birthdays.</p></div>
+          <div class="use-card"><div class="tool-icon">🎂</div><h3>Birthday Planning</h3><p>Find the next birthday and create a simple countdown.</p></div>
+          <div class="use-card"><div class="tool-icon">📋</div><h3>Official Forms</h3><p>Check age on a particular date before completing an application.</p></div>
+          <div class="use-card"><div class="tool-icon">⏱️</div><h3>Personal Use</h3><p>Explore how many days, weeks and hours have elapsed.</p></div>
+          <div class="use-card"><div class="tool-icon">🗓️</div><h3>Date Calculations</h3><p>Compare dates and add or subtract calendar time.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="container"><div class="ad">Advertisement – Demo</div></div>
+
+    <!-- EXPLANATION -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Learn</span>
+          <h2>How age is <span class="gradient-text">calculated</span></h2>
+        </div>
+        <div class="card content-card">
+          <p>MP Age Calculator uses calendar-aware arithmetic for the primary age result rather than simply dividing a number of days by 365.</p>
+          <h3>1. Start with the date of birth</h3>
+          <p>Your selected birth date becomes the starting point for the calculation.</p>
+          <h3>2. Determine the target date</h3>
+          <p>The current local date is used for the main calculator, while the Age on Any Date tool uses the date you choose.</p>
+          <h3>3. Calculate calendar years, months and days</h3>
+          <p>The calculator accounts for different month lengths and leap years. This is why an exact calendar age can differ from a simple day conversion.</p>
+          <h3>Why isn't one month always 30 days?</h3>
+          <p>Calendar months contain different numbers of days — typically 28, 29, 30 or 31. Therefore, a calendar age such as 20 years, 4 months and 12 days should not be treated as a fixed number of days using a single monthly conversion.</p>
+          <h3>Duration statistics</h3>
+          <p>Total days are measured using elapsed calendar-day boundaries. Hours, minutes and seconds are duration-based conversions and can vary when a time of birth is not supplied.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq" style="background:var(--surface2)">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">FAQ</span>
+          <h2>Frequently asked <span class="gradient-text">questions</span></h2>
+        </div>
+        <div class="faq">
+          <div class="faq-item"><button class="faq-question"><span>What is an age calculator?</span><span>+</span></button><div class="faq-answer"><p>An age calculator determines the elapsed calendar age between a date of birth and a selected current or target date.</p></div></div>
+          <div class="faq-item"><button class="faq-question"><span>How is exact age calculated?</span><span>+</span></button><div class="faq-answer"><p>The primary result uses calendar-aware years, months and days. It does not assume every year has exactly 365 days or every month has exactly 30 days.</p></div></div>
+          <div class="faq-item"><button class="faq-question"><span>Can I calculate my age in days?</span><span>+</span></button><div class="faq-answer"><p>Yes. The results include total elapsed days along with weeks, hours and minutes derived from the duration.</p></div></div>
+          <div class="faq-item"><button class="faq-question"><span>Can I calculate my age in months and weeks?</span><span>+</span></button><div class="faq-answer"><p>Yes. Completed calendar months are shown separately from approximate week conversions so the distinction remains clear.</p></div></div>
+          <div class="faq-item"><button class="faq-question"><span>Can I calculate age on a specific date?</span><span>+</span></button><div class="faq-answer"><p>Yes. Use the Age on Any Date tool and enter your birth date and target date.</p></div></div>
+          <div class="faq-item"><button class="faq-question"><span>Can I enter my birth time?</span><span>+</span></button><div class="faq-answer"><p>Yes. Birth time is optional and can make the live age counter more precise. Without it, the calculator is primarily date-based.</p></div></div>
+          <div class="faq-item"><button class="faq-question"><span>What happens with a February 29 birthday?</span><span>+</span></button><div class="faq-answer"><p>You can choose whether non-leap-year birthday calculations should use February 28 or March 1.</p></div></div>
+          <div class="faq-item"><button class="faq-question"><span>Does MP Age Calculator store my date of birth?</span><span>+</span></button><div class="faq-answer"><p>The core calculator performs calculations locally in your browser and does not need to send your date of birth to a server. This page does not require an account.</p></div></div>
+          <div class="faq-item"><button class="faq-question"><span>Why can calendar months not simply be converted using 30 days?</span><span>+</span></button><div class="faq-answer"><p>Months have different lengths. Calendar age therefore needs calendar arithmetic rather than a fixed 30-day-per-month assumption.</p></div></div>
+          <div class="faq-item"><button class="faq-question"><span>How accurate is the live age counter?</span><span>+</span></button><div class="faq-answer"><p>When birth time is supplied, the live counter uses the browser's local clock for elapsed time. Without a birth time, seconds-level precision cannot represent the actual time of birth.</p></div></div>
+          <div class="faq-item"><button class="faq-question"><span>Is this official proof of age?</span><span>+</span></button><div class="faq-answer"><p>No. The calculator is an informational utility and should not be used as legal proof of age. Use appropriate official documents for legal or government matters.</p></div></div>
+          <div class="faq-item"><button class="faq-question"><span>Is MP Age Calculator free?</span><span>+</span></button><div class="faq-answer"><p>Yes. The calculator is designed as a free browser-based utility and does not require registration.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRIVACY -->
+    <section class="section" id="privacy">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Privacy</span>
+          <h2>Designed with <span class="gradient-text">privacy in mind</span></h2>
+        </div>
+        <div class="card content-card">
+          <h3>Browser-based calculations</h3>
+          <p>The core age and date calculations are performed directly by JavaScript in your browser. A server is not required to calculate your result.</p>
+          <h3>Local information</h3>
+          <p>This implementation does not need an account or database to operate. Theme preferences, if saved, can be stored using browser localStorage.</p>
+          <h3>Third-party services</h3>
+          <p>If advertising, analytics or other external services are added to this website in the future, their data practices should be disclosed separately. The current calculator itself does not require such services.</p>
+          <h3>Your responsibility</h3>
+          <p>Avoid entering sensitive information into any public web form unless you understand how that service handles the information.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section" id="about" style="background:var(--surface2)">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">About</span>
+          <h2>About <span class="gradient-text">MP Age Calculator</span></h2>
+        </div>
+        <div class="card content-card">
+          <p>MP Age Calculator is designed to provide a simple, fast and convenient way to calculate exact age, birthdays, date differences and useful time statistics directly from a web browser.</p>
+          <h3>Our goal</h3>
+          <p>The goal is to make everyday date calculations easy to understand and accessible across phones, tablets and desktop computers.</p>
+          <h3>Important limitation</h3>
+          <p>The calculator is a general informational tool. Results should be independently verified when exact dates are needed for legal, government, immigration, educational, financial or other official purposes.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Support</span>
+          <h2>Need <span class="gradient-text">help?</span></h2>
+          <p>Contact the support channels below if you have questions about the website.</p>
+        </div>
+        <div class="tool-grid">
+          <div class="card tool-card">
+            <div class="tool-icon">💬</div>
+            <h3>WhatsApp Support</h3>
+            <p>For website questions and general support.</p>
+            <a class="btn btn-primary" href="https://wa.me/919131053539?text=Hello%20MP%20Age%20Calculator%20Support%2C%20I%20need%20help%20with%20the%20website" target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a>
+          </div>
+          <div class="card tool-card">
+            <div class="tool-icon">◎</div>
+            <h3>Instagram</h3>
+            <p>Follow @mpdigitalhub for updates and digital tools.</p>
+            <a class="btn btn-primary" href="https://www.instagram.com/mpdigitalhub/" target="_blank" rel="noopener noreferrer">Open Instagram</a>
+          </div>
+          <div class="card tool-card">
+            <div class="tool-icon">✉</div>
+            <h3>Email Support</h3>
+            <p>Send your question by email.</p>
+            <a class="btn btn-primary" href="mailto:support@mpage.online">support@mpage.online</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LEGAL -->
+    <section class="section" id="legal" style="background:var(--surface2)">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Legal</span>
+          <h2>Terms, disclaimer & <span class="gradient-text">policies</span></h2>
+        </div>
+
+        <div class="card content-card">
+          <h3 id="terms">Terms & Conditions</h3>
+          <p>By using MP Age Calculator, you agree to use the tool responsibly and understand that results are provided for general informational purposes. You are responsible for checking information before relying on it for important decisions.</p>
+
+          <h3 id="disclaimer">Disclaimer</h3>
+          <p>MP Age Calculator is not an official authority and does not provide legal certification of age. For government, immigration, legal, educational, financial or other official requirements, verify dates and age using appropriate official documents or authorities.</p>
+          <p>The calculator generates results from user-provided dates and browser time. While the calculation logic is designed to handle common calendar edge cases, no software should be treated as a substitute for official verification.</p>
+
+          <h3 id="cookies">Cookie Policy</h3>
+          <p>The core calculator does not require cookies to perform calculations. Browser localStorage may be used for preferences such as the selected light/dark theme. If third-party advertising or analytics are added later, their respective cookie or tracking practices should be disclosed.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="container"><div class="ad">Advertisement – Demo</div></div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="brand">
+            <svg class="logo" viewBox="0 0 64 64" aria-hidden="true">
+              <rect width="64" height="64" rx="17" fill="url(#brandGradient)"/>
+              <path d="M17 27h30M22 14v10M42 14v10M20 20h24a5 5 0 0 1 5 5v21a5 5 0 0 1-5 5H20a5 5 0 0 1-5-5V25a5 5 0 0 1 5-5Z" fill="none" stroke="#fff" stroke-width="3.6" stroke-linecap="round"/>
+              <text x="32" y="43" text-anchor="middle" font-size="12" font-weight="900" fill="#fff" font-family="Arial">MP</text>
             </svg>
-            <strong>Your QR Code Will Appear Here</strong>
-            <span>Choose a QR type and enter your information to get started.</span>
+            <span class="brand-text">MP Age Calculator<small>mpage.online</small></span>
           </div>
-          <canvas id="qrCanvas" class="hidden" aria-label="Generated QR code"></canvas>
+          <p>A professional browser-based age, birthday and date calculation toolkit.</p>
+          <div class="social-links">
+            <a class="social-link" href="https://wa.me/919131053539?text=Hello%20MP%20Age%20Calculator%20Support%2C%20I%20need%20help%20with%20the%20website" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">WA</a>
+            <a class="social-link" href="https://www.instagram.com/mpdigitalhub/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">IG</a>
+          </div>
         </div>
 
-        <div class="preview-actions">
-          <button class="btn btn-primary" id="downloadPng" disabled>Download PNG</button>
-          <button class="btn btn-secondary" id="downloadJpg" disabled>Download JPG</button>
-          <button class="btn btn-secondary" id="downloadSvg" disabled>Download SVG</button>
-          <button class="btn btn-secondary" id="copyQr" disabled>Copy QR</button>
-          <button class="btn btn-secondary" id="printQr" disabled>Print</button>
-          <button class="btn btn-success" id="shareQr" disabled>Share</button>
+        <div>
+          <h4>Tools</h4>
+          <a href="#calculator">Age Calculator</a>
+          <a href="#birthday">Birthday Calculator</a>
+          <a href="#tools">Date Difference</a>
+          <a href="#tools">Age on Any Date</a>
+          <a href="#tools">Age Comparison</a>
+          <a href="#statistics">Milestones</a>
         </div>
 
-        <button class="btn btn-secondary" id="saveFavorite" disabled style="margin-top:8px;width:100%">☆ Save Favorite</button>
-        <p class="preview-tip">Scan this QR code with your phone to test it before using it publicly.</p>
-      </aside>
-    </div>
-  </div>
+        <div>
+          <h4>Company</h4>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+          <a href="#contact">Support</a>
+          <a href="#faq">FAQ</a>
+          <a href="#how">How It Works</a>
+        </div>
 
-  <div class="ad ad-wide" style="margin-top:25px">Advertisement – Demo</div>
-
-  <div id="historySection" style="margin-top:35px">
-    <div style="display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap;margin-bottom:15px">
-      <div><h3 style="margin:0">Recent QR History</h3><div class="small muted">Stored locally in this browser.</div></div>
-      <button class="btn btn-secondary" id="clearHistory">Clear History</button>
-    </div>
-    <div class="history-grid" id="historyGrid"></div>
-    <div id="historyEmpty" class="muted small">Your recently generated QR codes will appear here.</div>
-  </div>
-
-  <div id="favoritesSection" style="margin-top:35px">
-    <div style="display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap;margin-bottom:15px">
-      <div><h3 style="margin:0">Favorites</h3><div class="small muted">Saved locally without an account.</div></div>
-      <button class="btn btn-secondary" id="clearFavorites">Clear Favorites</button>
-    </div>
-    <div class="history-grid" id="favoritesGrid"></div>
-    <div id="favoritesEmpty" class="muted small">Save a QR preset to access it quickly later.</div>
-  </div>
-</div>
-</section>
-
-<section class="section" id="features">
-<div class="container">
-  <div class="section-head"><h2>Everything You Need to <span class="gradient-text">Make Better QR Codes</span></h2><p>A focused QR toolkit with practical customization and useful browser-based features.</p></div>
-  <div class="feature-grid" id="featureGrid"></div>
-</div>
-</section>
-
-<section class="section" id="how">
-<div class="container">
-  <div class="section-head"><h2>How It <span class="gradient-text">Works</span></h2><p>Create a QR code in four simple steps.</p></div>
-  <div class="steps">
-    <div class="step"><div class="step-num">1</div><h3>Choose a Type</h3><p>Select Website, WhatsApp, UPI, Wi-Fi, Contact or another QR format.</p></div>
-    <div class="step"><div class="step-num">2</div><h3>Enter Information</h3><p>Add the information you want your QR code to contain.</p></div>
-    <div class="step"><div class="step-num">3</div><h3>Customize</h3><p>Adjust colors, size, correction level, margin and optional logo.</p></div>
-    <div class="step"><div class="step-num">4</div><h3>Use It</h3><p>Download, copy, share or print your finished QR code.</p></div>
-  </div>
-</div>
-</section>
-
-<section class="section" id="types">
-<div class="container">
-  <div class="section-head"><h2>Popular <span class="gradient-text">QR Types</span></h2><p>Create QR codes for everyday personal, business, creator and event needs.</p></div>
-  <div class="type-info-grid" id="typeInfoGrid"></div>
-</div>
-</section>
-
-<section class="section">
-<div class="container">
-  <div class="section-head"><h2>Built for <span class="gradient-text">Real Use Cases</span></h2><p>From small shops to creators and students, QR codes can make information easier to access.</p></div>
-  <div class="use-grid">
-    <div class="use-card"><h3>For Businesses</h3><p>Share websites, contact details, menus, payment information, offers and customer support links.</p></div>
-    <div class="use-card"><h3>For Students</h3><p>Connect classmates to study resources, assignments, project links, event information and useful references.</p></div>
-    <div class="use-card"><h3>For Restaurants</h3><p>Provide digital menus, Wi-Fi access, feedback links and other convenient customer resources.</p></div>
-    <div class="use-card"><h3>For Shops</h3><p>Create UPI payment, offer, website and WhatsApp QR codes for faster customer interaction.</p></div>
-    <div class="use-card"><h3>For Creators</h3><p>Connect audiences to YouTube, Instagram, social profiles, websites and digital products.</p></div>
-    <div class="use-card"><h3>For Events</h3><p>Share event details, venue locations, schedules, registration pages and contact information.</p></div>
-  </div>
-</div>
-</section>
-
-<div class="container"><div class="ad ad-wide">Advertisement – Demo</div></div>
-
-<section class="section" id="faq">
-<div class="container">
-  <div class="section-head"><h2>Frequently Asked <span class="gradient-text">Questions</span></h2><p>Helpful answers about creating and using QR codes.</p></div>
-  <div class="faq" id="faqList"></div>
-</div>
-</section>
-
-<section class="section" id="privacy">
-<div class="container">
-  <div class="info-panel">
-    <h2>Privacy-Focused QR Generation</h2>
-    <p>The core QR generation process runs directly in your browser. QR information is not intentionally sent to an MP QR Tool server. Recent history and favorites, when used, are stored locally with your browser's localStorage.</p>
-    <p>Uploaded logos are processed locally for QR composition. If this website uses external CDN resources, advertising services or other third-party resources, those services may have their own data and privacy practices. Review their policies before relying on them for sensitive information.</p>
-    <p><strong>Important:</strong> Do not put passwords, private keys, financial credentials or other highly sensitive information into QR codes unless you understand the security implications.</p>
-  </div>
-</div>
-</section>
-
-<section class="section" id="about">
-<div class="container">
-  <div class="info-panel">
-    <h2>About MP QR Tool</h2>
-    <p>MP QR Tool is designed to make QR creation simple, fast and accessible for individuals, creators, students, businesses and everyday users.</p>
-    <p>The tool focuses on practical QR formats, useful customization, easy downloads and browser-based processing without requiring an account.</p>
-  </div>
-</div>
-</section>
-
-<section class="section" id="contact">
-<div class="container">
-  <div class="section-head"><h2>Need <span class="gradient-text">Help?</span></h2><p>Reach out through the available support channels.</p></div>
-  <div class="contact-grid">
-    <div class="contact-card">
-      <h3>MP QR Tool Support</h3>
-      <p class="muted">For questions, feedback or help using the website, contact us through WhatsApp or Instagram.</p>
-      <a class="contact-link" href="https://wa.me/919131053539?text=Hello%20MP%20QR%20Tool%20Support%2C%20I%20need%20help%20with%20the%20website" target="_blank" rel="noopener">
-        <span class="contact-icon">
-          <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 3.5A11.8 11.8 0 0 0 12.1 0C5.6 0 .3 5.3.3 11.8c0 2.1.5 4.1 1.6 5.9L.2 24l6.5-1.7a11.8 11.8 0 0 0 5.4 1.3h.1c6.5 0 11.8-5.3 11.8-11.8 0-3.2-1.2-6.1-3.5-8.3ZM12.2 21.6h-.1c-1.7 0-3.4-.5-4.8-1.3l-.3-.2-3.8 1 1-3.7-.2-.3a9.8 9.8 0 1 1 18-5.2c0 5.4-4.4 9.7-9.8 9.7Zm5.4-7.3c-.3-.2-1.7-.8-2-.9-.3-.1-.5-.2-.7.2-.2.3-.7.9-.8 1.1-.2.2-.3.2-.6.1-1.7-.8-2.8-1.5-3.9-3.4-.3-.5.3-.5.8-1.7.1-.2.1-.4 0-.6-.1-.2-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.1 1.1-1.1 2.7s1.1 3.1 1.3 3.3c.2.2 2.2 3.4 5.4 4.8.8.4 1.5.6 2 .7.8.3 1.6.2 2.2.1.6-.1 1.7-.7 1.9-1.3.2-.6.2-1.2.1-1.3-.2-.2-.4-.2-.7-.4Z"/></svg>
-        </span>
-        <span><strong>WhatsApp Support</strong><br><span class="muted">+91 9131053539</span></span>
-      </a>
-      <a class="contact-link" href="https://www.instagram.com/mpdigitalhub/" target="_blank" rel="noopener">
-        <span class="contact-icon">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
-        </span>
-        <span><strong>Instagram</strong><br><span class="muted">@mpdigitalhub</span></span>
-      </a>
-      <a class="contact-link" href="mailto:support@mpage.online">
-        <span class="contact-icon">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
-        </span>
-        <span><strong>Email</strong><br><span class="muted">support@mpage.online</span></span>
-      </a>
-    </div>
-
-    <div class="contact-card">
-      <h3>Before You Publish</h3>
-      <p class="muted">A QR code simply encodes information. Always check that the encoded information is correct and scan the finished code using your own phone.</p>
-      <ul class="muted small">
-        <li>Check website URLs for spelling.</li>
-        <li>Verify UPI ID, recipient and amount before payment.</li>
-        <li>Keep sufficient contrast between QR modules and background.</li>
-        <li>Keep logos small enough to preserve scanability.</li>
-        <li>Test printed QR codes under the actual lighting and distance where they will be used.</li>
-      </ul>
-    </div>
-  </div>
-</div>
-</section>
-
-<section class="section" id="legal">
-<div class="container">
-  <div class="section-head"><h2>Legal & <span class="gradient-text">Policies</span></h2><p>Clear information about responsible use of MP QR Tool.</p></div>
-  <div class="legal-grid">
-    <article class="legal-card" id="privacy-policy">
-      <h3>Privacy Policy</h3>
-      <p>MP QR Tool's core QR generation is performed locally in the browser. QR content is not intentionally transmitted to an MP QR Tool backend. Optional history and favorites use local browser storage. Uploaded logo images are processed locally for QR composition.</p>
-      <p>External CDNs, advertising providers and other third-party services, if used, operate under their own policies. Users should avoid entering highly sensitive information into QR codes.</p>
-    </article>
-    <article class="legal-card" id="terms">
-      <h3>Terms & Conditions</h3>
-      <p>Use MP QR Tool responsibly and only with information you are authorized to encode. You are responsible for the content of the QR code you create, where you publish it and how you use it.</p>
-      <p>The service is provided as a convenience and may be changed or unavailable at times. No guarantee is made that every QR code will work with every scanner, camera, printer or device.</p>
-    </article>
-    <article class="legal-card" id="disclaimer">
-      <h3>Disclaimer</h3>
-      <p>QR codes are generated from user-provided information. MP QR Tool does not independently verify websites, phone numbers, UPI IDs, recipients, payments or other destinations.</p>
-      <p>Creating a UPI QR code does not mean that a payment has been completed or verified. Always verify payment information before paying.</p>
-    </article>
-    <article class="legal-card" id="cookies">
-      <h3>Cookie Policy</h3>
-      <p>The core website does not require cookies for QR generation. Browser localStorage may be used for preferences, recent history and favorites. If third-party advertising or analytics are added, those services may use cookies or similar technologies according to their own policies.</p>
-    </article>
-  </div>
-</div>
-</section>
-
-</main>
-
-<footer>
-<div class="container">
-  <div class="footer-grid">
-    <div class="footer-brand">
-      <a class="brand" href="#home">
-        <svg viewBox="0 0 64 64" aria-hidden="true">
-          <rect width="64" height="64" rx="16" fill="#4f46e5"/>
-          <path fill="#fff" d="M9 9h18v18H9zm5 5v8h8v-8zm23-5h18v18H37zm5 5v8h8v-8zM9 37h18v18H9zm5 5v8h8v-8zm23-5h6v6h-6zm12 0h6v12h-6zm-12 12h6v6h-6zm12 0h6v6h-6zM30 30h7v7h-7zm10 10h7v7h-7z"/>
-        </svg>
-        <span class="brand-name">MP QR Tool</span>
-      </a>
-      <p>Create beautiful QR codes for websites, WhatsApp, Wi-Fi, UPI, contacts, social media and more.</p>
-    </div>
-    <div>
-      <h4>Navigation</h4>
-      <a href="#home">Home</a><a href="#generator">QR Generator</a><a href="#features">Features</a>
-      <a href="#how">How It Works</a><a href="#faq">FAQ</a><a href="#about">About</a><a href="#contact">Contact</a>
-    </div>
-    <div>
-      <h4>Legal</h4>
-      <a href="#privacy-policy">Privacy Policy</a><a href="#terms">Terms & Conditions</a>
-      <a href="#disclaimer">Disclaimer</a><a href="#cookies">Cookie Policy</a>
-    </div>
-    <div>
-      <h4>Tools</h4>
-      <a href="#generator">QR Generator</a><a href="#generator">Website QR</a><a href="#generator">WhatsApp QR</a>
-      <a href="#generator">Wi-Fi QR</a><a href="#generator">UPI QR</a><a href="#generator">Contact QR</a>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <span>© 2026 MP QR Tool. All rights reserved.</span>
-    <span>Made for fast, simple QR creation.</span>
-  </div>
-</div>
-</footer>
-
-<div class="floating" aria-label="Social support">
-  <a class="float-btn instagram" href="https://www.instagram.com/mpdigitalhub/" target="_blank" rel="noopener" aria-label="Open MP Digital Hub Instagram">
-    <span class="tooltip">Instagram</span>
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="white"/></svg>
-  </a>
-  <a class="float-btn whatsapp" href="https://wa.me/919131053539?text=Hello%20MP%20QR%20Tool%20Support%2C%20I%20need%20help%20with%20the%20website" target="_blank" rel="noopener" aria-label="Contact MP QR Tool on WhatsApp">
-    <span class="tooltip">WhatsApp Support</span>
-    <svg width="25" height="25" viewBox="0 0 24 24" fill="white"><path d="M20.5 3.5A11.8 11.8 0 0 0 12.1 0C5.6 0 .3 5.3.3 11.8c0 2.1.5 4.1 1.6 5.9L.2 24l6.5-1.7a11.8 11.8 0 0 0 5.4 1.3h.1c6.5 0 11.8-5.3 11.8-11.8 0-3.2-1.2-6.1-3.5-8.3ZM12.2 21.6h-.1c-1.7 0-3.4-.5-4.8-1.3l-.3-.2-3.8 1 1-3.7-.2-.3a9.8 9.8 0 1 1 18-5.2c0 5.4-4.4 9.7-9.8 9.7Zm5.4-7.3c-.3-.2-1.7-.8-2-.9-.3-.1-.5-.2-.7.2-.2.3-.7.9-.8 1.1-.2.2-.3.2-.6.1-1.7-.8-2.8-1.5-3.9-3.4-.3-.5.3-.5.8-1.7.1-.2.1-.4 0-.6-.1-.2-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.1 1.1-1.1 2.7s1.1 3.1 1.3 3.3c.2.2 2.2 3.4 5.4 4.8.8.4 1.5.6 2 .7.8.3 1.6.2 2.2.1.6-.1 1.7-.7 1.9-1.3.2-.6.2-1.2.1-1.3-.2-.2-.4-.2-.7-.4Z"/></svg>
-  </a>
-</div>
-
-<div class="toast-wrap" id="toastWrap" aria-live="polite"></div>
-
-<div class="modal" id="printModal" role="dialog" aria-modal="true" aria-labelledby="printTitle">
-  <div class="modal-box">
-    <div class="modal-head">
-      <h3 id="printTitle">Print QR Code</h3>
-      <button class="modal-close" id="closePrint" aria-label="Close print preview">×</button>
-    </div>
-    <div class="print-area" id="printArea">
-      <h2 id="printQrTitle">MP QR Tool</h2>
-      <img id="printImage" alt="QR code ready to print">
-      <p id="printQrData"></p>
-    </div>
-    <div style="display:flex;gap:10px;margin-top:15px">
-      <button class="btn btn-primary" id="confirmPrint">Print Now</button>
-      <button class="btn btn-secondary" id="cancelPrint">Close</button>
-    </div>
-  </div>
-</div>
-
-<script>
-(() => {
-"use strict";
-
-const $ = (s, p=document) => p.querySelector(s);
-const $$ = (s, p=document) => [...p.querySelectorAll(s)];
-
-const types = [
-  {id:"url",name:"Website / URL",icon:"↗",desc:"Turn a website link into a QR code."},
-  {id:"text",name:"Plain Text",icon:"T",desc:"Encode ordinary text in a QR code."},
-  {id:"whatsapp",name:"WhatsApp",icon:"W",desc:"Create a WhatsApp chat QR with an optional message."},
-  {id:"phone",name:"Phone",icon:"☎",desc:"Create a tap-to-call phone QR."},
-  {id:"sms",name:"SMS",icon:"✉",desc:"Create an SMS QR with a predefined message."},
-  {id:"email",name:"Email",icon:"@",desc:"Create a mailto QR with subject and message."},
-  {id:"wifi",name:"Wi-Fi",icon:"⌁",desc:"Share Wi-Fi network credentials through a QR."},
-  {id:"vcard",name:"Contact / vCard",icon:"C",desc:"Create a digital business card QR."},
-  {id:"location",name:"Location",icon:"⌖",desc:"Encode a map location using latitude and longitude."},
-  {id:"upi",name:"UPI Payment",icon:"₹",desc:"Create a UPI payment URI QR."},
-  {id:"youtube",name:"YouTube",icon:"▶",desc:"Share a YouTube video or channel URL."},
-  {id:"instagram",name:"Instagram",icon:"◎",desc:"Share an Instagram profile."},
-  {id:"facebook",name:"Facebook",icon:"f",desc:"Share a Facebook profile or page."},
-  {id:"twitter",name:"X / Twitter",icon:"𝕏",desc:"Share an X / Twitter profile."},
-  {id:"telegram",name:"Telegram",icon:"➤",desc:"Share a Telegram username or URL."},
-  {id:"social",name:"Social Media",icon:"S",desc:"Combine several social profiles into one QR payload."},
-  {id:"app",name:"App Download",icon:"▣",desc:"Encode app store and website destinations."},
-  {id:"event",name:"Event",icon:"◆",desc:"Create a calendar/event information QR."},
-  {id:"coupon",name:"Coupon / Offer",icon:"%",desc:"Encode a promotional coupon or offer."},
-  {id:"auth",name:"Secure Text",icon:"◆",desc:"Encode generic tokens or non-sensitive authentication text."}
-];
-
-const featureData = [
-  ["20+ QR Types","Create QR codes for websites, messaging, payments, contacts and more."],
-  ["Instant Generation","Your QR preview updates as you enter valid information."],
-  ["Live Preview","See the final QR before downloading or sharing it."],
-  ["Custom Colors","Choose foreground and background colors."],
-  ["Logo Support","Add a small local logo to the center of your QR."],
-  ["PNG Download","Download a high-quality raster QR image."],
-  ["JPG Download","Create a JPG copy for compatible workflows."],
-  ["SVG Support","Download a scalable SVG QR representation."],
-  ["Print QR","Open a clean print-friendly QR layout."],
-  ["Share QR","Use the browser's native sharing tools when available."],
-  ["Mobile Friendly","Designed for phones, tablets and desktop screens."],
-  ["No Registration","The generator does not require an account."],
-  ["Browser-Based","Core QR generation happens in the browser."],
-  ["Privacy Friendly","History, favorites and logo processing stay local."],
-  ["QR History","Keep recent QR presets in local browser storage."],
-  ["Favorites","Save useful QR presets for quick reuse."],
-  ["Dark Mode","Switch between light and dark interface themes."],
-  ["Fast Generation","Client-side generation keeps the workflow responsive."],
-  ["Validation","Common URL, email, phone and location fields are checked."],
-  ["Custom Styling","Choose square, rounded or conservative dot styling."]
-];
-
-const infoData = [
-  ["Website QR","Share a website, landing page, portfolio or online store.","↗"],
-  ["WhatsApp QR","Let customers or friends open a WhatsApp chat quickly.","W"],
-  ["UPI QR","Encode UPI payment details. Always verify before paying.","₹"],
-  ["Wi-Fi QR","Make joining a supported Wi-Fi network easier.","⌁"],
-  ["Business Card QR","Share contact details using a vCard-compatible QR.","C"],
-  ["Email QR","Open an email composer with a predefined subject and message.","@"],
-  ["Phone QR","Let scanners open the phone dialer with a number.","☎"],
-  ["YouTube QR","Share videos, channels or other YouTube destinations.","▶"],
-  ["Social Media QR","Combine multiple social profiles and a website.","S"],
-  ["Event QR","Share event dates, location and description.","◆"],
-  ["Location QR","Encode latitude and longitude for a map destination.","⌖"]
-];
-
-const faqData = [
-  ["What is a QR code?","A QR code is a two-dimensional barcode that can store text, links and other structured information that compatible scanners can read."],
-  ["How do I create a QR code?","Choose a QR type, enter the required information and the live preview will update. You can then customize and download the result."],
-  ["Is MP QR Tool free?","The QR generator is designed as a free browser-based tool and does not require registration."],
-  ["Do I need to install software?","No. The core generator runs in a modern web browser."],
-  ["Can I create a WhatsApp QR code?","Yes. Enter a phone number with its country code and optionally add a predefined WhatsApp message."],
-  ["Can I create a UPI QR code?","Yes. Enter a UPI ID and optional payee, amount and note. Always verify the displayed recipient and amount before paying."],
-  ["Can I add a logo?","Yes. You can upload a small image and MP QR Tool composes it locally over the QR code. Keep the logo reasonably small."],
-  ["Can I download the QR code?","Yes. PNG and JPG downloads are available, and an SVG representation can also be downloaded."],
-  ["Can I print my QR code?","Yes. Use the Print button to open a clean print layout."],
-  ["Does the website store my data?","The core QR generation is performed in your browser. If you use History or Favorites, those presets are stored in localStorage on your device."],
-  ["Can QR codes expire?","A normal QR code itself does not have an automatic expiration date. However, the destination it contains, such as a website or payment service, can change or stop working."],
-  ["How do I test a QR code?","Scan it using a phone before publishing or printing it. Test the actual physical size and lighting when using a printed QR."],
-  ["Why is my QR code not scanning?","Check contrast, size, quiet zone, input correctness and whether a logo or decorative styling is too large."],
-  ["Is a customized QR code safe?","Customization is generally fine when sufficient contrast and a clear quiet zone are maintained. Always scan-test the result."],
-  ["Can I use QR codes commercially?","You can use generated QR codes for legitimate personal or commercial purposes, subject to the rights and terms associated with the content or destination you encode."]
-];
-
-let currentType = "url";
-let currentPayload = "";
-let logoDataUrl = "";
-let lastMatrix = null;
-let lastQr = null;
-let lastSize = 320;
-
-const formDescriptions = Object.fromEntries(types.map(t => [t.id,t.desc]));
-
-function esc(value) {
-  return String(value ?? "").replace(/[&<>"']/g, c => ({
-    "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"
-  }[c]));
-}
-
-function toast(message, type="info") {
-  const el = document.createElement("div");
-  el.className = `toast ${type}`;
-  el.textContent = message;
-  $("#toastWrap").appendChild(el);
-  setTimeout(() => el.remove(), 3300);
-}
-
-function normalizeUrl(value, service) {
-  value = value.trim();
-  if (!value) return "";
-  if (/^https?:\/\//i.test(value)) return value;
-  if (service === "instagram") return `https://www.instagram.com/${value.replace(/^@/,"")}/`;
-  if (service === "youtube") return `https://www.youtube.com/${value.replace(/^\/+/,"")}`;
-  if (service === "twitter") return `https://x.com/${value.replace(/^@/,"")}`;
-  if (service === "telegram") return `https://t.me/${value.replace(/^@/,"")}`;
-  if (service === "facebook") return `https://www.facebook.com/${value.replace(/^@/,"")}`;
-  return "https://" + value;
-}
-
-function phoneClean(v) {
-  return v.trim().replace(/[^\d+]/g,"");
-}
-
-function qrEscapeWifi(v) {
-  return String(v ?? "").replace(/([\\;,:"])/g,"\\$1");
-}
-
-function encodeMailto(email,subject,message) {
-  const params = [];
-  if(subject) params.push("subject="+encodeURIComponent(subject));
-  if(message) params.push("body="+encodeURIComponent(message));
-  return "mailto:"+email.trim()+(params.length?"?"+params.join("&"):"");
-}
-
-function buildForm(type) {
-  const f = {
-    url: `
-      <div class="field"><label for="url">Website URL *</label><input id="url" type="url" placeholder="https://example.com" autocomplete="url"><div class="error" data-error="url"></div></div>
-      <div class="field"><label for="title">Optional Title</label><input id="title" type="text" maxlength="100" placeholder="My Website"></div>`,
-    text: `
-      <div class="field"><label for="text">Text *</label><textarea id="text" maxlength="2500" placeholder="Type the text you want to encode..."></textarea><div class="error" data-error="text"></div><div class="small muted" id="textCount">0 / 2500</div></div>`,
-    whatsapp: `
-      <div class="field"><label for="waNumber">WhatsApp Phone Number *</label><input id="waNumber" type="tel" placeholder="+91 9131053539" autocomplete="tel"><div class="error" data-error="waNumber"></div><div class="small muted">Include country code, for example +91 for India.</div></div>
-      <div class="field"><label for="waMessage">Optional Message</label><textarea id="waMessage" maxlength="500" placeholder="Hello! I would like more information."></textarea></div>`,
-    phone: `
-      <div class="field"><label for="phoneNumber">Phone Number *</label><input id="phoneNumber" type="tel" placeholder="+91 9131053539" autocomplete="tel"><div class="error" data-error="phoneNumber"></div></div>`,
-    sms: `
-      <div class="field"><label for="smsNumber">Phone Number *</label><input id="smsNumber" type="tel" placeholder="+91 9131053539"><div class="error" data-error="smsNumber"></div></div>
-      <div class="field"><label for="smsMessage">Message *</label><textarea id="smsMessage" maxlength="500" placeholder="Your message"></textarea><div class="error" data-error="smsMessage"></div></div>`,
-    email: `
-      <div class="field"><label for="emailAddress">Email Address *</label><input id="emailAddress" type="email" placeholder="hello@example.com" autocomplete="email"><div class="error" data-error="emailAddress"></div></div>
-      <div class="field"><label for="emailSubject">Subject</label><input id="emailSubject" maxlength="150" placeholder="Hello"></div>
-      <div class="field"><label for="emailMessage">Message</label><textarea id="emailMessage" maxlength="1000" placeholder="Write your message..."></textarea></div>`,
-    wifi: `
-      <div class="field"><label for="wifiSsid">Network Name / SSID *</label><input id="wifiSsid" maxlength="100" placeholder="My Wi-Fi"><div class="error" data-error="wifiSsid"></div></div>
-      <div class="field"><label for="wifiPassword">Password</label><input id="wifiPassword" type="text" maxlength="100" placeholder="Wi-Fi password"></div>
-      <div class="grid2">
-        <div class="field"><label for="wifiSecurity">Security</label><select id="wifiSecurity"><option value="WPA">WPA/WPA2</option><option value="WEP">WEP</option><option value="nopass">None</option></select></div>
-        <div class="field" style="display:flex;align-items:end"><label class="check"><input id="wifiHidden" type="checkbox"> Hidden network</label></div>
-      </div>`,
-    vcard: `
-      <div class="grid2">
-        <div class="field"><label for="firstName">First Name</label><input id="firstName" maxlength="60"></div>
-        <div class="field"><label for="lastName">Last Name</label><input id="lastName" maxlength="60"></div>
+        <div>
+          <h4>Legal</h4>
+          <a href="#privacy">Privacy Policy</a>
+          <a href="#terms">Terms & Conditions</a>
+          <a href="#disclaimer">Disclaimer</a>
+          <a href="#cookies">Cookie Policy</a>
+        </div>
       </div>
-      <div class="grid2">
-        <div class="field"><label for="organization">Organization</label><input id="organization" maxlength="100"></div>
-        <div class="field"><label for="jobTitle">Job Title</label><input id="jobTitle" maxlength="100"></div>
+
+      <div class="footer-bottom">
+        <span>© 2026 MP Age Calculator. All rights reserved.</span>
+        <span>Calculations happen in your browser.</span>
       </div>
-      <div class="grid2">
-        <div class="field"><label for="vPhone">Phone</label><input id="vPhone" type="tel"></div>
-        <div class="field"><label for="vEmail">Email</label><input id="vEmail" type="email"></div>
+    </div>
+  </footer>
+
+  <!-- Floating Social -->
+  <div class="floating-social">
+    <a class="float-btn ig" data-tooltip="Instagram" href="https://www.instagram.com/mpdigitalhub/" target="_blank" rel="noopener noreferrer" aria-label="Open MP Digital Hub on Instagram">
+      <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+        <rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="white" stroke="none"/>
+      </svg>
+    </a>
+    <a class="float-btn wa" data-tooltip="WhatsApp Support" href="https://wa.me/919131053539?text=Hello%20MP%20Age%20Calculator%20Support%2C%20I%20need%20help%20with%20the%20website" target="_blank" rel="noopener noreferrer" aria-label="Contact MP Age Calculator Support on WhatsApp">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+        <path d="M20.5 3.5A11.8 11.8 0 0 0 12.05 0C5.55 0 .26 5.29.26 11.8c0 2.08.54 4.11 1.57 5.9L.17 24l6.45-1.63a11.8 11.8 0 0 0 5.43 1.3h.01c6.5 0 11.78-5.29 11.78-11.8 0-3.15-1.22-6.11-3.34-8.37ZM12.06 21.7c-1.7 0-3.37-.46-4.83-1.32l-.35-.21-3.83.97 1.02-3.73-.23-.38a9.86 9.86 0 1 1 8.22 4.67Zm5.41-7.4c-.3-.15-1.77-.87-2.05-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.65.07-.3-.15-1.28-.47-2.44-1.5-.9-.8-1.51-1.78-1.69-2.08-.17-.3-.02-.46.13-.61.14-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.5 0 1.47 1.07 2.9 1.22 3.1.15.2 2.1 3.21 5.09 4.5.71.3 1.27.49 1.7.62.72.23 1.37.2 1.89.12.58-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35Z"/>
+      </svg>
+    </a>
+  </div>
+
+  <div id="toast" role="status" aria-live="polite"></div>
+
+  <div class="modal" id="shareModal" aria-hidden="true">
+    <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="shareTitle">
+      <div class="modal-head">
+        <strong id="shareTitle">Share Your Result</strong>
+        <button class="modal-close" id="shareClose" aria-label="Close">×</button>
       </div>
-      <div class="field"><label for="vWebsite">Website</label><input id="vWebsite" placeholder="https://example.com"></div>
-      <div class="field"><label for="vAddress">Address</label><textarea id="vAddress" maxlength="250"></textarea></div>
-      <div class="error" data-error="vcard"></div>`,
-    location: `
-      <div class="grid2">
-        <div class="field"><label for="latitude">Latitude *</label><input id="latitude" type="number" step="any" min="-90" max="90" placeholder="23.2599"><div class="error" data-error="latitude"></div></div>
-        <div class="field"><label for="longitude">Longitude *</label><input id="longitude" type="number" step="any" min="-180" max="180" placeholder="77.4126"><div class="error" data-error="longitude"></div></div>
+      <div class="modal-body">
+        <p id="shareText" style="color:var(--muted);font-size:14px;margin-bottom:15px"></p>
+        <button class="btn btn-primary" id="modalCopy">Copy Result</button>
       </div>
-      <div class="field"><label for="locationName">Optional Location Name</label><input id="locationName" maxlength="100" placeholder="Bhopal"></div>`,
-    upi: `
-      <div class="grid2">
-        <div class="field"><label for="upiId">UPI ID *</label><input id="upiId" placeholder="name@upi"><div class="error" data-error="upiId"></div></div>
-        <div class="field"><label for="upiName">Payee Name</label><input id="upiName" maxlength="100" placeholder="Your Name"></div>
-      </div>
-      <div class="grid2">
-        <div class="field"><label for="upiAmount">Amount (INR)</label><input id="upiAmount" type="number" min="0" step="0.01" placeholder="100"></div>
-        <div class="field"><label for="upiNote">Transaction Note</label><input id="upiNote" maxlength="150" placeholder="Payment"></div>
-      </div>
-      <div class="notice">Always verify UPI ID, recipient name and amount before making a payment. MP QR Tool does not process or verify payments.</div>`,
-    youtube: `
-      <div class="field"><label for="youtubeUrl">YouTube URL *</label><input id="youtubeUrl" placeholder="https://youtube.com/watch?v=..." ><div class="error" data-error="youtubeUrl"></div></div>`,
-    instagram: `
-      <div class="field"><label for="instagramValue">Instagram Profile URL or Username *</label><input id="instagramValue" placeholder="@username or instagram.com/username"><div class="error" data-error="instagramValue"></div></div>`,
-    facebook: `
-      <div class="field"><label for="facebookValue">Facebook Profile/Page URL *</label><input id="facebookValue" placeholder="https://facebook.com/yourpage"><div class="error" data-error="facebookValue"></div></div>`,
-    twitter: `
-      <div class="field"><label for="twitterValue">X / Twitter URL or Username *</label><input id="twitterValue" placeholder="@username or x.com/username"><div class="error" data-error="twitterValue"></div></div>`,
-    telegram: `
-      <div class="field"><label for="telegramValue">Telegram Username or URL *</label><input id="telegramValue" placeholder="@username or t.me/username"><div class="error" data-error="telegramValue"></div></div>`,
-    social: `
-      <div class="grid2">
-        <div class="field"><label for="socialInstagram">Instagram</label><input id="socialInstagram" placeholder="@username or URL"></div>
-        <div class="field"><label for="socialFacebook">Facebook</label><input id="socialFacebook" placeholder="Page URL"></div>
-        <div class="field"><label for="socialYoutube">YouTube</label><input id="socialYoutube" placeholder="Channel/video URL"></div>
-        <div class="field"><label for="socialTwitter">X/Twitter</label><input id="socialTwitter" placeholder="@username or URL"></div>
-        <div class="field"><label for="socialTelegram">Telegram</label><input id="socialTelegram" placeholder="@username or URL"></div>
-        <div class="field"><label for="socialLinkedin">LinkedIn</label><input id="socialLinkedin" placeholder="Profile URL"></div>
-      </div>
-      <div class="field"><label for="socialWebsite">Website</label><input id="socialWebsite" placeholder="https://example.com"></div>
-      <div class="error" data-error="social"></div>`,
-    app: `
-      <div class="field"><label for="androidUrl">Android / Google Play URL</label><input id="androidUrl" placeholder="https://play.google.com/store/apps/..."></div>
-      <div class="field"><label for="appleUrl">Apple App Store URL</label><input id="appleUrl" placeholder="https://apps.apple.com/..."></div>
-      <div class="field"><label for="appWebsite">Website</label><input id="appWebsite" placeholder="https://example.com"></div>
-      <div class="error" data-error="app"></div>`,
-    event: `
-      <div class="field"><label for="eventTitle">Event Title *</label><input id="eventTitle" maxlength="120"><div class="error" data-error="eventTitle"></div></div>
-      <div class="grid2">
-        <div class="field"><label for="eventStartDate">Start Date *</label><input id="eventStartDate" type="date"><div class="error" data-error="eventStartDate"></div></div>
-        <div class="field"><label for="eventStartTime">Start Time *</label><input id="eventStartTime" type="time"><div class="error" data-error="eventStartTime"></div></div>
-        <div class="field"><label for="eventEndDate">End Date</label><input id="eventEndDate" type="date"></div>
-        <div class="field"><label for="eventEndTime">End Time</label><input id="eventEndTime" type="time"></div>
-      </div>
-      <div class="field"><label for="eventLocation">Location</label><input id="eventLocation" maxlength="200"></div>
-      <div class="field"><label for="eventDescription">Description</label><textarea id="eventDescription" maxlength="1000"></textarea></div>
-      <div class="field"><label for="eventWebsite">Website</label><input id="eventWebsite" placeholder="https://example.com"></div>`,
-    coupon: `
-      <div class="field"><label for="couponCode">Coupon Code *</label><input id="couponCode" maxlength="100" placeholder="SAVE20"><div class="error" data-error="couponCode"></div></div>
-      <div class="field"><label for="couponTitle">Offer Title</label><input id="couponTitle" maxlength="150" placeholder="20% Off"></div>
-      <div class="field"><label for="couponUrl">Website URL</label><input id="couponUrl" placeholder="https://example.com/offer"></div>
-      <div class="field"><label for="couponDescription">Description</label><textarea id="couponDescription" maxlength="500"></textarea></div>`,
-    auth: `
-      <div class="field"><label for="authText">Non-Sensitive Text / Token *</label><textarea id="authText" maxlength="2500" placeholder="Enter non-sensitive data to encode..."></textarea><div class="error" data-error="authText"></div></div>
-      <div class="notice">Do not put passwords, private keys, financial credentials or other highly sensitive information into QR codes unless you understand the security implications.</div>`
-  };
-  return f[type] || f.url;
-}
+    </div>
+  </div>
 
-function renderTypeList(filter="") {
-  const list = $("#typeList");
-  const q = filter.toLowerCase().trim();
-  list.textContent = "";
-  types.filter(t => !q || t.name.toLowerCase().includes(q) || t.id.includes(q) || t.desc.toLowerCase().includes(q))
-    .forEach(t => {
-      const b = document.createElement("button");
-      b.type="button";
-      b.className="type-btn"+(t.id===currentType?" active":"");
-      b.dataset.type=t.id;
-      b.innerHTML = `<span class="type-icon">${esc(t.icon)}</span><span>${esc(t.name)}</span>`;
-      b.addEventListener("click",()=>selectType(t.id));
-      list.appendChild(b);
-    });
-}
+  <div id="printArea" class="print-only"></div>
 
-function selectType(type, preserve=false) {
-  if (!types.some(t=>t.id===type)) return;
-  currentType=type;
-  const meta=types.find(t=>t.id===type);
-  $("#formTitle").textContent=meta.name;
-  $("#formDescription").textContent=formDescriptions[type];
-  $("#qrForm").innerHTML=buildForm(type);
-  renderTypeList($("#typeSearch").value);
-  if(!preserve) currentPayload="";
-  attachFormEvents();
-  generate(false);
-}
+  <script>
+    (() => {
+      "use strict";
 
-function attachFormEvents() {
-  $$("#qrForm input,#qrForm textarea,#qrForm select").forEach(el=>{
-    el.addEventListener("input",()=>generate(false));
-    el.addEventListener("change",()=>generate(false));
-  });
-  const text=$("#text");
-  const auth=$("#authText");
-  if(text) text.addEventListener("input",()=>$("#textCount").textContent=`${text.value.length} / 2500`);
-  if(auth) auth.addEventListener("input",()=>{});
-}
+      const $ = id => document.getElementById(id);
+      let ageTimer = null;
+      let birthdayTimer = null;
+      let currentData = null;
+      let currentBirthday = null;
+      let toastTimer = null;
 
-function val(id){const e=$("#"+id);return e?e.value.trim():"";}
-function setError(id,msg){
-  const e=document.querySelector(`[data-error="${id}"]`);
-  if(e)e.textContent=msg;
-  const input=$("#"+id);
-  if(input)input.classList.toggle("invalid",!!msg);
-}
+      const months = [
+        "January","February","March","April","May","June",
+        "July","August","September","October","November","December"
+      ];
+      const weekdays = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
 
-function clearErrors(){
-  $$(".error").forEach(e=>e.textContent="");
-  $$("input.invalid,textarea.invalid,select.invalid").forEach(e=>e.classList.remove("invalid"));
-}
+      function pad(n){ return String(n).padStart(2,"0"); }
 
-function isValidHttpUrl(v) {
-  try {
-    const u=new URL(v);
-    return u.protocol==="http:" || u.protocol==="https:";
-  } catch { return false; }
-}
-
-function emailValid(v){return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);}
-function phoneValid(v){return /^[+]?[\d\s().-]{6,20}$/.test(v);}
-
-function escapeIcal(v){
-  return String(v||"").replace(/\\/g,"\\\\").replace(/;/g,"\\;").replace(/,/g,"\\,").replace(/\r?\n/g,"\\n");
-}
-function icalDate(date,time){
-  const clean=(date||"").replaceAll("-","");
-  const tm=(time||"00:00").replace(":","");
-  return clean+"T"+tm+"00";
-}
-
-function buildPayload() {
-  clearErrors();
-  let p="",valid=true;
-  switch(currentType){
-    case "url":{
-      const v=val("url");
-      if(!v){setError("url","Please enter a website URL.");valid=false;break}
-      if(!isValidHttpUrl(v)){setError("url","Enter a valid URL starting with http:// or https://.");valid=false;break}
-      p=v;break;
-    }
-    case "text":{
-      const v=val("text");
-      if(!v){setError("text","Please enter some text.");valid=false;break}
-      p=v;break;
-    }
-    case "whatsapp":{
-      const n=phoneClean(val("waNumber")),m=val("waMessage");
-      if(!n || !phoneValid(n)){setError("waNumber","Enter a valid phone number with country code.");valid=false;break}
-      p="https://wa.me/"+n.replace(/^\+/,"")+(m?"?text="+encodeURIComponent(m):"");break;
-    }
-    case "phone":{
-      const n=phoneClean(val("phoneNumber"));
-      if(!n || !phoneValid(n)){setError("phoneNumber","Enter a valid phone number.");valid=false;break}
-      p="tel:"+n;break;
-    }
-    case "sms":{
-      const n=phoneClean(val("smsNumber")),m=val("smsMessage");
-      if(!n || !phoneValid(n)){setError("smsNumber","Enter a valid phone number.");valid=false}
-      if(!m){setError("smsMessage","Enter an SMS message.");valid=false}
-      if(valid)p="sms:"+n+"?body="+encodeURIComponent(m);break;
-    }
-    case "email":{
-      const e=val("emailAddress");
-      if(!emailValid(e)){setError("emailAddress","Enter a valid email address.");valid=false;break}
-      p=encodeMailto(e,val("emailSubject"),val("emailMessage"));break;
-    }
-    case "wifi":{
-      const s=val("wifiSsid"),pass=val("wifiPassword"),sec=$("#wifiSecurity").value;
-      if(!s){setError("wifiSsid","Enter the Wi-Fi network name.");valid=false;break}
-      p=`WIFI:T:${sec};S:${qrEscapeWifi(s)};P:${qrEscapeWifi(pass)};H:${$("#wifiHidden").checked?"true":"false"};;`;break;
-    }
-    case "vcard":{
-      const first=val("firstName"),last=val("lastName"),org=val("organization"),job=val("jobTitle"),ph=val("vPhone"),em=val("vEmail"),web=val("vWebsite"),addr=val("vAddress");
-      if(!first&&!last&&!ph&&!em){setError("vcard","Add at least a name, phone number or email.");valid=false;break}
-      if(em&&!emailValid(em)){setError("vEmail","Enter a valid email address.");valid=false;break}
-      p=`BEGIN:VCARD
-VERSION:3.0
-N:${escapeIcal(last)};${escapeIcal(first)};;;
-FN:${escapeIcal([first,last].filter(Boolean).join(" "))}
-${org?"ORG:"+escapeIcal(org)+"\n":""}${job?"TITLE:"+escapeIcal(job)+"\n":""}${ph?"TEL;TYPE=CELL:"+escapeIcal(ph)+"\n":""}${em?"EMAIL:"+escapeIcal(em)+"\n":""}${web&&isValidHttpUrl(normalizeUrl(web))?"URL:"+escapeIcal(normalizeUrl(web))+"\n":""}${addr?"ADR:;;"+escapeIcal(addr)+";;;;\n":""}END:VCARD`;
-      break;
-    }
-    case "location":{
-      const lat=val("latitude"),lon=val("longitude");
-      if(lat===""||Number(lat)<-90||Number(lat)>90){setError("latitude","Latitude must be between -90 and 90.");valid=false}
-      if(lon===""||Number(lon)<-180||Number(lon)>180){setError("longitude","Longitude must be between -180 and 180.");valid=false}
-      if(valid)p=`geo:${lat},${lon}${val("locationName")?"?q="+encodeURIComponent(val("locationName")):""}`;break;
-    }
-    case "upi":{
-      const pa=val("upiId");
-      if(!pa || !/^[^@\s]+@[^@\s]+$/.test(pa)){setError("upiId","Enter a valid UPI ID such as name@upi.");valid=false;break}
-      const params=new URLSearchParams();
-      params.set("pa",pa);
-      if(val("upiName"))params.set("pn",val("upiName"));
-      if(val("upiAmount"))params.set("am",Number(val("upiAmount")).toFixed(2));
-      params.set("cu","INR");
-      if(val("upiNote"))params.set("tn",val("upiNote"));
-      p="upi://pay?"+params.toString();break;
-    }
-    case "youtube":{
-      const v=normalizeUrl(val("youtubeUrl"),"youtube");
-      if(!val("youtubeUrl")||!isValidHttpUrl(v)){setError("youtubeUrl","Enter a valid YouTube URL.");valid=false;break}
-      p=v;break;
-    }
-    case "instagram":{
-      const v=normalizeUrl(val("instagramValue"),"instagram");
-      if(!val("instagramValue")||!isValidHttpUrl(v)){setError("instagramValue","Enter a valid Instagram username or URL.");valid=false;break}
-      p=v;break;
-    }
-    case "facebook":{
-      const v=normalizeUrl(val("facebookValue"),"facebook");
-      if(!val("facebookValue")||!isValidHttpUrl(v)){setError("facebookValue","Enter a valid Facebook URL or page name.");valid=false;break}
-      p=v;break;
-    }
-    case "twitter":{
-      const v=normalizeUrl(val("twitterValue"),"twitter");
-      if(!val("twitterValue")||!isValidHttpUrl(v)){setError("twitterValue","Enter a valid X/Twitter username or URL.");valid=false;break}
-      p=v;break;
-    }
-    case "telegram":{
-      const v=normalizeUrl(val("telegramValue"),"telegram");
-      if(!val("telegramValue")||!isValidHttpUrl(v)){setError("telegramValue","Enter a valid Telegram username or URL.");valid=false;break}
-      p=v;break;
-    }
-    case "social":{
-      const entries=[
-        ["Instagram",val("socialInstagram"),"instagram"],
-        ["Facebook",val("socialFacebook"),"facebook"],
-        ["YouTube",val("socialYoutube"),"youtube"],
-        ["X/Twitter",val("socialTwitter"),"twitter"],
-        ["Telegram",val("socialTelegram"),"telegram"],
-        ["LinkedIn",val("socialLinkedin"),null],
-        ["Website",val("socialWebsite"),null]
-      ].filter(x=>x[1]).map(([name,v,service])=>{
-        const url=service?normalizeUrl(v,service):normalizeUrl(v);
-        return `${name}: ${url}`;
-      });
-      if(!entries.length){setError("social","Add at least one social profile or website.");valid=false;break}
-      p="MP QR Tool Social Links\n"+entries.join("\n");break;
-    }
-    case "app":{
-      const vals=[val("androidUrl"),val("appleUrl"),val("appWebsite")];
-      if(!vals.some(Boolean)){setError("app","Add at least one app store or website URL.");valid=false;break}
-      const good=vals.filter(v=>isValidHttpUrl(normalizeUrl(v)));
-      if(good.length!==vals.filter(Boolean).length){setError("app","Each provided destination must be a valid URL.");valid=false;break}
-      p="App Download\n"+(val("androidUrl")?"Android: "+normalizeUrl(val("androidUrl"))+"\n":"")+(val("appleUrl")?"iOS: "+normalizeUrl(val("appleUrl"))+"\n":"")+(val("appWebsite")?"Website: "+normalizeUrl(val("appWebsite")):"");break;
-    }
-    case "event":{
-      const title=val("eventTitle"),sd=val("eventStartDate"),st=val("eventStartTime");
-      if(!title){setError("eventTitle","Enter an event title.");valid=false}
-      if(!sd){setError("eventStartDate","Choose a start date.");valid=false}
-      if(!st){setError("eventStartTime","Choose a start time.");valid=false}
-      if(!valid)break;
-      const ed=val("eventEndDate")||sd,et=val("eventEndTime")||st;
-      p=`BEGIN:VEVENT
-UID:${crypto.randomUUID?crypto.randomUUID():Date.now()+"@mpage.online"}
-DTSTAMP:${icalDate(new Date().toISOString().slice(0,10),new Date().toTimeString().slice(0,5))}
-DTSTART:${icalDate(sd,st)}
-DTEND:${icalDate(ed,et)}
-SUMMARY:${escapeIcal(title)}
-${val("eventLocation")?"LOCATION:"+escapeIcal(val("eventLocation"))+"\n":""}${val("eventDescription")?"DESCRIPTION:"+escapeIcal(val("eventDescription"))+"\n":""}${val("eventWebsite")&&isValidHttpUrl(normalizeUrl(val("eventWebsite")))?"URL:"+escapeIcal(normalizeUrl(val("eventWebsite")))+"\n":""}END:VEVENT`;
-      break;
-    }
-    case "coupon":{
-      const code=val("couponCode");
-      if(!code){setError("couponCode","Enter a coupon code.");valid=false;break}
-      p=`Coupon Code: ${code}\n${val("couponTitle")?"Offer: "+val("couponTitle")+"\n":""}${val("couponUrl")?"Website: "+normalizeUrl(val("couponUrl"))+"\n":""}${val("couponDescription")?"Details: "+val("couponDescription"):""}`;break;
-    }
-    case "auth":{
-      const v=val("authText");
-      if(!v){setError("authText","Enter the text you want to encode.");valid=false;break}
-      p=v;break;
-    }
-  }
-  return valid?p:null;
-}
-
-function getCorrection(){return $("#errorCorrection").value;}
-function getStyle(){return ($('input[name="qrStyle"]:checked')||{}).value||"square";}
-
-function generate(showToast=false) {
-  const payload=buildPayload();
-  if(!payload){
-    currentPayload="";
-    $("#qrCanvas").classList.add("hidden");
-    $("#emptyPreview").classList.remove("hidden");
-    setActionState(false);
-    return false;
-  }
-  currentPayload=payload;
-  try{
-    const ec=getCorrection();
-    const qr=qrcode(0,ec);
-    qr.addData(payload,"Byte");
-    qr.make();
-    lastQr=qr;
-    drawQr(qr);
-    setActionState(true);
-    saveHistory();
-    if(showToast)toast("QR generated successfully.","success");
-    return true;
-  }catch(err){
-    console.error(err);
-    currentPayload="";
-    setActionState(false);
-    toast("This content is too long for the selected QR settings. Try shorter text or lower error correction.","error");
-    return false;
-  }
-}
-
-function setActionState(on){
-  ["downloadPng","downloadJpg","downloadSvg","copyQr","printQr","shareQr","saveFavorite"].forEach(id=>$("#"+id).disabled=!on);
-}
-
-function drawRoundedRect(ctx,x,y,w,h,r){
-  const rr=Math.min(r,w/2,h/2);
-  ctx.beginPath();ctx.moveTo(x+rr,y);ctx.arcTo(x+w,y,x+w,y+h,rr);ctx.arcTo(x+w,y+h,x,y+h,rr);ctx.arcTo(x,y+h,x,y,rr);ctx.arcTo(x,y,x+w,y,rr);ctx.closePath();ctx.fill();
-}
-
-function drawQr(qr){
-  const size=Number($("#qrSize").value)||320;
-  lastSize=size;
-  const margin=Number($("#marginRange").value)||4;
-  const canvas=$("#qrCanvas");
-  const ctx=canvas.getContext("2d");
-  const modules=qr.getModuleCount();
-  lastMatrix=Array.from({length:modules},(_,r)=>Array.from({length:modules},(_,c)=>qr.isDark(r,c)));
-  const quiet=margin;
-  const total=modules+quiet*2;
-  const cell=size/total;
-  canvas.width=size;canvas.height=size;
-  const fg=$("#fgColor").value,bg=$("#bgColor").value;
-  ctx.fillStyle=bg;ctx.fillRect(0,0,size,size);
-
-  const style=getStyle();
-  ctx.fillStyle=fg;
-
-  for(let r=0;r<modules;r++){
-    for(let c=0;c<modules;c++){
-      if(!lastMatrix[r][c])continue;
-      const x=(c+quiet)*cell,y=(r+quiet)*cell;
-      const finder = (r<7&&c<7)||(r<7&&c>=modules-7)||(r>=modules-7&&c<7);
-      if(style==="dots"){
-        const d=cell*.72;
-        ctx.beginPath();ctx.arc(x+cell/2,y+cell/2,d/2,0,Math.PI*2);ctx.fill();
-      }else if(style==="rounded"){
-        drawRoundedRect(ctx,x+.04*cell,y+.04*cell,cell*.92,cell*.92,cell*.18);
-      }else{
-        ctx.fillRect(Math.floor(x),Math.floor(y),Math.ceil(cell+.3),Math.ceil(cell+.3));
+      function formatDate(d){
+        return `${pad(d.getDate())} ${months[d.getMonth()]} ${d.getFullYear()}`;
       }
-    }
-  }
 
-  drawFinderProtection(ctx,modules,quiet,cell,fg,bg);
-  if(logoDataUrl)drawLogo(ctx,size);
-  $("#previewSize").textContent=`${size} × ${size} px`;
-  $("#emptyPreview").classList.add("hidden");
-  canvas.classList.remove("hidden");
-}
-
-function drawFinderProtection(ctx,modules,quiet,cell,fg,bg){
-  /* QR finder patterns are deliberately rendered as strong square modules
-     after decorative modules to preserve their scan structure. */
-  const positions=[[0,0],[modules-7,0],[0,modules-7]];
-  positions.forEach(([cx,cy])=>{
-    const x=(cx+quiet)*cell,y=(cy+quiet)*cell;
-    ctx.fillStyle=bg;
-    ctx.fillRect(x,y,7*cell,7*cell);
-    ctx.fillStyle=fg;
-    ctx.fillRect(x,y,7*cell,7*cell);
-    ctx.fillStyle=bg;
-    ctx.fillRect(x+cell,y+cell,5*cell,5*cell);
-    ctx.fillStyle=fg;
-    ctx.fillRect(x+2*cell,y+2*cell,3*cell,3*cell);
-  });
-}
-
-function drawLogo(ctx,size){
-  const img=new Image();
-  img.onload=()=>{
-    const max=size*.19;
-    const box=size*.235;
-    const x=(size-box)/2,y=(size-box)/2;
-    ctx.save();
-    ctx.fillStyle="#fff";
-    ctx.beginPath();ctx.roundRect(x,y,box,box,box*.16);ctx.fill();
-    const ratio=Math.min(max/img.width,max/img.height);
-    const w=img.width*ratio,h=img.height*ratio;
-    ctx.drawImage(img,(size-w)/2,(size-h)/2,w,h);
-    ctx.restore();
-  };
-  img.src=logoDataUrl;
-}
-
-function canvasBlob(type,quality=.94){
-  return new Promise(resolve=>$("#qrCanvas").toBlob(resolve,type,quality));
-}
-
-async function downloadBlob(blob,name){
-  if(!blob){toast("Unable to create the download.","error");return}
-  const url=URL.createObjectURL(blob);
-  const a=document.createElement("a");a.href=url;a.download=name;
-  document.body.appendChild(a);a.click();a.remove();
-  setTimeout(()=>URL.revokeObjectURL(url),1500);
-  toast("Download started.","success");
-}
-
-function createSvg(){
-  if(!lastMatrix)return null;
-  const modules=lastMatrix.length,margin=Number($("#marginRange").value)||4;
-  const total=modules+margin*2;
-  const fg=$("#fgColor").value,bg=$("#bgColor").value;
-  const style=getStyle();
-  let paths="";
-  for(let r=0;r<modules;r++){
-    for(let c=0;c<modules;c++){
-      if(!lastMatrix[r][c])continue;
-      const x=c+margin,y=r+margin;
-      if(style==="dots"){
-        const cx=x+.5,cy=y+.5;
-        paths+=`<circle cx="${cx}" cy="${cy}" r=".36"/>`;
-      }else if(style==="rounded"){
-        paths+=`<rect x="${x+.04}" y="${y+.04}" width=".92" height=".92" rx=".18"/>`;
-      }else{
-        paths+=`<rect x="${x}" y="${y}" width="1.02" height="1.02"/>`;
+      function dateOnlyFromInput(value){
+        if(!value) return null;
+        const p = value.split("-").map(Number);
+        if(p.length !== 3 || p.some(Number.isNaN)) return null;
+        const d = new Date(p[0],p[1]-1,p[2]);
+        if(d.getFullYear() !== p[0] || d.getMonth() !== p[1]-1 || d.getDate() !== p[2]) return null;
+        d.setHours(0,0,0,0);
+        return d;
       }
-    }
-  }
-  const finders=[[0,0],[modules-7,0],[0,modules-7]];
-  finders.forEach(([x,y])=>{
-    paths+=`<rect x="${x+margin}" y="${y+margin}" width="7" height="7" fill="${fg}"/>
-    <rect x="${x+margin+1}" y="${y+margin+1}" width="5" height="5" fill="${bg}"/>
-    <rect x="${x+margin+2}" y="${y+margin+2}" width="3" height="3" fill="${fg}"/>`;
-  });
-  let logo="";
-  if(logoDataUrl){
-    const box=total*.235,max=total*.19;
-    logo=`<rect x="${(total-box)/2}" y="${(total-box)/2}" width="${box}" height="${box}" rx="${box*.16}" fill="#fff"/><image href="${logoDataUrl}" x="${(total-max)/2}" y="${(total-max)/2}" width="${max}" height="${max}" preserveAspectRatio="xMidYMid meet"/>`;
-  }
-  return `<svg xmlns="http://www.w3.org/2000/svg" width="${total*20}" height="${total*20}" viewBox="0 0 ${total} ${total}">
-<rect width="100%" height="100%" fill="${bg}"/><g fill="${fg}">${paths}</g>${logo}</svg>`;
-}
 
-function saveHistory(){
-  if(!currentPayload)return;
-  try{
-    const arr=JSON.parse(localStorage.getItem("mpqr_history")||"[]");
-    const item={
-      id:Date.now().toString(),
-      type:currentType,
-      name:types.find(t=>t.id===currentType)?.name||currentType,
-      data:currentPayload.slice(0,600),
-      payload:currentPayload,
-      created:new Date().toISOString()
-    };
-    const filtered=arr.filter(x=>!(x.type===item.type&&x.payload===item.payload));
-    filtered.unshift(item);
-    localStorage.setItem("mpqr_history",JSON.stringify(filtered.slice(0,12)));
-    renderHistory();
-  }catch(e){}
-}
-
-function getHistory(){try{return JSON.parse(localStorage.getItem("mpqr_history")||"[]")}catch{return[]}}
-function getFavorites(){try{return JSON.parse(localStorage.getItem("mpqr_favorites")||"[]")}catch{return[]}}
-
-function cardTemplate(item,isFav=false){
-  const card=document.createElement("div");
-  card.className="history-card";
-  const date=new Date(item.created);
-  card.innerHTML=`
-    <div class="history-card-top"><strong>${esc(item.name)}</strong><span class="small muted">${date.toLocaleDateString()}</span></div>
-    <p title="${esc(item.data)}">${esc(item.data)}</p>
-    <div class="card-actions">
-      <button data-action="load">Load</button>
-      ${isFav?`<button data-action="delete">Delete</button>`:`<button data-action="favorite">Save</button>`}
-    </div>`;
-  card.querySelector('[data-action="load"]').addEventListener("click",()=>loadPreset(item));
-  const action=card.querySelector('[data-action="delete"],[data-action="favorite"]');
-  if(action)action.addEventListener("click",()=>{
-    if(isFav){
-      const arr=getFavorites().filter(x=>x.id!==item.id);
-      localStorage.setItem("mpqr_favorites",JSON.stringify(arr));renderFavorites();toast("Favorite deleted.","success");
-    }else saveFavoriteItem(item);
-  });
-  return card;
-}
-
-function renderHistory(){
-  const grid=$("#historyGrid");grid.textContent="";
-  const arr=getHistory();
-  $("#historyEmpty").classList.toggle("hidden",arr.length>0);
-  arr.slice(0,6).forEach(item=>grid.appendChild(cardTemplate(item,false)));
-}
-function renderFavorites(){
-  const grid=$("#favoritesGrid");grid.textContent="";
-  const arr=getFavorites();
-  $("#favoritesEmpty").classList.toggle("hidden",arr.length>0);
-  arr.forEach(item=>grid.appendChild(cardTemplate(item,true)));
-}
-function saveFavoriteItem(item){
-  try{
-    const arr=getFavorites();
-    if(arr.some(x=>x.payload===item.payload&&x.type===item.type)){toast("This QR is already a favorite.","info");return}
-    const copy={...item,id:"fav_"+Date.now()};
-    arr.unshift(copy);localStorage.setItem("mpqr_favorites",JSON.stringify(arr.slice(0,20)));
-    renderFavorites();toast("Favorite saved.","success");
-  }catch(e){toast("Could not save the favorite.","error")}
-}
-function loadPreset(item){
-  selectType(item.type);
-  setTimeout(()=>{
-    const fieldMap={
-      url:["url"],text:["text"],whatsapp:["waNumber"],phone:["phoneNumber"],
-      sms:["smsNumber"],email:["emailAddress"]
-    };
-    const target=(fieldMap[item.type]||[])[0];
-    if(target){
-      const el=$("#"+target);
-      if(el){
-        let value=item.payload;
-        if(item.type==="url")value=item.payload;
-        else if(item.type==="text")value=item.payload;
-        else if(item.type==="phone")value=item.payload.replace(/^tel:/,"");
-        else if(item.type==="whatsapp")value=item.payload.replace(/^https:\/\/wa\.me\//,"").split("?")[0];
-        el.value=value;
+      function toInputDate(d){
+        return `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`;
       }
-    }
-    generate(true);
-    document.getElementById("generator").scrollIntoView({behavior:"smooth"});
-  },80);
-}
 
-function currentItem(){
-  return {
-    id:"current_"+Date.now(),
-    type:currentType,
-    name:types.find(t=>t.id===currentType)?.name||currentType,
-    data:currentPayload.slice(0,600),
-    payload:currentPayload,
-    created:new Date().toISOString()
-  };
-}
+      function today(){
+        const d = new Date();
+        d.setHours(0,0,0,0);
+        return d;
+      }
 
-function buildFeatures(){
-  const grid=$("#featureGrid");
-  featureData.forEach((x,i)=>{
-    const el=document.createElement("article");el.className="feature-card";
-    el.innerHTML=`<div class="feature-icon">${["✓","⚡","◈","◉","▣","↓","J","∞","⌁","↗","▦","✓","◌","♢","↺","☆","◐","⚙","✓","✦"][i]||"✓"}</div><h3>${esc(x[0])}</h3><p>${esc(x[1])}</p>`;
-    grid.appendChild(el);
-  });
-}
-function buildInfo(){
-  const grid=$("#typeInfoGrid");
-  infoData.forEach(x=>{
-    const el=document.createElement("article");el.className="type-info-card";
-    el.innerHTML=`<div class="type-mini-icon">${esc(x[2])}</div><h3>${esc(x[0])}</h3><p>${esc(x[1])}</p>`;
-    grid.appendChild(el);
-  });
-}
-function buildFaq(){
-  const grid=$("#faqList");
-  faqData.forEach(([q,a])=>{
-    const el=document.createElement("div");el.className="faq-item";
-    el.innerHTML=`<button class="faq-q" aria-expanded="false"><span>${esc(q)}</span><span>+</span></button><div class="faq-a"><div><p>${esc(a)}</p></div></div>`;
-    const btn=el.querySelector(".faq-q");
-    btn.addEventListener("click",()=>{
-      const open=el.classList.toggle("open");
-      btn.setAttribute("aria-expanded",String(open));
-    });
-    grid.appendChild(el);
-  });
-}
+      function daysInMonth(year, monthIndex){
+        return new Date(year, monthIndex + 1, 0).getDate();
+      }
 
-async function copyCanvas(){
-  if(!currentPayload)return;
-  try{
-    if(navigator.clipboard && window.ClipboardItem){
-      const blob=await canvasBlob("image/png");
-      await navigator.clipboard.write([new ClipboardItem({"image/png":blob})]);
-      toast("QR image copied to clipboard.","success");
-    }else if(navigator.clipboard){
-      await navigator.clipboard.writeText(currentPayload);
-      toast("QR data copied. Image clipboard is not supported in this browser.","info");
-    }else throw new Error();
-  }catch(e){
-    try{
-      await navigator.clipboard.writeText(currentPayload);
-      toast("QR data copied instead of the image.","info");
-    }catch{
-      toast("Clipboard access was not available.","error");
-    }
-  }
-}
+      function isLeapYear(year){
+        return year % 4 === 0 && (year % 100 !== 0 || year % 400 === 0);
+      }
 
-async function shareQr(){
-  if(!currentPayload)return;
-  try{
-    const blob=await canvasBlob("image/png");
-    const file=new File([blob],"mp-qr-code.png",{type:"image/png"});
-    if(navigator.share && (!navigator.canShare || navigator.canShare({files:[file]}))){
-      await navigator.share({title:"MP QR Tool QR Code",text:"QR code created with MP QR Tool",files:[file]});
-      return;
-    }
-    if(navigator.share){
-      await navigator.share({title:"MP QR Tool QR Code",text:currentPayload});
-      return;
-    }
-    await navigator.clipboard.writeText(currentPayload);
-    toast("Sharing is not supported. QR data copied instead.","info");
-  }catch(e){
-    if(e.name!=="AbortError")toast("Unable to share in this browser.","error");
-  }
-}
+      function clampDay(year, monthIndex, day){
+        return Math.min(day, daysInMonth(year,monthIndex));
+      }
 
-function openPrint(){
-  const image=$("#qrCanvas").toDataURL("image/png");
-  $("#printImage").src=image;
-  $("#printQrData").textContent=currentPayload.length>260?currentPayload.slice(0,257)+"…":currentPayload;
-  $("#printModal").classList.add("open");
-}
-function doPrint(){
-  const image=$("#printImage").src;
-  const title=types.find(t=>t.id===currentType)?.name||"QR Code";
-  const w=window.open("","_blank","width=700,height=800");
-  if(!w){toast("Please allow pop-ups to print the QR code.","error");return}
-  w.document.write(`<!doctype html><html><head><title>MP QR Tool - ${esc(title)}</title><style>body{font-family:Arial;text-align:center;padding:40px;color:#111}img{width:min(500px,90vw);image-rendering:auto}p{word-break:break-word;color:#555;max-width:650px;margin:20px auto}@media print{button{display:none}}</style></head><body><h1>MP QR Tool</h1><h2>${esc(title)}</h2><img src="${image}" alt="QR Code"><p>${esc(currentPayload)}</p><script>window.onload=()=>{window.print();setTimeout(()=>window.close(),500)}<\/script></body></html>`);
-  w.document.close();
-}
+      function addCalendarYears(d, years){
+        const y = d.getFullYear() + years;
+        const m = d.getMonth();
+        const day = clampDay(y,m,d.getDate());
+        return new Date(y,m,day,d.getHours(),d.getMinutes(),d.getSeconds(),d.getMilliseconds());
+      }
 
-function resetAll(){
-  currentPayload="";
-  logoDataUrl="";
-  $("#logoUpload").value="";
-  $("#logoPreview").classList.add("hidden");
-  $("#fgColor").value="#172033";$("#bgColor").value="#ffffff";
-  $("#fgHex").textContent="#172033";$("#bgHex").textContent="#FFFFFF";
-  $("#qrSize").value="320";$("#errorCorrection").value="M";$("#marginRange").value="4";$("#marginVal").textContent="4";
-  const sq=$('input[name="qrStyle"][value="square"]');if(sq)sq.checked=true;
-  selectType("url");
-  $("#url").value="";
-  $("#qrCanvas").classList.add("hidden");$("#emptyPreview").classList.remove("hidden");
-  setActionState(false);
-  toast("Generator reset.","success");
-}
+      function addCalendarMonths(d, monthsToAdd){
+        const originalDay = d.getDate();
+        const targetIndex = d.getFullYear() * 12 + d.getMonth() + monthsToAdd;
+        const y = Math.floor(targetIndex / 12);
+        const m = targetIndex - y * 12;
+        const day = Math.min(originalDay,daysInMonth(y,m));
+        return new Date(y,m,day,d.getHours(),d.getMinutes(),d.getSeconds(),d.getMilliseconds());
+      }
 
-function initTheme(){
-  const saved=localStorage.getItem("mpqr_theme");
-  if(saved==="dark")document.documentElement.classList.add("dark");
-  updateThemeIcon();
-}
-function updateThemeIcon(){
-  const dark=document.documentElement.classList.contains("dark");
-  $("#themeIcon").innerHTML=dark
-    ?`<circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>`
-    :`<path d="M21 12.8A8.5 8.5 0 1 1 11.2 3 6.7 6.7 0 0 0 21 12.8Z"/>`;
-}
+      function calendarAge(birth,target){
+        if(!(birth instanceof Date) || !(target instanceof Date) || target < birth) return null;
 
-$("#themeBtn").addEventListener("click",()=>{
-  const dark=document.documentElement.classList.toggle("dark");
-  localStorage.setItem("mpqr_theme",dark?"dark":"light");updateThemeIcon();
-});
-$("#menuBtn").addEventListener("click",()=>{
-  const n=$("#mainNav"),open=n.classList.toggle("mobile-open");
-  $("#menuBtn").setAttribute("aria-expanded",String(open));
-});
-$$(".nav-links a").forEach(a=>a.addEventListener("click",()=>$("#mainNav").classList.remove("mobile-open")));
+        let years = target.getFullYear() - birth.getFullYear();
+        let anniversary = addCalendarYears(birth,years);
 
-$("#typeSearch").addEventListener("input",e=>renderTypeList(e.target.value));
-$("#qrSize").addEventListener("change",()=>{if(currentPayload)generate(false)});
-$("#errorCorrection").addEventListener("change",()=>{if(currentPayload)generate(false)});
-$("#marginRange").addEventListener("input",()=>{
-  $("#marginVal").textContent=$("#marginRange").value;
-  if(currentPayload)generate(false);
-});
-$$('input[name="qrStyle"]').forEach(e=>e.addEventListener("change",()=>{if(currentPayload)generate(false)}));
-["fgColor","bgColor"].forEach(id=>{
-  $("#"+id).addEventListener("input",e=>{
-    const hex=e.target.value.toUpperCase();
-    $("#"+(id==="fgColor"?"fgHex":"bgHex")).textContent=hex;
-    if(currentPayload)generate(false);
-  });
-});
+        if(anniversary > target){
+          years--;
+          anniversary = addCalendarYears(birth,years);
+        }
 
-$("#logoUpload").addEventListener("change",e=>{
-  const file=e.target.files?.[0];
-  if(!file)return;
-  if(file.size>2*1024*1024){toast("Please choose a logo smaller than 2 MB.","error");e.target.value="";return}
-  const reader=new FileReader();
-  reader.onload=()=>{
-    logoDataUrl=reader.result;
-    $("#logoThumb").src=logoDataUrl;
-    $("#logoPreview").classList.remove("hidden");
-    if(currentPayload)generate(false);
-    toast("Logo loaded locally.","success");
-  };
-  reader.onerror=()=>toast("Unable to read the logo file.","error");
-  reader.readAsDataURL(file);
-});
-$("#removeLogo").addEventListener("click",()=>{
-  logoDataUrl="";$("#logoUpload").value="";$("#logoPreview").classList.add("hidden");
-  if(currentPayload)generate(false);toast("Logo removed.","success");
-});
+        let months = target.getMonth() - anniversary.getMonth() + 12 * (target.getFullYear() - anniversary.getFullYear());
+        let monthPoint = addCalendarMonths(anniversary,months);
 
-$("#downloadPng").addEventListener("click",async()=>{if(currentPayload)downloadBlob(await canvasBlob("image/png"),"mp-qr-code.png")});
-$("#downloadJpg").addEventListener("click",async()=>{
-  if(!currentPayload)return;
-  const temp=document.createElement("canvas"),size=$("#qrCanvas").width;
-  temp.width=size;temp.height=size;
-  const c=temp.getContext("2d");c.fillStyle=$("#bgColor").value;c.fillRect(0,0,size,size);c.drawImage($("#qrCanvas"),0,0);
-  await new Promise(resolve=>temp.toBlob(b=>{downloadBlob(b,"mp-qr-code.jpg");resolve()}, "image/jpeg",.94));
-});
-$("#downloadSvg").addEventListener("click",()=>{
-  if(!currentPayload)return;
-  const svg=createSvg();if(!svg){toast("SVG could not be created.","error");return}
-  downloadBlob(new Blob([svg],{type:"image/svg+xml"}),"mp-qr-code.svg");
-});
-$("#copyQr").addEventListener("click",copyCanvas);
-$("#shareQr").addEventListener("click",shareQr);
-$("#printQr").addEventListener("click",openPrint);
-$("#closePrint").addEventListener("click",()=>$("#printModal").classList.remove("open"));
-$("#cancelPrint").addEventListener("click",()=>$("#printModal").classList.remove("open"));
-$("#printModal").addEventListener("click",e=>{if(e.target===e.currentTarget)e.currentTarget.classList.remove("open")});
-$("#confirmPrint").addEventListener("click",doPrint);
-$("#resetTopBtn").addEventListener("click",resetAll);
+        if(monthPoint > target){
+          months--;
+          monthPoint = addCalendarMonths(anniversary,months);
+        }
 
-$("#saveFavorite").addEventListener("click",()=>{
-  if(currentPayload)saveFavoriteItem(currentItem());
-});
-$("#clearHistory").addEventListener("click",()=>{
-  localStorage.removeItem("mpqr_history");renderHistory();toast("History cleared.","success");
-});
-$("#clearFavorites").addEventListener("click",()=>{
-  localStorage.removeItem("mpqr_favorites");renderFavorites();toast("Favorites cleared.","success");
-});
+        let remainingMs = target.getTime() - monthPoint.getTime();
+        let days = Math.floor(remainingMs / 86400000);
 
-window.addEventListener("keydown",e=>{
-  if(e.key==="Escape"){
-    $("#printModal").classList.remove("open");
-    $("#mainNav").classList.remove("mobile-open");
-  }
-});
+        return {years,months,days,anniversary,monthPoint,remainingMs};
+      }
 
-initTheme();
-buildFeatures();
-buildInfo();
-buildFaq();
-renderTypeList();
-renderHistory();
-renderFavorites();
-selectType("url");
-})();
-</script>
+      function elapsedDays(start,end){
+        const a = new Date(start.getFullYear(),start.getMonth(),start.getDate());
+        const b = new Date(end.getFullYear(),end.getMonth(),end.getDate());
+        return Math.max(0,Math.round((b-a)/86400000));
+      }
 
-<script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@type":"WebApplication",
-  "name":"MP QR Tool",
-  "url":"https://mpage.online/",
-  "description":"Free online QR code generator for websites, WhatsApp, Wi-Fi, UPI, contacts, email, phone, social media and more.",
-  "applicationCategory":"UtilitiesApplication",
-  "operatingSystem":"Any",
-  "browserRequirements":"Requires a modern web browser with JavaScript enabled.",
-  "offers":{"@type":"Offer","price":"0","priceCurrency":"INR"}
-}
-</script>
+      function plural(n,s){ return `${n} ${s}${n === 1 ? "" : "s"}`; }
 
-<script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@type":"FAQPage",
-  "mainEntity":[
-    {"@type":"Question","name":"What is a QR code?","acceptedAnswer":{"@type":"Answer","text":"A QR code is a two-dimensional barcode that can store text, links and other structured information that compatible scanners can read."}},
-    {"@type":"Question","name":"How do I create a QR code?","acceptedAnswer":{"@type":"Answer","text":"Choose a QR type, enter the required information and use the live preview to check the generated QR code."}},
-    {"@type":"Question","name":"Can I create a WhatsApp QR code?","acceptedAnswer":{"@type":"Answer","text":"Yes. Enter a phone number with its country code and optionally add a predefined WhatsApp message."}},
-    {"@type":"Question","name":"Can I create a UPI QR code?","acceptedAnswer":{"@type":"Answer","text":"Yes. Enter a UPI ID and optional payment information. Always verify the recipient and amount before paying."}},
-    {"@type":"Question","name":"Can I add a logo?","acceptedAnswer":{"@type":"Answer","text":"Yes. A small logo can be processed locally and composed over the center of the QR code."}},
-    {"@type":"Question","name":"Can I download the QR code?","acceptedAnswer":{"@type":"Answer","text":"Yes. PNG, JPG and SVG download options are available."}}
-  ]
-}
-</script>
+      function showToast(message){
+        const toast = $("toast");
+        toast.textContent = message;
+        toast.classList.add("show");
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(() => toast.classList.remove("show"),2600);
+      }
 
+      function showError(el,message){
+        el.textContent = message;
+        el.classList.add("show");
+      }
+
+      function hideError(el){
+        el.textContent = "";
+        el.classList.remove("show");
+      }
+
+      function setMaxDates(){
+        const max = toInputDate(today());
+        $("dob").max = max;
+        $("birthdayDob").max = max;
+        $("specificDob").max = max;
+        $("personA").max = max;
+        $("personB").max = max;
+      }
+
+      function getBirthDateTime(){
+        const dob = dateOnlyFromInput($("dob").value);
+        if(!dob) return null;
+
+        if(!$("useBirthTime").checked) return dob;
+
+        let hour = Number($("birthHour").value);
+        const minute = Number($("birthMinute").value);
+
+        if(!Number.isInteger(hour) || !Number.isInteger(minute) || minute < 0 || minute > 59){
+          return null;
+        }
+
+        if($("birthPeriod").value === "12"){
+          if(hour < 1 || hour > 12) return null;
+          // 12-hour mode uses the select as a simple 24-hour indicator only.
+          // To avoid ambiguous AM/PM controls, interpret 12-hour input as the entered hour.
+          // Users can use 24-hour mode for exact times.
+          hour = hour % 24;
+        }else if(hour < 0 || hour > 23){
+          return null;
+        }
+
+        return new Date(dob.getFullYear(),dob.getMonth(),dob.getDate(),hour,minute,0,0);
+      }
+
+      function validateMain(){
+        const err = $("dobError");
+        hideError(err);
+        const dob = dateOnlyFromInput($("dob").value);
+
+        if(!dob){
+          showError(err,"Please select a valid date of birth.");
+          return null;
+        }
+
+        if(dob > today()){
+          showError(err,"Date of birth cannot be in the future.");
+          return null;
+        }
+
+        if(dob.getFullYear() < 1 || dob.getFullYear() > 9999){
+          showError(err,"Please choose a supported year.");
+          return null;
+        }
+
+        if($("useBirthTime").checked){
+          const dt = getBirthDateTime();
+          if(!dt){
+            showError(err,"Please enter a valid birth time.");
+            return null;
+          }
+          if(dt > new Date()){
+            showError(err,"Birth date and time cannot be in the future.");
+            return null;
+          }
+          return dt;
+        }
+
+        return dob;
+      }
+
+      function calculateMain(){
+        const birth = validateMain();
+        if(!birth) return;
+
+        stopAgeTimer();
+
+        const now = new Date();
+        const age = calendarAge(birth,now);
+        if(!age){
+          showError($("dobError"),"The selected date could not be calculated.");
+          return;
+        }
+
+        currentData = {birth};
+
+        $("emptyResult").style.display = "none";
+        $("resultContent").style.display = "block";
+
+        $("exactAge").textContent = `${age.years} Years, ${age.months} Months, ${age.days} Days`;
+        $("resultBirthDate").textContent = `Born ${formatDate(birth)}${$("useBirthTime").checked ? ` at ${pad(birth.getHours())}:${pad(birth.getMinutes())}` : ""}`;
+
+        const dayTotal = Math.max(0,Math.floor((now - birth)/86400000));
+        const hours = Math.floor((now-birth)/3600000);
+        const minutes = Math.floor((now-birth)/60000);
+        const seconds = Math.floor((now-birth)/1000);
+
+        $("yearsStat").textContent = age.years.toLocaleString();
+        $("monthsStat").textContent = (age.years*12+age.months).toLocaleString();
+        $("weeksStat").textContent = Math.floor(dayTotal/7).toLocaleString();
+        $("daysStat").textContent = dayTotal.toLocaleString();
+        $("hoursStat").textContent = hours.toLocaleString();
+        $("minutesStat").textContent = minutes.toLocaleString();
+
+        $("liveHint").textContent = $("useBirthTime").checked
+          ? "Based on your entered birth time and your local browser clock."
+          : "Date-based result; exact seconds require a time of birth.";
+
+        updateLiveAge();
+        ageTimer = setInterval(updateLiveAge,1000);
+
+        updateLifeStats(dayTotal,now-birth);
+        updateMilestones(birth);
+        updateBirthInfo(birth);
+        updateZodiac(birth);
+
+        showToast("Age calculated successfully.");
+      }
+
+      function updateLiveAge(){
+        if(!currentData) return;
+        const now = new Date();
+        const age = calendarAge(currentData.birth,now);
+        if(!age) return;
+
+        let text = `${age.years} Years ${age.months} Months ${age.days} Days`;
+
+        if($("useBirthTime").checked){
+          const remainder = now - age.monthPoint;
+          const hrs = Math.floor(remainder/3600000);
+          const mins = Math.floor((remainder%3600000)/60000);
+          const secs = Math.floor((remainder%60000)/1000);
+          text += ` ${hrs} Hours ${mins} Minutes ${secs} Seconds`;
+        }else{
+          text += " + live time";
+        }
+
+        $("liveAge").textContent = text;
+      }
+
+      function stopAgeTimer(){
+        if(ageTimer){ clearInterval(ageTimer); ageTimer = null; }
+      }
+
+      function resetMain(){
+        stopAgeTimer();
+        currentData = null;
+        $("dob").value = "";
+        $("useBirthTime").checked = false;
+        $("birthTimeWrap").style.display = "none";
+        $("birthHour").value = "";
+        $("birthMinute").value = "";
+        hideError($("dobError"));
+        $("emptyResult").style.display = "grid";
+        $("resultContent").style.display = "none";
+        $("lifeYears").textContent = "—";
+        $("lifeMonths").textContent = "—";
+        $("lifeWeeks").textContent = "—";
+        $("lifeDays").textContent = "—";
+        $("lifeHours").textContent = "—";
+        $("lifeMinutes").textContent = "—";
+        $("milestones").innerHTML = '<div class="empty" style="grid-column:1/-1;min-height:120px">Calculate your age first to see your milestones.</div>';
+        $("birthInfo").textContent = "Enter your date of birth in the main calculator to see this information.";
+        $("zodiacInfo").textContent = "Your zodiac sign will appear after calculation.";
+        showToast("Calculator reset.");
+      }
+
+      function updateLifeStats(dayTotal,durationMs){
+        const birth = currentData.birth;
+        const age = calendarAge(birth,new Date());
+        $("lifeYears").textContent = age ? age.years.toLocaleString() : "—";
+        $("lifeMonths").textContent = Math.floor(dayTotal/30.436875).toLocaleString();
+        $("lifeWeeks").textContent = Math.floor(dayTotal/7).toLocaleString();
+        $("lifeDays").textContent = dayTotal.toLocaleString();
+        $("lifeHours").textContent = Math.floor(durationMs/3600000).toLocaleString();
+        $("lifeMinutes").textContent = Math.floor(durationMs/60000).toLocaleString();
+      }
+
+      function updateMilestones(birth){
+        const ages = [18,21,25,30,40,50,60,70,75,80,90,100];
+        const now = today();
+        let html = "";
+
+        ages.forEach(age => {
+          const date = addCalendarYears(birth,age);
+          const future = date > now;
+          const days = future ? elapsedDays(now,date) : 0;
+          html += `
+            <div class="milestone">
+              <div class="milestone-age">${age}</div>
+              <strong>${formatDate(date)}</strong>
+              <small>${weekdays[date.getDay()]}</small>
+              <small>${future ? `${days.toLocaleString()} days remaining` : "Already reached"}</small>
+            </div>`;
+        });
+
+        $("milestones").innerHTML = html;
+      }
+
+      function updateBirthInfo(birth){
+        const monthDays = daysInMonth(birth.getFullYear(),birth.getMonth());
+        $("birthInfo").innerHTML = `
+          <strong>${formatDate(birth)}</strong><br>
+          You were born on <strong>${weekdays[birth.getDay()]}</strong>.<br>
+          Your birth month was <strong>${months[birth.getMonth()]}</strong>, which had ${monthDays} days in ${birth.getFullYear()}.
+        `;
+      }
+
+      function zodiac(d){
+        const m=d.getMonth()+1, day=d.getDate();
+        const signs=[
+          ["Capricorn","Dec 22 – Jan 19"],["Aquarius","Jan 20 – Feb 18"],["Pisces","Feb 19 – Mar 20"],
+          ["Aries","Mar 21 – Apr 19"],["Taurus","Apr 20 – May 20"],["Gemini","May 21 – Jun 20"],
+          ["Cancer","Jun 21 – Jul 22"],["Leo","Jul 23 – Aug 22"],["Virgo","Aug 23 – Sep 22"],
+          ["Libra","Sep 23 – Oct 22"],["Scorpio","Oct 23 – Nov 21"],["Sagittarius","Nov 22 – Dec 21"]
+        ];
+        const cutoff=[19,18,20,19,20,20,22,22,22,22,21,21];
+        let index=m-1;
+        if(day > cutoff[index]) index=(index+1)%12;
+        return signs[index];
+      }
+
+      function updateZodiac(birth){
+        const z=zodiac(birth);
+        $("zodiacInfo").innerHTML = `<strong>${z[0]}</strong><br><span style="color:var(--muted)">Typical date range: ${z[1]}</span><br><small style="color:var(--muted)">Western zodiac information is provided for general/entertainment purposes and is not scientific.</small>`;
+      }
+
+      /* Birthday */
+      function getNextBirthday(birth,rule){
+        const now=today();
+        let year=now.getFullYear();
+        let day=birth.getDate();
+        let month=birth.getMonth();
+
+        function make(y){
+          if(month===1 && day===29 && !isLeapYear(y)){
+            return new Date(y,1,rule==="mar1"?1:28);
+          }
+          return new Date(y,month,day);
+        }
+
+        let next=make(year);
+        if(next < now) next=make(year+1);
+        return next;
+      }
+
+      function calculateBirthday(){
+        const birth=dateOnlyFromInput($("birthdayDob").value);
+        if(!birth){
+          showToast("Please select a valid birth date.");
+          return;
+        }
+
+        const next=getNextBirthday(birth,$("febRule").value);
+        const now=new Date();
+        const days=elapsedDays(today(),next);
+        const ageNext=next.getFullYear()-birth.getFullYear();
+
+        currentBirthday={birth,rule:$("febRule").value};
+
+        $("birthdayResult").classList.add("show");
+        $("birthdayResult").innerHTML=`
+          <strong>Next Birthday</strong><br>
+          <span class="result-highlight">${formatDate(next)}</span><br>
+          You will turn <strong>${ageNext}</strong> years old.<br>
+          ${days === 0 ? "Your birthday is today! 🎉" : `${days.toLocaleString()} days remaining.`}<br>
+          It falls on <strong>${weekdays[next.getDay()]}</strong>.
+          ${birth.getMonth()===1 && birth.getDate()===29 && !isLeapYear(next.getFullYear()) ? `<br><small>February 29 birthday: this year's calculation uses ${$("febRule").value==="mar1"?"March 1":"February 28"}.</small>` : ""}
+        `;
+
+        $("countdownEmpty").style.display="none";
+        $("countdownResult").style.display="block";
+        updateBirthdayCountdown();
+        if(birthdayTimer) clearInterval(birthdayTimer);
+        birthdayTimer=setInterval(updateBirthdayCountdown,1000);
+        showToast("Birthday information calculated.");
+      }
+
+      function updateBirthdayCountdown(){
+        if(!currentBirthday) return;
+        const next=getNextBirthday(currentBirthday.birth,currentBirthday.rule);
+        let target=new Date(next);
+        const now=new Date();
+
+        if(now >= target){
+          if(currentBirthday.birth.getMonth()===1 && currentBirthday.birth.getDate()===29 && !isLeapYear(now.getFullYear())){
+            // keep the selected interpretation
+          }
+          target=getNextBirthday(currentBirthday.birth,currentBirthday.rule);
+        }
+
+        let diff=Math.max(0,target-now);
+        const days=Math.floor(diff/86400000);
+        diff%=86400000;
+        const hours=Math.floor(diff/3600000);
+        diff%=3600000;
+        const mins=Math.floor(diff/60000);
+        const secs=Math.floor((diff%60000)/1000);
+
+        $("cdDays").textContent=days;
+        $("cdHours").textContent=hours;
+        $("cdMinutes").textContent=mins;
+        $("cdSeconds").textContent=secs;
+
+        if(days===0 && hours===0 && mins===0 && secs===0){
+          $("birthdayMessage").textContent="Happy Birthday! 🎉";
+        }else{
+          $("birthdayMessage").textContent=`Your next birthday is ${formatDate(target)}.`;
+        }
+      }
+
+      /* Specific date */
+      function calculateSpecific(){
+        hideError($("specificError"));
+        const birth=dateOnlyFromInput($("specificDob").value);
+        const target=dateOnlyFromInput($("targetDate").value);
+
+        if(!birth || !target){
+          showError($("specificError"),"Please select both dates.");
+          return;
+        }
+        if(target<birth){
+          showError($("specificError"),"Target date cannot be before the date of birth.");
+          return;
+        }
+
+        const age=calendarAge(birth,target);
+        const days=elapsedDays(birth,target);
+        $("specificResult").classList.add("show");
+        $("specificResult").innerHTML=`
+          On <strong>${formatDate(target)}</strong>, the age was/will be
+          <div class="result-highlight">${age.years} Years, ${age.months} Months, ${age.days} Days</div>
+          Total elapsed days: <strong>${days.toLocaleString()}</strong>.
+        `;
+        showToast("Age on selected date calculated.");
+      }
+
+      /* Difference */
+      function calculateDifference(){
+        const a=dateOnlyFromInput($("startDate").value);
+        const b=dateOnlyFromInput($("endDate").value);
+        if(!a || !b){
+          showToast("Please select both dates.");
+          return;
+        }
+
+        const start=a<=b?a:b;
+        const end=a<=b?b:a;
+        const age=calendarAge(start,end);
+        const days=elapsedDays(start,end);
+
+        $("differenceResult").classList.add("show");
+        $("differenceResult").innerHTML=`
+          <div class="result-highlight">${age.years} Years, ${age.months} Months, ${age.days} Days</div>
+          Total days: <strong>${days.toLocaleString()}</strong><br>
+          Total weeks: <strong>${(days/7).toFixed(2)}</strong><br>
+          Approx. hours: <strong>${(days*24).toLocaleString()}</strong><br>
+          Approx. minutes: <strong>${(days*1440).toLocaleString()}</strong><br>
+          Approx. seconds: <strong>${(days*86400).toLocaleString()}</strong>
+          ${a>b ? "<br><small>Dates were automatically ordered from earlier to later.</small>" : ""}
+        `;
+        showToast("Date difference calculated.");
+      }
+
+      /* Comparison */
+      function calculateComparison(){
+        const a=dateOnlyFromInput($("personA").value);
+        const b=dateOnlyFromInput($("personB").value);
+        if(!a || !b){
+          showToast("Please select both birth dates.");
+          return;
+        }
+
+        const older=a<=b?a:b;
+        const younger=a<=b?b:a;
+        const diff=calendarAge(older,younger);
+        const days=elapsedDays(older,younger);
+        const aOlder=a<b;
+
+        let relation;
+        if(a.getTime()===b.getTime()) relation="Both people have the same date of birth.";
+        else relation=`Person ${aOlder?"A":"B"} is older by ${diff.years} Years, ${diff.months} Months, ${diff.days} Days.`;
+
+        $("compareResult").classList.add("show");
+        $("compareResult").innerHTML=`
+          <div class="result-highlight">${relation}</div>
+          Total date difference: <strong>${days.toLocaleString()} days</strong>.
+        `;
+        showToast("Ages compared successfully.");
+      }
+
+      /* Add/subtract */
+      function calculateAddTime(){
+        const base=dateOnlyFromInput($("baseDate").value);
+        if(!base){
+          showToast("Please select a starting date.");
+          return;
+        }
+
+        const y=Number($("addYears").value)||0;
+        const m=Number($("addMonths").value)||0;
+        const d=Number($("addDays").value)||0;
+        const direction=$("addDirection").value==="subtract"?-1:1;
+
+        let result=addCalendarYears(base,y*direction);
+        result=addCalendarMonths(result,m*direction);
+        result.setDate(result.getDate()+d*direction);
+
+        $("addTimeResult").classList.add("show");
+        $("addTimeResult").innerHTML=`Resulting date:<div class="result-highlight">${formatDate(result)}</div>${weekdays[result.getDay()]}`;
+        showToast("New date calculated.");
+      }
+
+      /* Pet calculators */
+      function calculateDog(){
+        const age=Number($("dogAge").value);
+        if(!Number.isFinite(age)||age<0){
+          showToast("Enter a valid dog age.");
+          return;
+        }
+        const size=$("dogSize").value;
+        let human;
+        if(age<=1) human=15;
+        else if(age<=2) human=24;
+        else {
+          const extra=size==="small"?4:size==="large"?8:5;
+          human=24+(age-2)*extra;
+        }
+        $("dogResult").classList.add("show");
+        $("dogResult").innerHTML=`Approximate human-equivalent age: <div class="result-highlight">${Math.round(human)} years</div><small>This is only an estimate; breed, size, genetics and health can change aging patterns.</small>`;
+      }
+
+      function calculateCat(){
+        const age=Number($("catAge").value);
+        if(!Number.isFinite(age)||age<0){
+          showToast("Enter a valid cat age.");
+          return;
+        }
+        let human;
+        if(age<=1) human=15;
+        else if(age<=2) human=24;
+        else human=24+(age-2)*4;
+        $("catResult").classList.add("show");
+        $("catResult").innerHTML=`Approximate human-equivalent age: <div class="result-highlight">${Math.round(human)} years</div><small>This is an estimate for general reference.</small>`;
+      }
+
+      /* Copy/share/print */
+      function resultText(){
+        if(!currentData) return "";
+        const now=new Date();
+        const age=calendarAge(currentData.birth,now);
+        const next=getNextBirthday(currentData.birth,$("febRule").value);
+        const days=elapsedDays(today(),next);
+
+        return `MP Age Calculator
+
+Date of Birth: ${formatDate(currentData.birth)}
+Exact Age: ${age.years} Years, ${age.months} Months, ${age.days} Days
+Total Days: ${elapsedDays(currentData.birth,today()).toLocaleString()}
+Total Weeks: ${Math.floor(elapsedDays(currentData.birth,today())/7).toLocaleString()}
+Next Birthday: ${formatDate(next)}
+Days Until Next Birthday: ${days}
+
+https://mpage.online/`;
+      }
+
+      async function copyText(text){
+        if(!text) return false;
+        try{
+          await navigator.clipboard.writeText(text);
+          return true;
+        }catch(e){
+          const ta=document.createElement("textarea");
+          ta.value=text;
+          ta.style.position="fixed";
+          ta.style.opacity="0";
+          document.body.appendChild(ta);
+          ta.select();
+          let ok=false;
+          try{ok=document.execCommand("copy")}catch(_){}
+          ta.remove();
+          return ok;
+        }
+      }
+
+      async function copyResults(){
+        if(!currentData){showToast("Calculate your age first.");return}
+        const ok=await copyText(resultText());
+        showToast(ok?"Result copied to clipboard.":"Unable to copy. Please copy the result manually.");
+      }
+
+      async function shareResults(){
+        if(!currentData){showToast("Calculate your age first.");return}
+        const text=resultText();
+        if(navigator.share){
+          try{
+            await navigator.share({title:"My Age Result – MP Age Calculator",text,url:"https://mpage.online/"});
+            return;
+          }catch(e){
+            if(e && e.name==="AbortError") return;
+          }
+        }
+        $("shareText").textContent=text;
+        $("shareModal").classList.add("show");
+        $("shareModal").setAttribute("aria-hidden","false");
+      }
+
+      function printResults(){
+        if(!currentData){showToast("Calculate your age first.");return}
+        const age=calendarAge(currentData.birth,new Date());
+        const next=getNextBirthday(currentData.birth,$("febRule").value);
+        const days=elapsedDays(today(),next);
+        $("printArea").innerHTML=`
+          <h1>MP Age Calculator</h1>
+          <p><strong>Date of Birth:</strong> ${formatDate(currentData.birth)}</p>
+          <p><strong>Exact Age:</strong> ${age.years} Years, ${age.months} Months, ${age.days} Days</p>
+          <p><strong>Total Days:</strong> ${elapsedDays(currentData.birth,today()).toLocaleString()}</p>
+          <p><strong>Next Birthday:</strong> ${formatDate(next)}</p>
+          <p><strong>Days Until Next Birthday:</strong> ${days}</p>
+          <hr>
+          <p>Generated by MP Age Calculator – https://mpage.online/</p>
+        `;
+        window.print();
+      }
+
+      /* Theme */
+      function initTheme(){
+        const saved=localStorage.getItem("mpAgeTheme");
+        const prefers=window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+        const theme=saved || (prefers?"dark":"light");
+        document.documentElement.dataset.theme=theme;
+        $("themeBtn").textContent=theme==="dark"?"☀":"☾";
+      }
+
+      function toggleTheme(){
+        const current=document.documentElement.dataset.theme==="dark"?"dark":"light";
+        const next=current==="dark"?"light":"dark";
+        document.documentElement.dataset.theme=next;
+        localStorage.setItem("mpAgeTheme",next);
+        $("themeBtn").textContent=next==="dark"?"☀":"☾";
+      }
+
+      /* Navigation */
+      function setupNavigation(){
+        $("menuBtn").addEventListener("click",()=>{
+          const open=$("navLinks").classList.toggle("mobile-open");
+          $("menuBtn").setAttribute("aria-expanded",String(open));
+          $("menuBtn").textContent=open?"×":"☰";
+        });
+
+        document.querySelectorAll("#navLinks a").forEach(a=>{
+          a.addEventListener("click",()=>{
+            $("navLinks").classList.remove("mobile-open");
+            $("menuBtn").setAttribute("aria-expanded","false");
+            $("menuBtn").textContent="☰";
+          });
+        });
+      }
+
+      /* FAQ */
+      function setupFaq(){
+        document.querySelectorAll(".faq-question").forEach(btn=>{
+          btn.addEventListener("click",()=>{
+            const item=btn.parentElement;
+            const wasOpen=item.classList.contains("open");
+            document.querySelectorAll(".faq-item").forEach(x=>x.classList.remove("open"));
+            if(!wasOpen)item.classList.add("open");
+          });
+        });
+      }
+
+      /* Event setup */
+      function setup(){
+        setMaxDates();
+        initTheme();
+        setupNavigation();
+        setupFaq();
+
+        $("themeBtn").addEventListener("click",toggleTheme);
+        $("calculateBtn").addEventListener("click",calculateMain);
+        $("resetBtn").addEventListener("click",resetMain);
+
+        $("useBirthTime").addEventListener("change",e=>{
+          $("birthTimeWrap").style.display=e.target.checked?"block":"none";
+        });
+
+        $("dob").addEventListener("change",()=>{
+          if($("dob").value && !currentData){
+            // Keep calculation explicit; no automatic result surprise.
+          }
+        });
+
+        $("birthdayBtn").addEventListener("click",calculateBirthday);
+        $("specificBtn").addEventListener("click",calculateSpecific);
+        $("differenceBtn").addEventListener("click",calculateDifference);
+
+        $("swapDatesBtn").addEventListener("click",()=>{
+          const a=$("startDate").value;
+          $("startDate").value=$("endDate").value;
+          $("endDate").value=a;
+          showToast("Dates swapped.");
+        });
+
+        $("compareBtn").addEventListener("click",calculateComparison);
+        $("addTimeBtn").addEventListener("click",calculateAddTime);
+        $("dogBtn").addEventListener("click",calculateDog);
+        $("catBtn").addEventListener("click",calculateCat);
+
+        $("copyBtn").addEventListener("click",copyResults);
+        $("shareBtn").addEventListener("click",shareResults);
+        $("printBtn").addEventListener("click",printResults);
+
+        $("shareClose").addEventListener("click",()=>{
+          $("shareModal").classList.remove("show");
+          $("shareModal").setAttribute("aria-hidden","true");
+        });
+
+        $("shareModal").addEventListener("click",e=>{
+          if(e.target===$("shareModal")){
+            $("shareModal").classList.remove("show");
+            $("shareModal").setAttribute("aria-hidden","true");
+          }
+        });
+
+        $("modalCopy").addEventListener("click",async()=>{
+          const ok=await copyText(resultText());
+          showToast(ok?"Result copied.":"Copy failed.");
+        });
+
+        document.addEventListener("keydown",e=>{
+          if(e.key==="Escape"){
+            $("shareModal").classList.remove("show");
+            $("shareModal").setAttribute("aria-hidden","true");
+            $("navLinks").classList.remove("mobile-open");
+            $("menuBtn").setAttribute("aria-expanded","false");
+            $("menuBtn").textContent="☰";
+          }
+        });
+
+        // Set a few sensible default dates for secondary tools.
+        const t=toInputDate(today());
+        $("targetDate").value=t;
+        $("endDate").value=t;
+        $("baseDate").value=t;
+
+        // Update hero calendar dynamically.
+        const now=new Date();
+        $("heroMonth").textContent=months[now.getMonth()];
+        $("heroYear").textContent=now.getFullYear();
+
+        window.addEventListener("beforeunload",()=>{
+          stopAgeTimer();
+          if(birthdayTimer) clearInterval(birthdayTimer);
+        });
+      }
+
+      setup();
+    })();
+  </script>
 </body>
 </html>
